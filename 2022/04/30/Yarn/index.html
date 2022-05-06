@@ -9,12 +9,12 @@
   <meta name="description" content="Yarn: 依赖包管理工具 官方文档 项目初始化1yarn init  管理依赖新增依赖123yarn add [package]yarn add [package]@[version]yarn add [package]@[tag]  更新依赖123yarn upgrade [package]yarn upgrade [package]@[version]yarn upgrade [packag">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Yarn">
-<meta property="og:url" content="http://example.com/2022/04/30/Yarn/index.html">
+<meta property="og:url" content="http://example.com/2022/04/30/yarn/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Yarn: 依赖包管理工具 官方文档 项目初始化1yarn init  管理依赖新增依赖123yarn add [package]yarn add [package]@[version]yarn add [package]@[tag]  更新依赖123yarn upgrade [package]yarn upgrade [package]@[version]yarn upgrade [packag">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-30T09:50:32.318Z">
-<meta property="article:modified_time" content="2022-05-06T00:56:00.674Z">
+<meta property="article:modified_time" content="2022-05-06T01:20:45.658Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Yarn">
 <meta property="article:tag" content="Dependent">
@@ -75,14 +75,14 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-Yarn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-yarn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/04/30/Yarn/" class="article-date">
+    <a href="/2022/04/30/yarn/" class="article-date">
   <time class="dt-published" datetime="2022-04-30T09:50:32.318Z" itemprop="datePublished">2022-04-30</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Dependent-Management/">Dependent Management</a>►<a class="article-category-link" href="/categories/Dependent-Management/Yarn/">Yarn</a>
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>►<a class="article-category-link" href="/categories/Tools/Yarn/">Yarn</a>
   </div>
 
   </div>
@@ -116,10 +116,26 @@
 <p><a target="_blank" rel="noopener" href="http://yarnpkg.top/Cli-install.html"><code>yarn install</code></a>命令用来安装一个项目的全部依赖。项目的这些依赖是在项目的<code>package.json</code>文件中描述的，并被储存在<code>yarn.lock</code>文件中</p>
 <p>通常在下面两种情况下需要安装依赖</p>
 <ol>
-<li>一个全新的项目刚刚被下载</li>
-<li>依赖有了更新</li>
+<li><p>一个全新的项目刚刚被下载</p>
+</li>
+<li><p>依赖有了更新</p>
+</li>
 </ol>
-
+<hr>
+<h4 id="Yarn的优点"><a href="#Yarn的优点" class="headerlink" title="Yarn的优点"></a>Yarn的优点</h4><ul>
+<li><strong>速度快</strong> 。速度快主要来自以下两个方面：</li>
+</ul>
+<ol>
+<li>并行安装：无论 npm 还是 Yarn 在执行包的安装时，都会执行一系列任务。npm 是按照队列执行每个 package，也就是说必须要等到当前 package 安装完成之后，才能继续后面的安装。而 Yarn 是同步执行所有任务，提高了性能。</li>
+<li>离线模式：如果之前已经安装过一个软件包，用Yarn再次安装时之间从缓存中获取，就不用像npm那样再从网络下载了。</li>
+</ol>
+<ul>
+<li>安装<strong>版本统一</strong>：为了防止拉取到不同的版本，Yarn 有一个锁定文件 (lock file) 记录了被确切安装上的模块的版本号。每次只要新增了一个模块，Yarn 就会创建（或更新）yarn.lock 这个文件。这么做就保证了，每一次拉取同一个项目依赖时，使用的都是一样的模块版本。npm 其实也有办法实现处处使用相同版本的 packages，但需要开发者执行 npm shrinkwrap 命令。这个命令将会生成一个锁定文件，在执行 npm install 的时候，该锁定文件会先被读取，和 Yarn 读取 yarn.lock 文件一个道理。npm 和 Yarn 两者的不同之处在于，Yarn 默认会生成这样的锁定文件，而 npm 要通过 shrinkwrap 命令生成 npm-shrinkwrap.json 文件，只有当这个文件存在的时候，packages 版本信息才会被记录和更新。</li>
+<li><strong>更简洁的输出</strong>：npm 的输出信息比较冗长。在执行 npm install 的时候，命令行里会不断地打印出所有被安装上的依赖。相比之下，Yarn 简洁太多：默认情况下，结合了 emoji直观且直接地打印出必要的信息，也提供了一些命令供开发者查询额外的安装信息。</li>
+<li><strong>多注册来源处理：</strong>所有的依赖包，不管他被不同的库间接关联引用多少次，安装这个包时，只会从一个注册来源去装，要么是 npm 要么是 bower, 防止出现混乱不一致。</li>
+<li><strong>更好的语义化</strong>： yarn改变了一些npm命令的名称，比如 yarn add&#x2F;remove，感觉上比 npm 原本的 install&#x2F;uninstall 要更清晰。</li>
+</ul>
+<h4 id="Yarn和npm命令对比"><a href="#Yarn和npm命令对比" class="headerlink" title="Yarn和npm命令对比"></a>Yarn和npm命令对比</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install === yarn </span><br><span class="line">npm install taco --save === yarn add taco</span><br><span class="line">npm uninstall taco --save === yarn remove taco</span><br><span class="line">npm install taco --save-dev === yarn add taco --dev</span><br><span class="line">npm update --save === yarn upgrade</span><br></pre></td></tr></table></figure>
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
@@ -132,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/30/Yarn/" data-id="cl2tq9mqy0000m8uh0t5yhh7t" data-title="Yarn" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/04/30/yarn/" data-id="cl2tr7ty300015ouh519na7cl" data-title="Yarn" class="article-share-link">Share</a>
       
       
       
@@ -164,7 +180,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dependent-Management/">Dependent Management</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dependent-Management/Yarn/">Yarn</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/Yarn/">Yarn</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -174,7 +190,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li></ul>
     </div>
   </div>
 
@@ -184,7 +200,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a>
+      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a>
     </div>
   </div>
 
@@ -206,11 +222,15 @@
       <ul>
         
           <li>
-            <a href="/2022/04/30/Yarn/">Yarn</a>
+            <a href="/2022/04/30/yarn/">Yarn</a>
           </li>
         
           <li>
             <a href="/2022/04/30/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/29/VueJs-NuxtJs-NodeJs-concept/">Vue.js, Nuxt.js &amp; Node.js</a>
           </li>
         
       </ul>
