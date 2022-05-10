@@ -14,7 +14,7 @@
 <meta property="og:description" content="本文介绍的是来自github的开源项目setup-ipsec-vpn，想要全面了解项目的各项设置，可查看其详尽的说明文档。 Step 1. 服务端安装首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。 使用以下命令快速搭建 IPsec VPN 服务器： 1wget https:&#x2F;&#x2F;get.vpnsetup.net -qO vpn.sh &amp;&amp;a">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-05-10T01:13:54.852Z">
-<meta property="article:modified_time" content="2022-05-10T02:14:06.768Z">
+<meta property="article:modified_time" content="2022-05-10T02:33:24.993Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="VPN">
 <meta name="twitter:card" content="summary">
@@ -107,6 +107,7 @@
 
 <p>你的 VPN 登录凭证将会被自动随机生成，并在安装完成后显示。</p>
 <p>VPN客户端有两种，所用登录凭证都在安装完成时，展示在界面上，记得保存</p>
+<p>*Linux 服务器需自行准备好，官方提供了几个购买渠道，我选用了 vultr.com 但是没有香港节点，只能选国外节点。首次注册并在14天内充值10美金，官方将赠送100美金的优惠（可以用支付宝支付，最近汇率贬了多花了2块大洋），选用最低配置的Linux服务器，费用是$6&#x2F;month (流量2000G，等用完了再找找更便宜的服务器)。</p>
 <p>a. IPsec&#x2F;L2TP </p>
 <p>通过在客户端设置VPN的用户名，密码，IPsec PSK. 这种方式不需要下载相应文件，仅需要配置即可使用，但这种方式比较繁琐的是，期间有可能遇到各种各样的报错，手机端（Android 12+）不支持。推荐使用下面这种</p>
 <p>b. IKEv2 </p>
