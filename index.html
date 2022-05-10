@@ -71,6 +71,77 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-VPN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/05/10/VPN/" class="article-date">
+  <time class="dt-published" datetime="2022-05-10T01:13:54.852Z" itemprop="datePublished">2022-05-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/05/10/VPN/">快速创建自己的VPN服务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本文介绍的是来自github的开源项目<a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn">setup-ipsec-vpn</a>，想要全面了解项目的各项设置，可查看其详尽的说明文档。</p>
+<h3 id="Step-1-服务端安装"><a href="#Step-1-服务端安装" class="headerlink" title="Step 1. 服务端安装"></a>Step 1. 服务端安装</h3><p>首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。</p>
+<p>使用以下命令快速搭建 IPsec VPN 服务器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://get.vpnsetup.net -qO vpn.sh &amp;&amp; sudo sh vpn.sh</span><br></pre></td></tr></table></figure>
+
+<p>你的 VPN 登录凭证将会被自动随机生成，并在安装完成后显示。</p>
+<p>VPN客户端有两种，所用登录凭证都在安装完成时，展示在界面上，记得保存</p>
+<p>a. IPsec&#x2F;L2TP </p>
+<p>通过在客户端设置VPN的用户名，密码，IPsec PSK. 这种方式不需要下载相应文件，仅需要配置即可使用，但这种方式比较繁琐的是，期间有可能遇到各种各样的报错，手机端（Android 12+）不支持。推荐使用下面这种</p>
+<p>b. IKEv2 </p>
+<p>&#x2F;root&#x2F;vpnclient.p12 (for Windows &amp; Linux)<br>&#x2F;root&#x2F;vpnclient.sswan (for Android)<br>&#x2F;root&#x2F;vpnclient.mobileconfig (for iOS &amp; macOS)</p>
+<h3 id="Step-2-客户端安装"><a href="#Step-2-客户端安装" class="headerlink" title="Step 2. 客户端安装"></a>Step 2. 客户端安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md">IKEv2 VPN 配置和使用指南</a></p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows:"></a>Windows:</h4><ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/vpn-extras/releases/latest/download/ikev2_config_import.cmd">ikev2_config_import.cmd</a> 下载cmd文件，并将cmd文件与上面的 .p12放在同个目录下，</li>
+<li>选择 <strong>以管理员身份运行</strong> 并按提示操作，输入账号名，IP地址即可。</li>
+<li>其中遇到一个错误并且没有列入官方的报错列表中，顺便记录下来 “parameter is incorrect” 相应的解决方案再 <a target="_blank" rel="noopener" href="https://github.com/trailofbits/algo/issues/1051">github issue</a> 中找到。</li>
+</ol>
+<p>Android, OS X (macOS), IOS 等手机端的，官方文档更加详细。</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/05/10/VPN/" data-id="cl2zis9ba00004kuhapli38vx" data-title="快速创建自己的VPN服务" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-VueJs-NuxtJs-NodeJs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/09/VueJs-NuxtJs-NodeJs/" class="article-date">
@@ -310,7 +381,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li></ul>
     </div>
   </div>
 
@@ -320,7 +391,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a>
+      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a>
     </div>
   </div>
 
@@ -340,6 +411,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/10/VPN/">快速创建自己的VPN服务</a>
+          </li>
         
           <li>
             <a href="/2022/05/09/VueJs-NuxtJs-NodeJs/">Vue.js, Nuxt.js &amp; Node.js</a>
