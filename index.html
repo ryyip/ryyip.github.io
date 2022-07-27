@@ -71,375 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-VPN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2022/07/26/VPN/" class="article-date">
-  <time class="dt-published" datetime="2022-07-26T10:21:30.065Z" itemprop="datePublished">2022-07-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/project/categories/Tools/">Tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/project/2022/07/26/VPN/">快速创建自己的VPN服务</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>本文介绍的是来自github的开源项目<a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn">setup-ipsec-vpn</a>，想要全面了解项目的各项设置，可查看其详尽的说明文档。</p>
-<h3 id="Step-1-服务端安装"><a href="#Step-1-服务端安装" class="headerlink" title="Step 1. 服务端安装"></a>Step 1. 服务端安装</h3><p>首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。</p>
-<p>使用以下命令快速搭建 IPsec VPN 服务器：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://get.vpnsetup.net -qO vpn.sh &amp;&amp; sudo sh vpn.sh</span><br></pre></td></tr></table></figure>
-
-<p>你的 VPN 登录凭证将会被自动随机生成，并在安装完成后显示。</p>
-<p>VPN客户端有两种，所用登录凭证都在安装完成时，展示在界面上，记得保存</p>
-<p>a. IPsec&#x2F;L2TP</p>
-<p>通过在客户端设置VPN的用户名，密码，IPsec PSK. 这种方式不需要下载相应文件，仅需要配置即可使用，但这种方式比较繁琐的是，期间有可能遇到各种各样的报错，手机端（Android 12+）不支持。推荐使用下面这种</p>
-<p>b. IKEv2</p>
-<p>&#x2F;root&#x2F;vpnclient.p12 (for Windows &amp; Linux)<br>&#x2F;root&#x2F;vpnclient.sswan (for Android)<br>&#x2F;root&#x2F;vpnclient.mobileconfig (for iOS &amp; macOS)</p>
-<h3 id="Step-2-客户端安装"><a href="#Step-2-客户端安装" class="headerlink" title="Step 2. 客户端安装"></a>Step 2. 客户端安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md">IKEv2 VPN 配置和使用指南</a></p>
-<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows:"></a>Windows:</h4><ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/vpn-extras/releases/latest/download/ikev2_config_import.cmd">ikev2_config_import.cmd</a> 下载cmd文件，并将cmd文件与上面的 .p12放在同个目录下，</li>
-<li>选择 <strong>以管理员身份运行</strong> 并按提示操作，输入账号名，IP地址即可。</li>
-<li>其中遇到一个错误并且没有列入官方的报错列表中，顺便记录下来 “parameter is incorrect” 相应的解决方案再 <a target="_blank" rel="noopener" href="https://github.com/trailofbits/algo/issues/1051">github issue</a> 中找到。</li>
-</ol>
-<p>Android, OS X (macOS), IOS 等手机端的，官方文档更加详细。</p>
-<p>*<strong>Linux 服务器购买渠道：</strong></p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://vultr.com/">vultr.com</a> 最低配置服务器，费用是$6&#x2F;month。（首次注册赠送100美金的优惠，仅有14天有效期）</li>
-<li><a target="_blank" rel="noopener" href="https://www.bwgyhw.cn/recommend">搬瓦工（国内）</a> <a target="_blank" rel="noopener" href="https://bwh81.net/vps-hosting.php">搬瓦工（国外）</a> 最优惠的 $49.99&#x2F;year，有常用优惠码减 5 ~ 6%，黑五、双11，元旦优惠码减 11 ~ 12%，服务器IP被baned后，需购买更换IP服务（$8&#x2F;次）</li>
-</ol>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/project/2022/07/26/VPN/" data-id="cl62x7d0y0000npjw1kdtebjp" data-title="快速创建自己的VPN服务" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/VPN/" rel="tag">VPN</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-VueJs-NuxtJs-NodeJs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2022/07/26/VueJs-NuxtJs-NodeJs/" class="article-date">
-  <time class="dt-published" datetime="2022-07-26T10:21:30.065Z" itemprop="datePublished">2022-07-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/project/categories/JS/">JS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/project/2022/07/26/VueJs-NuxtJs-NodeJs/">Vue.js, Nuxt.js &amp; Node.js</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
-<p>JS依赖管理工具</p>
-<p><strong>NPM</strong></p>
-<p>Node.js自带的依赖管理工具</p>
-<p><strong>Vue.js</strong></p>
-<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a target="_blank" rel="noopener" href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<p><strong>Nuxt.js</strong></p>
-<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
-<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
-<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
-<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
-<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
-<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
-<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
-<p><strong>Node.js</strong></p>
-<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
-<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
-<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
-<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/project/2022/07/26/VueJs-NuxtJs-NodeJs/" data-id="cl62x7d140001npjw0zov07xu" data-title="Vue.js, Nuxt.js &amp; Node.js" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Vue-js/" rel="tag">Vue.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Yarn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2022/07/26/Yarn/" class="article-date">
-  <time class="dt-published" datetime="2022-07-26T10:21:30.065Z" itemprop="datePublished">2022-07-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/project/categories/Tools/">Tools</a>►<a class="article-category-link" href="/project/categories/Tools/Yarn/">Yarn</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/project/2022/07/26/Yarn/">Yarn</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><em><strong>Yarn: 依赖包管理工具</strong></em></p>
-<p><a target="_blank" rel="noopener" href="http://yarnpkg.top/WorkFlow.html">官方文档</a></p>
-<h4 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn init</span><br></pre></td></tr></table></figure>
-
-<h4 id="管理依赖"><a href="#管理依赖" class="headerlink" title="管理依赖"></a>管理依赖</h4><h5 id="新增依赖"><a href="#新增依赖" class="headerlink" title="新增依赖"></a>新增依赖</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add [package]</span><br><span class="line">yarn add [package]@[version]</span><br><span class="line">yarn add [package]@[tag]</span><br></pre></td></tr></table></figure>
-
-<h5 id="更新依赖"><a href="#更新依赖" class="headerlink" title="更新依赖"></a>更新依赖</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn upgrade [package]</span><br><span class="line">yarn upgrade [package]@[version]</span><br><span class="line">yarn upgrade [package]@[dist-tag]</span><br></pre></td></tr></table></figure>
-
-<h5 id="删除依赖"><a href="#删除依赖" class="headerlink" title="删除依赖"></a>删除依赖</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn remove [package]</span><br></pre></td></tr></table></figure>
-
-<h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="http://yarnpkg.top/Cli-install.html"><code>yarn install</code></a>命令用来安装一个项目的全部依赖。项目的这些依赖是在项目的<code>package.json</code>文件中描述的，并被储存在<code>yarn.lock</code>文件中</p>
-<p>通常在下面两种情况下需要安装依赖</p>
-<ol>
-<li><p>一个全新的项目刚刚被下载</p>
-</li>
-<li><p>依赖有了更新</p>
-</li>
-</ol>
-<hr>
-<h4 id="Yarn的优点"><a href="#Yarn的优点" class="headerlink" title="Yarn的优点"></a>Yarn的优点</h4><ul>
-<li><strong>速度快</strong> 。速度快主要来自以下两个方面：</li>
-</ul>
-<ol>
-<li>并行安装：无论 npm 还是 Yarn 在执行包的安装时，都会执行一系列任务。npm 是按照队列执行每个 package，也就是说必须要等到当前 package 安装完成之后，才能继续后面的安装。而 Yarn 是同步执行所有任务，提高了性能。</li>
-<li>离线模式：如果之前已经安装过一个软件包，用Yarn再次安装时之间从缓存中获取，就不用像npm那样再从网络下载了。</li>
-</ol>
-<ul>
-<li>安装<strong>版本统一</strong>：为了防止拉取到不同的版本，Yarn 有一个锁定文件 (lock file) 记录了被确切安装上的模块的版本号。每次只要新增了一个模块，Yarn 就会创建（或更新）yarn.lock 这个文件。这么做就保证了，每一次拉取同一个项目依赖时，使用的都是一样的模块版本。npm 其实也有办法实现处处使用相同版本的 packages，但需要开发者执行 npm shrinkwrap 命令。这个命令将会生成一个锁定文件，在执行 npm install 的时候，该锁定文件会先被读取，和 Yarn 读取 yarn.lock 文件一个道理。npm 和 Yarn 两者的不同之处在于，Yarn 默认会生成这样的锁定文件，而 npm 要通过 shrinkwrap 命令生成 npm-shrinkwrap.json 文件，只有当这个文件存在的时候，packages 版本信息才会被记录和更新。</li>
-<li><strong>更简洁的输出</strong>：npm 的输出信息比较冗长。在执行 npm install 的时候，命令行里会不断地打印出所有被安装上的依赖。相比之下，Yarn 简洁太多：默认情况下，结合了 emoji直观且直接地打印出必要的信息，也提供了一些命令供开发者查询额外的安装信息。</li>
-<li><strong>多注册来源处理：</strong>所有的依赖包，不管他被不同的库间接关联引用多少次，安装这个包时，只会从一个注册来源去装，要么是 npm 要么是 bower, 防止出现混乱不一致。</li>
-<li><strong>更好的语义化</strong>： yarn改变了一些npm命令的名称，比如 yarn add&#x2F;remove，感觉上比 npm 原本的 install&#x2F;uninstall 要更清晰。</li>
-</ul>
-<h4 id="Yarn和npm命令对比"><a href="#Yarn和npm命令对比" class="headerlink" title="Yarn和npm命令对比"></a>Yarn和npm命令对比</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install === yarn </span><br><span class="line">npm install taco --save === yarn add taco</span><br><span class="line">npm uninstall taco --save === yarn remove taco</span><br><span class="line">npm install taco --save-dev === yarn add taco --dev</span><br><span class="line">npm update --save === yarn upgrade</span><br></pre></td></tr></table></figure>
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/project/2022/07/26/Yarn/" data-id="cl62x7d180004npjw3eh4bjqf" data-title="Yarn" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Dependent/" rel="tag">Dependent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Yarn/" rel="tag">Yarn</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-bandwidth-internetSpeed-flow" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2022/07/26/bandwidth-internetSpeed-flow/" class="article-date">
-  <time class="dt-published" datetime="2022-07-26T10:21:30.065Z" itemprop="datePublished">2022-07-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/project/categories/Computer/">Computer</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/project/2022/07/26/bandwidth-internetSpeed-flow/">带宽、网速、流量之间有什么关系</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>1、带宽的统计单位是：比特&#x2F;秒（bps）：100M&#x3D;100Mbps；</p>
-<p>2、网速是数据传输的速度，单位是：字节&#x2F;秒（B&#x2F;s KB&#x2F;s MB&#x2F;s）：1MB&#x2F;s&#x3D;1024KB&#x2F;s ；1KB&#x2F;s&#x3D;1024B&#x2F;s。</p>
-<p>3、流量是用户上网发送和接收的数据量总和，单位是：字节（Byte）；</p>
-<p>比特是信息的最小单位：1字节&#x3D;8比特（1B&#x3D;8bit或者1B&#x3D;8b）；1字节&#x2F;秒&#x3D;8比特&#x2F;秒（1B&#x2F;s&#x3D;8bps）</p>
-<h3 id="如何换算"><a href="#如何换算" class="headerlink" title="如何换算"></a>如何换算</h3><p>我们这里来用实例看下：比如200M宽带下载速度是多少？</p>
-<p>首先，运营商所说的200M宽带光纤，完整单位是200Mbps，而我们电脑中所说的下载速度单位是：MB。因此200M宽带下载速度并不代表下载速度就是200Mb&#x2F;s，而是需要按照如下公式进行换算：</p>
-<p>1Mbps&#x3D;1024Kbps&#x3D;1024&#x2F;8KBps&#x3D;128KB&#x2F;s</p>
-<p>也就是说 1M 的宽带下载速度不会超过 128KB&#x2F;s ，也就是理论上1秒钟，可以下载128K的内容，实际上1M宽带，下载速度100k&#x2F;s就属于正常，毕竟理论值不一定能达到。</p>
-<p>200M宽带的下载速度理论上为：128KB&#x2F;s x 200 &#x3D; 25600 KB&#x2F;s &#x3D; 25.6MB&#x2F;s</p>
-<p>正常的下载速度是：25M；当然，这是理论上的下载速度，在实际使用的过程中，可能会略低于&#x2F;高于25M，一般来说上下浮动1M都属于正常的，即24-26都属于正常的。</p>
-<p>如果你家网速测试小于25M太多的话，要么是连的假200M带宽，要么就是其它的路由器、光猫没有使用千兆的。</p>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/project/2022/07/26/bandwidth-internetSpeed-flow/" data-id="cl62x7d1a0005npjwayuc5uld" data-title="带宽、网速、流量之间有什么关系" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/bandwidth/" rel="tag">bandwidth</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-typora" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/project/2022/07/26/typora/" class="article-date">
-  <time class="dt-published" datetime="2022-07-26T10:21:30.065Z" itemprop="datePublished">2022-07-26</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/project/categories/Tools/">Tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/project/2022/07/26/typora/">Typora破解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示：Typora破解和下载（仅供学习）</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.typora.io/windows/typora-setup-x64.exe">https://www.typora.io/windows/typora-setup-x64.exe</a>　（官方，仅安装包）<br><a target="_blank" rel="noopener" href="https://lanzouv.com/b04cdi4if">https://lanzouv.com/b04cdi4if</a>　（含破解文件）<br>密码：dyuh</p>
-</blockquote>
-<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>安装后</p>
-<h3 id="1、覆盖文件"><a href="#1、覆盖文件" class="headerlink" title="1、覆盖文件"></a>1、覆盖文件</h3><p>将 app.asar.txt 文件名中的“.txt”去掉，并覆盖至安装路径的“resources”文件夹内，参考路径：<br>C:\Program Files\Typora\resources<br><code>提示：可自定义安装路径</code></p>
-<h3 id="2、输入序列号"><a href="#2、输入序列号" class="headerlink" title="2、输入序列号"></a>2、输入序列号</h3><p>①打开 typora ，点击“输入序列号”：</p>
-<p>②邮箱一栏中任意填写（但须保证邮箱地址格式正确），输入序列号(<strong>在key.txt文件中，任选一条</strong>)，点击“激活”。</p>
-<blockquote>
-<p>DZTX2H-6MCQZT-QL4GCT-5EBWFX</p>
-<p>G7LPKN-HP4NLD-FA3BGF-6JDQ5R</p>
-<p>3MH4Y8-YJWT37-G5JL9Y-UHNQDJ</p>
-<p>85ZPHY-ELQ9FQ-94J3VP-D92YLU</p>
-<p>VEZ7NV-USYN3G-8TL2N3-DADUG4</p>
-</blockquote>
-<p><img src="https://img2022.cnblogs.com/blog/731947/202202/731947-20220218031448652-466663591.png" alt="img"></p>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/project/2022/07/26/typora/" data-id="cl62x7d1g000fnpjw5ndt09db" data-title="Typora破解" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Typora/" rel="tag">Typora</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-software-recommend " class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/project/2022/06/30/software-recommend%20/" class="article-date">
@@ -507,10 +138,74 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/project/2022/06/30/software-recommend%20/" data-id="cl62x7d1d000bnpjwdxyievyr" data-title="Software Recommend" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/project/2022/06/30/software-recommend%20/" data-id="cl62xq2fw000f95jwdf3cdc2n" data-title="Software Recommend" class="article-share-link">Share</a>
       
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-bandwidth-internetSpeed-flow" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2022/06/15/bandwidth-internetSpeed-flow/" class="article-date">
+  <time class="dt-published" datetime="2022-06-14T16:00:00.000Z" itemprop="datePublished">2022-06-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/project/categories/Computer/">Computer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2022/06/15/bandwidth-internetSpeed-flow/">带宽、网速、流量之间有什么关系</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>1、带宽的统计单位是：比特&#x2F;秒（bps）：100M&#x3D;100Mbps；</p>
+<p>2、网速是数据传输的速度，单位是：字节&#x2F;秒（B&#x2F;s KB&#x2F;s MB&#x2F;s）：1MB&#x2F;s&#x3D;1024KB&#x2F;s ；1KB&#x2F;s&#x3D;1024B&#x2F;s。</p>
+<p>3、流量是用户上网发送和接收的数据量总和，单位是：字节（Byte）；</p>
+<p>比特是信息的最小单位：1字节&#x3D;8比特（1B&#x3D;8bit或者1B&#x3D;8b）；1字节&#x2F;秒&#x3D;8比特&#x2F;秒（1B&#x2F;s&#x3D;8bps）</p>
+<h3 id="如何换算"><a href="#如何换算" class="headerlink" title="如何换算"></a>如何换算</h3><p>我们这里来用实例看下：比如200M宽带下载速度是多少？</p>
+<p>首先，运营商所说的200M宽带光纤，完整单位是200Mbps，而我们电脑中所说的下载速度单位是：MB。因此200M宽带下载速度并不代表下载速度就是200Mb&#x2F;s，而是需要按照如下公式进行换算：</p>
+<p>1Mbps&#x3D;1024Kbps&#x3D;1024&#x2F;8KBps&#x3D;128KB&#x2F;s</p>
+<p>也就是说 1M 的宽带下载速度不会超过 128KB&#x2F;s ，也就是理论上1秒钟，可以下载128K的内容，实际上1M宽带，下载速度100k&#x2F;s就属于正常，毕竟理论值不一定能达到。</p>
+<p>200M宽带的下载速度理论上为：128KB&#x2F;s x 200 &#x3D; 25600 KB&#x2F;s &#x3D; 25.6MB&#x2F;s</p>
+<p>正常的下载速度是：25M；当然，这是理论上的下载速度，在实际使用的过程中，可能会略低于&#x2F;高于25M，一般来说上下浮动1M都属于正常的，即24-26都属于正常的。</p>
+<p>如果你家网速测试小于25M太多的话，要么是连的假200M带宽，要么就是其它的路由器、光猫没有使用千兆的。</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/project/2022/06/15/bandwidth-internetSpeed-flow/" data-id="cl62xq2ff000095jw8kzd4tq8" data-title="带宽、网速、流量之间有什么关系" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/bandwidth/" rel="tag">bandwidth</a></li></ul>
+
     </footer>
   </div>
   
@@ -559,10 +254,315 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/project/2022/06/15/encoding/" data-id="cl62x7d1a0006npjwf5b14bhk" data-title="Encoding" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/project/2022/06/15/encoding/" data-id="cl62xq2fk000195jw34qveig3" data-title="Encoding" class="article-share-link">Share</a>
       
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-VPN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2022/06/10/VPN/" class="article-date">
+  <time class="dt-published" datetime="2022-06-09T16:00:00.000Z" itemprop="datePublished">2022-06-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/project/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2022/06/10/VPN/">快速创建自己的VPN服务</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本文介绍的是来自github的开源项目<a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn">setup-ipsec-vpn</a>，想要全面了解项目的各项设置，可查看其详尽的说明文档。</p>
+<h3 id="Step-1-服务端安装"><a href="#Step-1-服务端安装" class="headerlink" title="Step 1. 服务端安装"></a>Step 1. 服务端安装</h3><p>首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。</p>
+<p>使用以下命令快速搭建 IPsec VPN 服务器：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://get.vpnsetup.net -qO vpn.sh &amp;&amp; sudo sh vpn.sh</span><br></pre></td></tr></table></figure>
+
+<p>你的 VPN 登录凭证将会被自动随机生成，并在安装完成后显示。</p>
+<p>VPN客户端有两种，所用登录凭证都在安装完成时，展示在界面上，记得保存</p>
+<p>a. IPsec&#x2F;L2TP</p>
+<p>通过在客户端设置VPN的用户名，密码，IPsec PSK. 这种方式不需要下载相应文件，仅需要配置即可使用，但这种方式比较繁琐的是，期间有可能遇到各种各样的报错，手机端（Android 12+）不支持。推荐使用下面这种</p>
+<p>b. IKEv2</p>
+<p>&#x2F;root&#x2F;vpnclient.p12 (for Windows &amp; Linux)<br>&#x2F;root&#x2F;vpnclient.sswan (for Android)<br>&#x2F;root&#x2F;vpnclient.mobileconfig (for iOS &amp; macOS)</p>
+<h3 id="Step-2-客户端安装"><a href="#Step-2-客户端安装" class="headerlink" title="Step 2. 客户端安装"></a>Step 2. 客户端安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md">IKEv2 VPN 配置和使用指南</a></p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows:"></a>Windows:</h4><ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/vpn-extras/releases/latest/download/ikev2_config_import.cmd">ikev2_config_import.cmd</a> 下载cmd文件，并将cmd文件与上面的 .p12放在同个目录下，</li>
+<li>选择 <strong>以管理员身份运行</strong> 并按提示操作，输入账号名，IP地址即可。</li>
+<li>其中遇到一个错误并且没有列入官方的报错列表中，顺便记录下来 “parameter is incorrect” 相应的解决方案再 <a target="_blank" rel="noopener" href="https://github.com/trailofbits/algo/issues/1051">github issue</a> 中找到。</li>
+</ol>
+<p>Android, OS X (macOS), IOS 等手机端的，官方文档更加详细。</p>
+<p>*<strong>Linux 服务器购买渠道：</strong></p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://vultr.com/">vultr.com</a> 最低配置服务器，费用是$6&#x2F;month。（首次注册赠送100美金的优惠，仅有14天有效期）</li>
+<li><a target="_blank" rel="noopener" href="https://www.bwgyhw.cn/recommend">搬瓦工（国内）</a> <a target="_blank" rel="noopener" href="https://bwh81.net/vps-hosting.php">搬瓦工（国外）</a> 最优惠的 $49.99&#x2F;year，有常用优惠码减 5 ~ 6%，黑五、双11，元旦优惠码减 11 ~ 12%，服务器IP被baned后，需购买更换IP服务（$8&#x2F;次）</li>
+</ol>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/project/2022/06/10/VPN/" data-id="cl62xq2fp000495jwbun1a0a1" data-title="快速创建自己的VPN服务" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/VPN/" rel="tag">VPN</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-typora" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2022/05/30/typora/" class="article-date">
+  <time class="dt-published" datetime="2022-05-29T16:00:00.000Z" itemprop="datePublished">2022-05-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/project/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2022/05/30/typora/">Typora破解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">提示：Typora破解和下载（仅供学习）</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.typora.io/windows/typora-setup-x64.exe">https://www.typora.io/windows/typora-setup-x64.exe</a>　（官方，仅安装包）<br><a target="_blank" rel="noopener" href="https://lanzouv.com/b04cdi4if">https://lanzouv.com/b04cdi4if</a>　（含破解文件）<br>密码：dyuh</p>
+</blockquote>
+<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>安装后</p>
+<h3 id="1、覆盖文件"><a href="#1、覆盖文件" class="headerlink" title="1、覆盖文件"></a>1、覆盖文件</h3><p>将 app.asar.txt 文件名中的“.txt”去掉，并覆盖至安装路径的“resources”文件夹内，参考路径：<br>C:\Program Files\Typora\resources<br><code>提示：可自定义安装路径</code></p>
+<h3 id="2、输入序列号"><a href="#2、输入序列号" class="headerlink" title="2、输入序列号"></a>2、输入序列号</h3><p>①打开 typora ，点击“输入序列号”：</p>
+<p>②邮箱一栏中任意填写（但须保证邮箱地址格式正确），输入序列号(<strong>在key.txt文件中，任选一条</strong>)，点击“激活”。</p>
+<blockquote>
+<p>DZTX2H-6MCQZT-QL4GCT-5EBWFX</p>
+<p>G7LPKN-HP4NLD-FA3BGF-6JDQ5R</p>
+<p>3MH4Y8-YJWT37-G5JL9Y-UHNQDJ</p>
+<p>85ZPHY-ELQ9FQ-94J3VP-D92YLU</p>
+<p>VEZ7NV-USYN3G-8TL2N3-DADUG4</p>
+</blockquote>
+<p><img src="https://img2022.cnblogs.com/blog/731947/202202/731947-20220218031448652-466663591.png" alt="img"></p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/project/2022/05/30/typora/" data-id="cl62xq2fu000b95jw6zuoh7t2" data-title="Typora破解" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Typora/" rel="tag">Typora</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Yarn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2022/05/05/Yarn/" class="article-date">
+  <time class="dt-published" datetime="2022-05-05T02:20:12.000Z" itemprop="datePublished">2022-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/project/categories/Tools/">Tools</a>►<a class="article-category-link" href="/project/categories/Tools/Yarn/">Yarn</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2022/05/05/Yarn/">Yarn</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><em><strong>Yarn: 依赖包管理工具</strong></em></p>
+<p><a target="_blank" rel="noopener" href="http://yarnpkg.top/WorkFlow.html">官方文档</a></p>
+<h4 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn init</span><br></pre></td></tr></table></figure>
+
+<h4 id="管理依赖"><a href="#管理依赖" class="headerlink" title="管理依赖"></a>管理依赖</h4><h5 id="新增依赖"><a href="#新增依赖" class="headerlink" title="新增依赖"></a>新增依赖</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add [package]</span><br><span class="line">yarn add [package]@[version]</span><br><span class="line">yarn add [package]@[tag]</span><br></pre></td></tr></table></figure>
+
+<h5 id="更新依赖"><a href="#更新依赖" class="headerlink" title="更新依赖"></a>更新依赖</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn upgrade [package]</span><br><span class="line">yarn upgrade [package]@[version]</span><br><span class="line">yarn upgrade [package]@[dist-tag]</span><br></pre></td></tr></table></figure>
+
+<h5 id="删除依赖"><a href="#删除依赖" class="headerlink" title="删除依赖"></a>删除依赖</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn remove [package]</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://yarnpkg.top/Cli-install.html"><code>yarn install</code></a>命令用来安装一个项目的全部依赖。项目的这些依赖是在项目的<code>package.json</code>文件中描述的，并被储存在<code>yarn.lock</code>文件中</p>
+<p>通常在下面两种情况下需要安装依赖</p>
+<ol>
+<li><p>一个全新的项目刚刚被下载</p>
+</li>
+<li><p>依赖有了更新</p>
+</li>
+</ol>
+<hr>
+<h4 id="Yarn的优点"><a href="#Yarn的优点" class="headerlink" title="Yarn的优点"></a>Yarn的优点</h4><ul>
+<li><strong>速度快</strong> 。速度快主要来自以下两个方面：</li>
+</ul>
+<ol>
+<li>并行安装：无论 npm 还是 Yarn 在执行包的安装时，都会执行一系列任务。npm 是按照队列执行每个 package，也就是说必须要等到当前 package 安装完成之后，才能继续后面的安装。而 Yarn 是同步执行所有任务，提高了性能。</li>
+<li>离线模式：如果之前已经安装过一个软件包，用Yarn再次安装时之间从缓存中获取，就不用像npm那样再从网络下载了。</li>
+</ol>
+<ul>
+<li>安装<strong>版本统一</strong>：为了防止拉取到不同的版本，Yarn 有一个锁定文件 (lock file) 记录了被确切安装上的模块的版本号。每次只要新增了一个模块，Yarn 就会创建（或更新）yarn.lock 这个文件。这么做就保证了，每一次拉取同一个项目依赖时，使用的都是一样的模块版本。npm 其实也有办法实现处处使用相同版本的 packages，但需要开发者执行 npm shrinkwrap 命令。这个命令将会生成一个锁定文件，在执行 npm install 的时候，该锁定文件会先被读取，和 Yarn 读取 yarn.lock 文件一个道理。npm 和 Yarn 两者的不同之处在于，Yarn 默认会生成这样的锁定文件，而 npm 要通过 shrinkwrap 命令生成 npm-shrinkwrap.json 文件，只有当这个文件存在的时候，packages 版本信息才会被记录和更新。</li>
+<li><strong>更简洁的输出</strong>：npm 的输出信息比较冗长。在执行 npm install 的时候，命令行里会不断地打印出所有被安装上的依赖。相比之下，Yarn 简洁太多：默认情况下，结合了 emoji直观且直接地打印出必要的信息，也提供了一些命令供开发者查询额外的安装信息。</li>
+<li><strong>多注册来源处理：</strong>所有的依赖包，不管他被不同的库间接关联引用多少次，安装这个包时，只会从一个注册来源去装，要么是 npm 要么是 bower, 防止出现混乱不一致。</li>
+<li><strong>更好的语义化</strong>： yarn改变了一些npm命令的名称，比如 yarn add&#x2F;remove，感觉上比 npm 原本的 install&#x2F;uninstall 要更清晰。</li>
+</ul>
+<h4 id="Yarn和npm命令对比"><a href="#Yarn和npm命令对比" class="headerlink" title="Yarn和npm命令对比"></a>Yarn和npm命令对比</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install === yarn </span><br><span class="line">npm install taco --save === yarn add taco</span><br><span class="line">npm uninstall taco --save === yarn remove taco</span><br><span class="line">npm install taco --save-dev === yarn add taco --dev</span><br><span class="line">npm update --save === yarn upgrade</span><br></pre></td></tr></table></figure>
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/project/2022/05/05/Yarn/" data-id="cl62xq2fq000595jw7nxed6hk" data-title="Yarn" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Dependent/" rel="tag">Dependent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Yarn/" rel="tag">Yarn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-VueJs-NuxtJs-NodeJs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2022/05/05/VueJs-NuxtJs-NodeJs/" class="article-date">
+  <time class="dt-published" datetime="2022-05-05T02:00:12.000Z" itemprop="datePublished">2022-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/project/categories/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/project/2022/05/05/VueJs-NuxtJs-NodeJs/">Vue.js, Nuxt.js &amp; Node.js</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
+<p>JS依赖管理工具</p>
+<p><strong>NPM</strong></p>
+<p>Node.js自带的依赖管理工具</p>
+<p><strong>Vue.js</strong></p>
+<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a target="_blank" rel="noopener" href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p><strong>Nuxt.js</strong></p>
+<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
+<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
+<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
+<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
+<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
+<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
+<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
+<p><strong>Node.js</strong></p>
+<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
+<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
+<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/project/2022/05/05/VueJs-NuxtJs-NodeJs/" data-id="cl62xq2fr000695jwb7u5h06v" data-title="Vue.js, Nuxt.js &amp; Node.js" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Vue-js/" rel="tag">Vue.js</a></li></ul>
+
     </footer>
   </div>
   
@@ -623,7 +623,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/project/2022/04/30/hello-world/" data-id="cl62x7d1c000anpjwf5eab4d4" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/project/2022/04/30/hello-world/" data-id="cl62xq2fs000a95jw39ogh40j" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -674,7 +674,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/04/">April 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/04/">April 2022</a></li></ul>
     </div>
   </div>
 
@@ -687,23 +687,23 @@
       <ul>
         
           <li>
-            <a href="/project/2022/07/26/VPN/">快速创建自己的VPN服务</a>
+            <a href="/project/2022/06/30/software-recommend%20/">Software Recommend</a>
           </li>
         
           <li>
-            <a href="/project/2022/07/26/VueJs-NuxtJs-NodeJs/">Vue.js, Nuxt.js &amp; Node.js</a>
+            <a href="/project/2022/06/15/bandwidth-internetSpeed-flow/">带宽、网速、流量之间有什么关系</a>
           </li>
         
           <li>
-            <a href="/project/2022/07/26/Yarn/">Yarn</a>
+            <a href="/project/2022/06/15/encoding/">Encoding</a>
           </li>
         
           <li>
-            <a href="/project/2022/07/26/bandwidth-internetSpeed-flow/">带宽、网速、流量之间有什么关系</a>
+            <a href="/project/2022/06/10/VPN/">快速创建自己的VPN服务</a>
           </li>
         
           <li>
-            <a href="/project/2022/07/26/typora/">Typora破解</a>
+            <a href="/project/2022/05/30/typora/">Typora破解</a>
           </li>
         
       </ul>
