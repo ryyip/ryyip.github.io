@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Vue.js, Nuxt.js &amp; Node.js | Ryyip</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="ConceptYarn JS依赖管理工具 NPM Node.js自带的依赖管理工具 Vue.js Vue (读音 &#x2F;vjuː&#x2F;，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，V">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue.js, Nuxt.js &amp; Node.js">
+<meta property="og:url" content="https://ryyip.github.io/project/2022/07/26/VueJs-NuxtJs-NodeJs/index.html">
+<meta property="og:site_name" content="Ryyip">
+<meta property="og:description" content="ConceptYarn JS依赖管理工具 NPM Node.js自带的依赖管理工具 Vue.js Vue (读音 &#x2F;vjuː&#x2F;，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，V">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-26T10:21:30.065Z">
+<meta property="article:modified_time" content="2022-07-26T10:21:30.065Z">
+<meta property="article:author" content="Leo Ye">
+<meta property="article:tag" content="Vue.js">
+<meta property="article:tag" content="Nuxt.js">
+<meta property="article:tag" content="Node.js">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/project/atom.xml" title="Ryyip" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/project/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/project/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/project/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/project/" id="logo">Ryyip</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/project/">Home</a>
+        
+          <a class="main-nav-link" href="/project/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/project/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ryyip.github.io/project"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-VueJs-NuxtJs-NodeJs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/project/2022/07/26/VueJs-NuxtJs-NodeJs/" class="article-date">
+  <time class="dt-published" datetime="2022-07-26T10:21:30.065Z" itemprop="datePublished">2022-07-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/project/categories/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Vue.js, Nuxt.js &amp; Node.js
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
+<p>JS依赖管理工具</p>
+<p><strong>NPM</strong></p>
+<p>Node.js自带的依赖管理工具</p>
+<p><strong>Vue.js</strong></p>
+<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a target="_blank" rel="noopener" href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p><strong>Nuxt.js</strong></p>
+<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
+<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
+<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
+<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
+<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
+<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
+<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
+<p><strong>Node.js</strong></p>
+<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
+<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
+<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/project/2022/07/26/VueJs-NuxtJs-NodeJs/" data-id="cl62x7d140001npjw0zov07xu" data-title="Vue.js, Nuxt.js &amp; Node.js" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/project/tags/Vue-js/" rel="tag">Vue.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/project/2022/07/26/VPN/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          快速创建自己的VPN服务
+        
+      </div>
+    </a>
+  
+  
+    <a href="/project/2022/07/26/Yarn/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Yarn</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/project/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/project/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/project/categories/Tools/">Tools</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/project/categories/Tools/Yarn/">Yarn</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/Yarn/" rel="tag">Yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/project/tags/bandwidth/" rel="tag">bandwidth</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/project/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/project/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/project/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/project/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/project/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/project/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/project/tags/Yarn/" style="font-size: 10px;">Yarn</a> <a href="/project/tags/bandwidth/" style="font-size: 10px;">bandwidth</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/project/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/project/2022/07/26/VPN/">快速创建自己的VPN服务</a>
+          </li>
+        
+          <li>
+            <a href="/project/2022/07/26/VueJs-NuxtJs-NodeJs/">Vue.js, Nuxt.js &amp; Node.js</a>
+          </li>
+        
+          <li>
+            <a href="/project/2022/07/26/Yarn/">Yarn</a>
+          </li>
+        
+          <li>
+            <a href="/project/2022/07/26/bandwidth-internetSpeed-flow/">带宽、网速、流量之间有什么关系</a>
+          </li>
+        
+          <li>
+            <a href="/project/2022/07/26/typora/">Typora破解</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Leo Ye<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/project/" class="mobile-nav-link">Home</a>
+  
+    <a href="/project/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/project/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/project/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/project/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
