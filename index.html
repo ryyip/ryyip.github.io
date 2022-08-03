@@ -143,164 +143,6 @@
 
 
   
-    <article id="post-linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/27/linux/" class="article-date">
-  <time class="dt-published" datetime="2022-07-27T10:00:00.000Z" itemprop="datePublished">2022-07-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>►<a class="article-category-link" href="/categories/linux/linux-command/">linux command</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/27/linux/">Linux command</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="User-amp-Group"><a href="#User-amp-Group" class="headerlink" title="User &amp; Group"></a>User &amp; Group</h3><p>切换root<br>sudo su</p>
-<p>切换用户<br>su leo</p>
-<ol>
-<li>chgrp：更改文件属组<br>chgrp [-R] 属组名 文件名</li>
-<li>chown：更改文件属主，也可以同时更改文件属组<br>chown [–R] 属主名 文件名<br>chown [-R] 属主名:属组名 文件名</li>
-<li>chmod: 更改文件权限<br>chmod [-R] 755 文件名</li>
-</ol>
-<p>查看当前用户所属组: groups</p>
-<p>查看指定用户所属组: groups leo</p>
-<p>直接查看组文件: cat &#x2F;etc&#x2F;group</p>
-<p>wget <a target="_blank" rel="noopener" href="http://example.com/file.tar">http://example.com/file.tar</a> -O &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar<br>curl <a target="_blank" rel="noopener" href="http://example.com/file.tar">http://example.com/file.tar</a> -o &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar</p>
-<p>cgroups<br>cgroups(Control Groups) 是 linux 内核提供的一种机制，这种机制可以根据需求把一系列系统任务及其子任务整合(或分隔)到按资源划分等级的不同组内，从而为系统资源管理提供一个统一的框架。简单说，cgroups 可以限制、记录任务组所使用的物理资源。本质上来说，cgroups 是内核附加在程序上的一系列钩子(hook)，通过程序运行时对资源的调度触发相应的钩子以达到资源追踪和限制的目的。</p>
-<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p>#lsof(list open files)是一个列出当前系统打开文件的工具。<br>lsof -i:端口号</p>
-<p>#netstat -tunlp 用于显示 tcp，udp 的端口和进程等相关情况。<br>netstat -tunlp | grep 端口号</p>
-<p>sudo update-alternatives –set php &#x2F;usr&#x2F;bin&#x2F;php7.2</p>
-<h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><p>快速创建文件<br>echo &gt; test.txt</p>
-<h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><p>source命令<br>通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录。因为linux所有的操作都会变成文件的格式存在。<br>当我修改了&#x2F;etc&#x2F;profile文件，我想让它立刻生效，而不用重新登录；这时就想到用source命令，如:source &#x2F;etc&#x2F;profile<br>语法<br>source filename</p>
-<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p>Host app-staging.local.com<br>  HostName app-staging<br>  User ubuntu<br>  IdentityFile ~&#x2F;Personal&#x2F;AWS-CN.pem<br>  Port 22</p>
-<p>Host *<br>  IdentitiesOnly&#x3D;yes<br>  ServerAliveInterval 60<br>  AddKeysToAgent yes<br>  IdentityFile ~&#x2F;.ssh&#x2F;AWS-CN.pem</p>
-<h3 id="System"><a href="#System" class="headerlink" title="System"></a>System</h3><p>查看系统版本<br>cat &#x2F;etc&#x2F;os-release<br>lsb_release -a<br>hostnamectl</p>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/27/linux/" data-id="cl6dbye9e000g0xjw96c79j0b" data-title="Linux command" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-command/" rel="tag">linux command</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-manjaro" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/27/manjaro/" class="article-date">
-  <time class="dt-published" datetime="2022-07-27T10:00:00.000Z" itemprop="datePublished">2022-07-27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/27/manjaro/">Manjaro</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>镜像源修改</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># change to pacman china mirrors</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
-
-<p>中文输入法安装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Install sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line"></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"></span><br><span class="line"># export LC_ALL=zh_CN.UTF-8 # 这个是控制系统界面的语言类型的，这一行意味着显示中文。这里还是注销了吧。</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=“@im=fcitx”</span><br></pre></td></tr></table></figure>
-
-<p>pacman</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
-
-<p>推荐软件安装</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">smartgit</span><br><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">github-desktop</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br></pre></td></tr></table></figure>
-
-<p>软件安装方式</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
-
-<p>Antojump</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Program/Installer</span><br><span class="line">git clone https://github.com/wting/autojump.git</span><br><span class="line">cd autojump</span><br><span class="line">./install.py</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br><span class="line">autojump -v</span><br></pre></td></tr></table></figure>
-
-<p>设置命令行的别称</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">alias ll=&#x27;ls -l&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>SSH Error:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SSH Error:</span><br><span class="line">ssh erp-staging.gaatu.com</span><br><span class="line">sign_and_send_pubkey: no mutual signature supported</span><br><span class="line">ubuntu@erp-staging.gaatu.com&#x27;s password:</span><br><span class="line">ubuntu@erp-staging.gaatu.com: Permission denied (publickey,password).</span><br><span class="line"></span><br><span class="line">Solution: </span><br><span class="line">set the ~/.ssh/config</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line">or</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-dss</span><br></pre></td></tr></table></figure>
-
-<p>Keyring</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">After forgetting the password to the “Default keyring”, resolved the issue as follows:</span><br><span class="line"></span><br><span class="line">1.Navigate to local Home folder in file manager and displayed hidden folders with Ctrl+H</span><br><span class="line">2.Navigate to /home/.local/share/keyrings/</span><br><span class="line">3.Deleted all files with “.keyring” file ending.</span><br><span class="line">4.Then launched application to receive a prompt to create a new password for the Default keyring.</span><br><span class="line">5.Specified the new password and confirmed.</span><br><span class="line">Now can use apps that require access to the Default keyring.</span><br><span class="line"></span><br><span class="line">cd /home/.local/share/keyrings</span><br><span class="line">rm *.keyring</span><br></pre></td></tr></table></figure>
-
-<p>Debtap: </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Install debtap:</span><br><span class="line">  yay -S debtap sudo debtap -u</span><br><span class="line">Convert .deb packages Into Arch Linux Packages using debtap:</span><br><span class="line">  debtap packagename.deb</span><br><span class="line">install the package in the system:</span><br><span class="line">  sudo pacman -U package-name</span><br></pre></td></tr></table></figure>
-
-
-
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/27/manjaro/" data-id="cl6dbye9h000m0xjw9izw2e8m" data-title="Manjaro" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manjaro/" rel="tag">manjaro</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/07/21/git/" class="article-date">
@@ -327,11 +169,10 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#x6f;&#46;&#x79;&#101;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#108;&#101;&#x6f;&#46;&#x79;&#101;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#x6f;&#x2e;&#x79;&#101;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;">&#x6c;&#101;&#x6f;&#x2e;&#x79;&#101;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
-<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
-<p>git add .<br>git commit ‘desc’<br>git pull<br>git push<br>git push –set-upstream origin feature&#x2F;ST-8498-Supplier-Assembly-Sku<br>git checkout branchName<br>git checkout -b feature&#x2F;ST-13074-Shipsage-Api origin&#x2F;feature&#x2F;ST-13074-Shipsage-Api</p>
+<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal<br>git add .<br>git commit ‘desc’<br>git pull<br>git push<br>git push –set-upstream origin feature&#x2F;ST-8498-Supplier-Assembly-Sku<br>git checkout branchName<br>git checkout -b feature&#x2F;ST-13074-Shipsage-Api origin&#x2F;feature&#x2F;ST-13074-Shipsage-Api</p>
 <p>#Stash<br>git stash<br>git stash list<br>git stash apply<br>git stash drop<br>git stash pop stash@{1} #apply &amp; drop</p>
 
 <div id="gitalk-container"></div>
@@ -411,6 +252,164 @@
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git-Flow/" rel="tag">Git Flow</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/16/linux/" class="article-date">
+  <time class="dt-published" datetime="2022-07-15T16:00:00.000Z" itemprop="datePublished">2022-07-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>►<a class="article-category-link" href="/categories/linux/linux-command/">linux command</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/16/linux/">Linux command</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="User-amp-Group"><a href="#User-amp-Group" class="headerlink" title="User &amp; Group"></a>User &amp; Group</h3><p>切换root<br>sudo su</p>
+<p>切换用户<br>su leo</p>
+<ol>
+<li>chgrp：更改文件属组<br>chgrp [-R] 属组名 文件名</li>
+<li>chown：更改文件属主，也可以同时更改文件属组<br>chown [–R] 属主名 文件名<br>chown [-R] 属主名:属组名 文件名</li>
+<li>chmod: 更改文件权限<br>chmod [-R] 755 文件名</li>
+</ol>
+<p>查看当前用户所属组: groups</p>
+<p>查看指定用户所属组: groups leo</p>
+<p>直接查看组文件: cat &#x2F;etc&#x2F;group</p>
+<p>wget <a target="_blank" rel="noopener" href="http://example.com/file.tar">http://example.com/file.tar</a> -O &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar<br>curl <a target="_blank" rel="noopener" href="http://example.com/file.tar">http://example.com/file.tar</a> -o &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar</p>
+<p>cgroups<br>cgroups(Control Groups) 是 linux 内核提供的一种机制，这种机制可以根据需求把一系列系统任务及其子任务整合(或分隔)到按资源划分等级的不同组内，从而为系统资源管理提供一个统一的框架。简单说，cgroups 可以限制、记录任务组所使用的物理资源。本质上来说，cgroups 是内核附加在程序上的一系列钩子(hook)，通过程序运行时对资源的调度触发相应的钩子以达到资源追踪和限制的目的。</p>
+<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p>#lsof(list open files)是一个列出当前系统打开文件的工具。<br>lsof -i:端口号</p>
+<p>#netstat -tunlp 用于显示 tcp，udp 的端口和进程等相关情况。<br>netstat -tunlp | grep 端口号</p>
+<p>sudo update-alternatives –set php &#x2F;usr&#x2F;bin&#x2F;php7.2</p>
+<h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><p>快速创建文件<br>echo &gt; test.txt</p>
+<h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><p>source命令<br>通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录。因为linux所有的操作都会变成文件的格式存在。<br>当我修改了&#x2F;etc&#x2F;profile文件，我想让它立刻生效，而不用重新登录；这时就想到用source命令，如:source &#x2F;etc&#x2F;profile<br>语法<br>source filename</p>
+<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p>Host app-staging.local.com<br>  HostName app-staging<br>  User ubuntu<br>  IdentityFile ~&#x2F;Personal&#x2F;AWS-CN.pem<br>  Port 22</p>
+<p>Host *<br>  IdentitiesOnly&#x3D;yes<br>  ServerAliveInterval 60<br>  AddKeysToAgent yes<br>  IdentityFile ~&#x2F;.ssh&#x2F;AWS-CN.pem</p>
+<h3 id="System"><a href="#System" class="headerlink" title="System"></a>System</h3><p>查看系统版本<br>cat &#x2F;etc&#x2F;os-release<br>lsb_release -a<br>hostnamectl</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/07/16/linux/" data-id="cl6dbye9e000g0xjw96c79j0b" data-title="Linux command" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-command/" rel="tag">linux command</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-manjaro" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/15/manjaro/" class="article-date">
+  <time class="dt-published" datetime="2022-07-14T16:00:00.000Z" itemprop="datePublished">2022-07-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/15/manjaro/">Manjaro</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>镜像源修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># change to pacman china mirrors</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
+
+<p>中文输入法安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Install sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line"></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"></span><br><span class="line"># export LC_ALL=zh_CN.UTF-8 # 这个是控制系统界面的语言类型的，这一行意味着显示中文。这里还是注销了吧。</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=“@im=fcitx”</span><br></pre></td></tr></table></figure>
+
+<p>pacman</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
+
+<p>推荐软件安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">smartgit</span><br><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">github-desktop</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br></pre></td></tr></table></figure>
+
+<p>软件安装方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
+
+<p>Antojump</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Program/Installer</span><br><span class="line">git clone https://github.com/wting/autojump.git</span><br><span class="line">cd autojump</span><br><span class="line">./install.py</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br><span class="line">autojump -v</span><br></pre></td></tr></table></figure>
+
+<p>设置命令行的别称</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">alias ll=&#x27;ls -l&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>SSH Error:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SSH Error:</span><br><span class="line">ssh erp-staging.gaatu.com</span><br><span class="line">sign_and_send_pubkey: no mutual signature supported</span><br><span class="line">ubuntu@erp-staging.gaatu.com&#x27;s password:</span><br><span class="line">ubuntu@erp-staging.gaatu.com: Permission denied (publickey,password).</span><br><span class="line"></span><br><span class="line">Solution: </span><br><span class="line">set the ~/.ssh/config</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line">or</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-dss</span><br></pre></td></tr></table></figure>
+
+<p>Keyring</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">After forgetting the password to the “Default keyring”, resolved the issue as follows:</span><br><span class="line"></span><br><span class="line">1.Navigate to local Home folder in file manager and displayed hidden folders with Ctrl+H</span><br><span class="line">2.Navigate to /home/.local/share/keyrings/</span><br><span class="line">3.Deleted all files with “.keyring” file ending.</span><br><span class="line">4.Then launched application to receive a prompt to create a new password for the Default keyring.</span><br><span class="line">5.Specified the new password and confirmed.</span><br><span class="line">Now can use apps that require access to the Default keyring.</span><br><span class="line"></span><br><span class="line">cd /home/.local/share/keyrings</span><br><span class="line">rm *.keyring</span><br></pre></td></tr></table></figure>
+
+<p>Debtap: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Install debtap:</span><br><span class="line">  yay -S debtap sudo debtap -u</span><br><span class="line">Convert .deb packages Into Arch Linux Packages using debtap:</span><br><span class="line">  debtap packagename.deb</span><br><span class="line">install the package in the system:</span><br><span class="line">  sudo pacman -U package-name</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/07/15/manjaro/" data-id="cl6dbye9h000m0xjw9izw2e8m" data-title="Manjaro" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manjaro/" rel="tag">manjaro</a></li></ul>
 
     </footer>
   </div>
@@ -822,19 +821,19 @@
           </li>
         
           <li>
-            <a href="/2022/07/27/linux/">Linux command</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/27/manjaro/">Manjaro</a>
-          </li>
-        
-          <li>
             <a href="/2022/07/21/git/">Git</a>
           </li>
         
           <li>
             <a href="/2022/07/21/git-flow/">Git Flow</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/16/linux/">Linux command</a>
+          </li>
+        
+          <li>
+            <a href="/2022/07/15/manjaro/">Manjaro</a>
           </li>
         
       </ul>
