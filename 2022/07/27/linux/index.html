@@ -20,28 +20,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ryyip.github.io","root":"/project/","images":"/project/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/project/js/config.js"></script>
 
-    <meta name="description" content="本文介绍的是来自github的开源项目setup-ipsec-vpn，想要全面了解项目的各项设置，可查看其详尽的说明文档。 Step 1. 服务端安装首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。 使用以下命令快速搭建 IPsec VPN 服务器： 1wget https:&#x2F;&#x2F;get.vpnsetup.net -qO vpn.sh &amp;&amp;a">
+    <meta name="description" content="User &amp; Group切换rootsudo su 切换用户su leo  chgrp：更改文件属组chgrp [-R] 属组名 文件名 chown：更改文件属主，也可以同时更改文件属组chown [–R] 属主名 文件名chown [-R] 属主名:属组名 文件名 chmod: 更改文件权限chmod [-R] 755 文件名  查看当前用户所属组: groups 查看指定用户所属组:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速创建自己的VPN服务">
-<meta property="og:url" content="https://ryyip.github.io/project/2022/06/10/VPN/index.html">
+<meta property="og:title" content="Linux command">
+<meta property="og:url" content="https://ryyip.github.io/project/2022/07/27/linux/index.html">
 <meta property="og:site_name" content="Ryyip">
-<meta property="og:description" content="本文介绍的是来自github的开源项目setup-ipsec-vpn，想要全面了解项目的各项设置，可查看其详尽的说明文档。 Step 1. 服务端安装首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。 使用以下命令快速搭建 IPsec VPN 服务器： 1wget https:&#x2F;&#x2F;get.vpnsetup.net -qO vpn.sh &amp;&amp;a">
+<meta property="og:description" content="User &amp; Group切换rootsudo su 切换用户su leo  chgrp：更改文件属组chgrp [-R] 属组名 文件名 chown：更改文件属主，也可以同时更改文件属组chown [–R] 属主名 文件名chown [-R] 属主名:属组名 文件名 chmod: 更改文件权限chmod [-R] 755 文件名  查看当前用户所属组: groups 查看指定用户所属组:">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-06-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-27T01:34:25.527Z">
+<meta property="article:published_time" content="2022-07-27T10:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-03T06:18:10.904Z">
 <meta property="article:author" content="Leo Ye">
-<meta property="article:tag" content="VPN">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="linux command">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://ryyip.github.io/project/2022/06/10/VPN/">
+<link rel="canonical" href="https://ryyip.github.io/project/2022/07/27/linux/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ryyip.github.io/project/2022/06/10/VPN/","path":"2022/06/10/VPN/","title":"快速创建自己的VPN服务"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ryyip.github.io/project/2022/07/27/linux/","path":"2022/07/27/linux/","title":"Linux command"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>快速创建自己的VPN服务 | Ryyip</title>
+<title>Linux command | Ryyip</title>
   
 
 
@@ -109,7 +110,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">Step 1. 服务端安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-2-%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">Step 2. 客户端安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows"><span class="nav-number">2.1.</span> <span class="nav-text">Windows:</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#User-amp-Group"><span class="nav-number">1.</span> <span class="nav-text">User &amp; Group</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Process"><span class="nav-number">1.1.</span> <span class="nav-text">Process</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#File"><span class="nav-number">2.</span> <span class="nav-text">File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Setting"><span class="nav-number">3.</span> <span class="nav-text">Setting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSH"><span class="nav-number">4.</span> <span class="nav-text">SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#System"><span class="nav-number">5.</span> <span class="nav-text">System</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -170,7 +171,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ryyip.github.io/project/2022/06/10/VPN/">
+    <link itemprop="mainEntityOfPage" href="https://ryyip.github.io/project/2022/07/27/linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/project/images/avatar.gif">
@@ -183,12 +184,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="快速创建自己的VPN服务 | Ryyip">
+      <meta itemprop="name" content="Linux command | Ryyip">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          快速创建自己的VPN服务
+          Linux command
         </h1>
 
         <div class="post-meta-container">
@@ -199,14 +200,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-06-10 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-10T00:00:00+08:00">2022-06-10</time>
+      <time title="Created: 2022-07-27 18:00:00" itemprop="dateCreated datePublished" datetime="2022-07-27T18:00:00+08:00">2022-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-27 09:34:25" itemprop="dateModified" datetime="2022-07-27T09:34:25+08:00">2022-07-27</time>
+      <time title="Modified: 2022-08-03 14:18:10" itemprop="dateModified" datetime="2022-08-03T14:18:10+08:00">2022-08-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -214,7 +215,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/project/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+          <a href="/project/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/project/categories/linux/linux-command/" itemprop="url" rel="index"><span itemprop="name">linux command</span></a>
         </span>
     </span>
 
@@ -228,29 +233,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>本文介绍的是来自github的开源项目<a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn">setup-ipsec-vpn</a>，想要全面了解项目的各项设置，可查看其详尽的说明文档。</p>
-<h3 id="Step-1-服务端安装"><a href="#Step-1-服务端安装" class="headerlink" title="Step 1. 服务端安装"></a>Step 1. 服务端安装</h3><p>首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。</p>
-<p>使用以下命令快速搭建 IPsec VPN 服务器：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://get.vpnsetup.net -qO vpn.sh &amp;&amp; sudo sh vpn.sh</span><br></pre></td></tr></table></figure>
-
-<p>你的 VPN 登录凭证将会被自动随机生成，并在安装完成后显示。</p>
-<p>VPN客户端有两种，所用登录凭证都在安装完成时，展示在界面上，记得保存</p>
-<p>a. IPsec&#x2F;L2TP</p>
-<p>通过在客户端设置VPN的用户名，密码，IPsec PSK. 这种方式不需要下载相应文件，仅需要配置即可使用，但这种方式比较繁琐的是，期间有可能遇到各种各样的报错，手机端（Android 12+）不支持。推荐使用下面这种</p>
-<p>b. IKEv2</p>
-<p>&#x2F;root&#x2F;vpnclient.p12 (for Windows &amp; Linux)<br>&#x2F;root&#x2F;vpnclient.sswan (for Android)<br>&#x2F;root&#x2F;vpnclient.mobileconfig (for iOS &amp; macOS)</p>
-<h3 id="Step-2-客户端安装"><a href="#Step-2-客户端安装" class="headerlink" title="Step 2. 客户端安装"></a>Step 2. 客户端安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md">IKEv2 VPN 配置和使用指南</a></p>
-<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows:"></a>Windows:</h4><ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/vpn-extras/releases/latest/download/ikev2_config_import.cmd">ikev2_config_import.cmd</a> 下载cmd文件，并将cmd文件与上面的 .p12放在同个目录下，</li>
-<li>选择 <strong>以管理员身份运行</strong> 并按提示操作，输入账号名，IP地址即可。</li>
-<li>其中遇到一个错误并且没有列入官方的报错列表中，顺便记录下来 “parameter is incorrect” 相应的解决方案再 <a target="_blank" rel="noopener" href="https://github.com/trailofbits/algo/issues/1051">github issue</a> 中找到。</li>
-</ol>
-<p>Android, OS X (macOS), IOS 等手机端的，官方文档更加详细。</p>
-<p>*<strong>Linux 服务器购买渠道：</strong></p>
+        <h3 id="User-amp-Group"><a href="#User-amp-Group" class="headerlink" title="User &amp; Group"></a>User &amp; Group</h3><p>切换root<br>sudo su</p>
+<p>切换用户<br>su leo</p>
 <ol>
-<li><a target="_blank" rel="noopener" href="https://vultr.com/">vultr.com</a> 最低配置服务器，费用是$6&#x2F;month。（首次注册赠送100美金的优惠，仅有14天有效期）</li>
-<li><a target="_blank" rel="noopener" href="https://www.bwgyhw.cn/recommend">搬瓦工（国内）</a> <a target="_blank" rel="noopener" href="https://bwh81.net/vps-hosting.php">搬瓦工（国外）</a> 最优惠的 $49.99&#x2F;year，有常用优惠码减 5 ~ 6%，黑五、双11，元旦优惠码减 11 ~ 12%，服务器IP被baned后，需购买更换IP服务（$8&#x2F;次）</li>
+<li>chgrp：更改文件属组<br>chgrp [-R] 属组名 文件名</li>
+<li>chown：更改文件属主，也可以同时更改文件属组<br>chown [–R] 属主名 文件名<br>chown [-R] 属主名:属组名 文件名</li>
+<li>chmod: 更改文件权限<br>chmod [-R] 755 文件名</li>
 </ol>
+<p>查看当前用户所属组: groups</p>
+<p>查看指定用户所属组: groups leo</p>
+<p>直接查看组文件: cat &#x2F;etc&#x2F;group</p>
+<p>wget <a target="_blank" rel="noopener" href="http://example.com/file.tar">http://example.com/file.tar</a> -O &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar<br>curl <a target="_blank" rel="noopener" href="http://example.com/file.tar">http://example.com/file.tar</a> -o &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar</p>
+<p>cgroups<br>cgroups(Control Groups) 是 linux 内核提供的一种机制，这种机制可以根据需求把一系列系统任务及其子任务整合(或分隔)到按资源划分等级的不同组内，从而为系统资源管理提供一个统一的框架。简单说，cgroups 可以限制、记录任务组所使用的物理资源。本质上来说，cgroups 是内核附加在程序上的一系列钩子(hook)，通过程序运行时对资源的调度触发相应的钩子以达到资源追踪和限制的目的。</p>
+<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p>#lsof(list open files)是一个列出当前系统打开文件的工具。<br>lsof -i:端口号</p>
+<p>#netstat -tunlp 用于显示 tcp，udp 的端口和进程等相关情况。<br>netstat -tunlp | grep 端口号</p>
+<p>sudo update-alternatives –set php &#x2F;usr&#x2F;bin&#x2F;php7.2</p>
+<h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><p>快速创建文件<br>echo &gt; test.txt</p>
+<h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><p>source命令<br>通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录。因为linux所有的操作都会变成文件的格式存在。<br>当我修改了&#x2F;etc&#x2F;profile文件，我想让它立刻生效，而不用重新登录；这时就想到用source命令，如:source &#x2F;etc&#x2F;profile<br>语法<br>source filename</p>
+<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p>Host app-staging.local.com<br>  HostName app-staging<br>  User ubuntu<br>  IdentityFile ~&#x2F;Personal&#x2F;AWS-CN.pem<br>  Port 22</p>
+<p>Host *<br>  IdentitiesOnly&#x3D;yes<br>  ServerAliveInterval 60<br>  AddKeysToAgent yes<br>  IdentityFile ~&#x2F;.ssh&#x2F;AWS-CN.pem</p>
+<h3 id="System"><a href="#System" class="headerlink" title="System"></a>System</h3><p>查看系统版本<br>cat &#x2F;etc&#x2F;os-release<br>lsb_release -a<br>hostnamectl</p>
 
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -269,21 +271,19 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/project/tags/VPN/" rel="tag"># VPN</a>
+              <a href="/project/tags/linux/" rel="tag"># linux</a>
+              <a href="/project/tags/linux-command/" rel="tag"># linux command</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/project/2022/05/30/typora/" rel="prev" title="Typora破解">
-                  <i class="fa fa-chevron-left"></i> Typora破解
+                <a href="/project/2022/07/27/manjaro/" rel="prev" title="Manjaro">
+                  <i class="fa fa-chevron-left"></i> Manjaro
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/project/2022/06/15/encoding/" rel="next" title="Encoding">
-                  Encoding <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

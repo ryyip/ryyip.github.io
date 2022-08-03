@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/project/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/project/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/project/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/project/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/project/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"ryyip.github.io","root":"/project/","images":"/project/images","scheme":"Muse","darkmode":false,"version":"8.12.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/project/js/config.js"></script>
+
+    <meta name="description" content="镜像源修改 12# change to pacman china mirrorssudo pacman-mirrors -i -c China -m rank  中文输入法安装 12345678910# Install sogoupinyinsudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyinsudo pacman -S fcitx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manjaro">
+<meta property="og:url" content="https://ryyip.github.io/project/2022/07/27/manjaro/index.html">
+<meta property="og:site_name" content="Ryyip">
+<meta property="og:description" content="镜像源修改 12# change to pacman china mirrorssudo pacman-mirrors -i -c China -m rank  中文输入法安装 12345678910# Install sogoupinyinsudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyinsudo pacman -S fcitx">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-27T10:00:00.000Z">
+<meta property="article:modified_time" content="2022-07-27T10:59:33.489Z">
+<meta property="article:author" content="Leo Ye">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="manjaro">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://ryyip.github.io/project/2022/07/27/manjaro/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ryyip.github.io/project/2022/07/27/manjaro/","path":"2022/07/27/manjaro/","title":"Manjaro"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Manjaro | Ryyip</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/project/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/project/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Ryyip</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Leo Ye</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/project/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://ryyip.github.io/project/2022/07/27/manjaro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/project/images/avatar.gif">
+      <meta itemprop="name" content="Leo Ye">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryyip">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Manjaro | Ryyip">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Manjaro
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-27 18:00:00 / Modified: 18:59:33" itemprop="dateCreated datePublished" datetime="2022-07-27T18:00:00+08:00">2022-07-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/project/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>镜像源修改</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># change to pacman china mirrors</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
+
+<p>中文输入法安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Install sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line"></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"></span><br><span class="line"># export LC_ALL=zh_CN.UTF-8 # 这个是控制系统界面的语言类型的，这一行意味着显示中文。这里还是注销了吧。</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=“@im=fcitx”</span><br></pre></td></tr></table></figure>
+
+<p>pacman</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
+
+<p>推荐软件安装</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">smartgit</span><br><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">github-desktop</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br></pre></td></tr></table></figure>
+
+<p>软件安装方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
+
+<p>Antojump</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Program/Installer</span><br><span class="line">git clone https://github.com/wting/autojump.git</span><br><span class="line">cd autojump</span><br><span class="line">./install.py</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br><span class="line">autojump -v</span><br></pre></td></tr></table></figure>
+
+<p>设置命令行的别称</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">alias ll=&#x27;ls -l&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>SSH Error:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SSH Error:</span><br><span class="line">ssh erp-staging.gaatu.com</span><br><span class="line">sign_and_send_pubkey: no mutual signature supported</span><br><span class="line">ubuntu@erp-staging.gaatu.com&#x27;s password:</span><br><span class="line">ubuntu@erp-staging.gaatu.com: Permission denied (publickey,password).</span><br><span class="line"></span><br><span class="line">Solution: </span><br><span class="line">set the ~/.ssh/config</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line">or</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-dss</span><br></pre></td></tr></table></figure>
+
+<p>Keyring</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">After forgetting the password to the “Default keyring”, resolved the issue as follows:</span><br><span class="line"></span><br><span class="line">1.Navigate to local Home folder in file manager and displayed hidden folders with Ctrl+H</span><br><span class="line">2.Navigate to /home/.local/share/keyrings/</span><br><span class="line">3.Deleted all files with “.keyring” file ending.</span><br><span class="line">4.Then launched application to receive a prompt to create a new password for the Default keyring.</span><br><span class="line">5.Specified the new password and confirmed.</span><br><span class="line">Now can use apps that require access to the Default keyring.</span><br><span class="line"></span><br><span class="line">cd /home/.local/share/keyrings</span><br><span class="line">rm *.keyring</span><br></pre></td></tr></table></figure>
+
+<p>Debtap: </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Install debtap:</span><br><span class="line">  yay -S debtap sudo debtap -u</span><br><span class="line">Convert .deb packages Into Arch Linux Packages using debtap:</span><br><span class="line">  debtap packagename.deb</span><br><span class="line">install the package in the system:</span><br><span class="line">  sudo pacman -U package-name</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/project/tags/linux/" rel="tag"># linux</a>
+              <a href="/project/tags/manjaro/" rel="tag"># manjaro</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/project/2022/06/30/software-recommend%20/" rel="prev" title="Software Recommend">
+                  <i class="fa fa-chevron-left"></i> Software Recommend
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/project/2022/07/27/linux/" rel="next" title="Linux command">
+                  Linux command <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leo Ye</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/project/js/comments.js"></script><script src="/project/js/utils.js"></script><script src="/project/js/motion.js"></script><script src="/project/js/schemes/muse.js"></script><script src="/project/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
