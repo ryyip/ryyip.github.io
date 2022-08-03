@@ -4,14 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>Tag: VPN | Ryyip</title>
+  <title>Git Flow | Ryyip</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Ryyip">
-<meta property="og:url" content="https://ryyip.github.io/tags/VPN/index.html">
+  <meta name="description" content="GIT FlowInitial[master]$ git flow init[develop]$ git push –set-upstream origin develop Release[develop]$ git pull # Pull first and then choose an intial version number like V1.0.0.0 or V0.1.0.0 …[deve">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Flow">
+<meta property="og:url" content="https://ryyip.github.io/2022/07/21/git-flow/index.html">
 <meta property="og:site_name" content="Ryyip">
+<meta property="og:description" content="GIT FlowInitial[master]$ git flow init[develop]$ git push –set-upstream origin develop Release[develop]$ git pull # Pull first and then choose an intial version number like V1.0.0.0 or V0.1.0.0 …[deve">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-20T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-03T08:10:19.768Z">
 <meta property="article:author" content="Leo Ye">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Ryyip" type="application/atom+xml">
@@ -69,39 +74,83 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2022/06/10/VPN/" class="archive-article-date">
-  <time class="dt-published" datetime="2022-06-09T16:00:00.000Z" itemprop="datePublished">Jun 10</time>
+        <section id="main"><article id="post-git-flow" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/21/git-flow/" class="article-date">
+  <time class="dt-published" datetime="2022-07-20T16:00:00.000Z" itemprop="datePublished">2022-07-21</time>
 </a>
-      
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/06/10/VPN/">快速创建自己的VPN服务</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      Git Flow
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="GIT-Flow"><a href="#GIT-Flow" class="headerlink" title="GIT Flow"></a><em>GIT Flow</em></h2><h3 id="Initial"><a href="#Initial" class="headerlink" title="Initial"></a>Initial</h3><p>[master]$ git flow init<br>[develop]$ git push –set-upstream origin develop</p>
+<h3 id="Release"><a href="#Release" class="headerlink" title="Release"></a>Release</h3><p>[develop]$ git pull # Pull first and then choose an intial version number like V1.0.0.0 or V0.1.0.0 …<br>[develop]$ git flow release start V0.0.1.0 # VMajor.Minor.Release.Hotfix<br>[release&#x2F;V0.0.1.0]$ git flow release finish V0.0.1.0<br>[master]$ git push<br>[master]$ git push –tags</p>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>[master]$ git flow feature start ST-6319-DEV-Workflow-V2.0 # ST-JiraNo-feature-Name-Version<br>[feature]$ git add .<br>[feature]$ git commit -m ‘ST-6774: Code Review Doc-Init’ # ST-TaskJiraNo: Task Name-Action(Init&#x2F;Update&#x2F;Done&#x2F;Fix Bug&#x2F;Approved&#x2F;Rejected…)<br>[feature]$ git push –set-upstream origin feature&#x2F;ST-10185-Purchase-Permission<br>root&#x2F;client&#x2F;ERP yarn generate</p>
+<h4 id="1-Feature-Release"><a href="#1-Feature-Release" class="headerlink" title="1. Feature Release"></a>1. Feature Release</h4><p>Mode 1:<br>[feature]$ git flow feature finish ST-8284-EstimatedPaymentDate<br>Mode 2:<br>[feature]$ git flow feature publish ST-6319-DEV-Workflow-V2.0 # The new unpublished feature<br>[feature]$ git push # The published feature</p>
+<h4 id="2-Feature-Testing"><a href="#2-Feature-Testing" class="headerlink" title="2. Feature Testing"></a>2. Feature Testing</h4><p>[staging][develop]$ git pull<br>[staging][develop]$ git checkout feature&#x2F;ST-6319-DEV-Workflow-V2.0</p>
+<h4 id="3-Feature-Release"><a href="#3-Feature-Release" class="headerlink" title="3. Feature Release"></a>3. Feature Release</h4><p>[develop]$ git pull # Pull first<br>[develop]$ git flow release start V0.0.2.0 # VMajor.Minor.Release.Hotfix<br>[release&#x2F;V0.0.2.0]$ git flow release finish V0.0.2.0<br>[master]$ git push<br>[master]$ git push –tags</p>
+<h3 id="Hotfix"><a href="#Hotfix" class="headerlink" title="Hotfix"></a>Hotfix</h3><p>[develop]$ git pull # Pull first<br>[develop]$ git flow hotfix start V0.0.2.1 # VMajor.Minor.Release.Hotfix<br>[hotfix&#x2F;V0.0.2.1]$ git add .<br>[hotfix&#x2F;V0.0.2.1]$ git commit -m ‘ST-6774: Code Review Doc-Fix Bug’<br>[hotfix&#x2F;V0.0.2.1]$ git flow hotfix finish V0.0.2.1<br>[master]$ git push<br>[master]$ git push –tags</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/07/21/git-flow/" data-id="cl6dbxfh6000arsjw0rrodbnb" data-title="Git Flow" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/07/27/manjaro/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Manjaro
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/07/21/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Git</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>

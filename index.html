@@ -71,6 +71,78 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/03/docker/" class="article-date">
+  <time class="dt-published" datetime="2022-08-02T16:00:00.000Z" itemprop="datePublished">2022-08-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/docker/">docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/03/docker/">Docker &amp; Docker Compose</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>​		上个月将系统更换成了Manjaro，期间顺理了相关软件推荐，命令的简要使用等，今天总结一下docker的使用及遇到的问题。</p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul>
+<li>image (相当于镜像，里面各项配置)</li>
+<li>container (相当与一台台虚拟机)</li>
+<li>docker-compose (多容器合作，App容器，数据库容器)</li>
+<li>Portainer (容器可视化管理软件)</li>
+</ul>
+<h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><p>dockerfile (自动化脚本，用于创建镜像)</p>
+<p>docker-compose.yml (docker compose 配置文件)</p>
+<h4 id="镜像源地址修改"><a href="#镜像源地址修改" class="headerlink" title="镜像源地址修改"></a>镜像源地址修改</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;http://hub-mirror.c.163.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">#重启docker</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br><span class="line"></span><br><span class="line">#腾讯云的镜像地址</span><br><span class="line">https://mirror.ccs.tencentyun.com</span><br><span class="line"></span><br><span class="line">#网易的镜像地址</span><br><span class="line">http://hub-mirror.c.163.com</span><br><span class="line"></span><br><span class="line">#阿里云镜像地址，需要到自己的阿里云&quot;容器镜像服务-&gt;镜像加速器&quot;去复制自己的镜像地址</span><br><span class="line">https://xxxx.mirror.aliyuncs.com</span><br><span class="line"></span><br><span class="line">#daocloud发布的镜像地址</span><br><span class="line">http://f1361db2.m.daocloud.io</span><br></pre></td></tr></table></figure>
+
+<h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#创建container (第一次会先下载对应的镜像)</span><br><span class="line">docker run -itd -v /sys/fs/cgroup:/sys/fs/cgroup:ro --privileged=true --name=lnmp 2233466866/lnmp</span><br><span class="line">#查看容器信息</span><br><span class="line">docker inspect lnmp | grep IPAddress</span><br><span class="line">#进入容器console(*部分容器支持/bin/bash,部分支持/bin/sh)</span><br><span class="line">docker exec -it lnmp /bin/bash</span><br><span class="line">docker exec -it cgi /bin/bash</span><br><span class="line">docker exec -it proxy /bin/sh</span><br><span class="line">#在宿主机直接运行 指定容器 的命令</span><br><span class="line">docker exec -it cgi /bin/bash -c &quot;cd /var/www/html/app.gaatu.com &amp;&amp; php artisan migrate&quot;</span><br><span class="line">#复制容器内的文件或文件夹到宿主机</span><br><span class="line">docker cp cgi:/usr/local/etc/php/php.ini ~/docker-compose/docker-leo/docker/config/cgi/php.ini</span><br><span class="line"></span><br><span class="line">#查询所有container</span><br><span class="line">docker ps -a</span><br><span class="line">#查询所有image</span><br><span class="line">docker images</span><br><span class="line">#停止container</span><br><span class="line">docker stop containerName</span><br><span class="line">docker stop $(docker ps -a -q)</span><br><span class="line">#删除container</span><br><span class="line">docker rm containerName</span><br><span class="line">docker rm $(docker ps -a -q)</span><br><span class="line">#删除image</span><br><span class="line">docker rmi imageName</span><br><span class="line">docker rmi $(docker images -q)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Container-Problems"><a href="#Container-Problems" class="headerlink" title="Container Problems"></a>Container Problems</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#image: mysql:8.0.29</span><br><span class="line">error: the server requested authentication method unknown to the client</span><br><span class="line"></span><br><span class="line">$ docker-compose exec mysql bash</span><br><span class="line">$ mysql -u root -p</span><br><span class="line">(login as root)</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;root&#x27;;</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;root&#x27;;</span><br><span class="line">ALTER USER &#x27;default&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;secret&#x27;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#image: php:7.2-fpm</span><br><span class="line"></span><br><span class="line">#重启php服务(该容器自带的特定命令)</span><br><span class="line">kill -USR2 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/ryyip/docker-leo</span><br></pre></td></tr></table></figure>
+
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/08/03/docker/" data-id="cl6dbxfh40006rsjw8hod3zra" data-title="Docker &amp; Docker Compose" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker-compose/" rel="tag">docker compose</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-linux" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/07/27/linux/" class="article-date">
@@ -130,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/27/linux/" data-id="cl6d8bp6r000a7ijw1pcr8o0m" data-title="Linux command" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/27/linux/" data-id="cl6dbxfhb000lrsjw3xj45c6h" data-title="Linux command" class="article-share-link">Share</a>
       
       
       
@@ -215,11 +287,130 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/27/manjaro/" data-id="cl6d8bp6s000e7ijwg8bxgsyp" data-title="Manjaro" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/27/manjaro/" data-id="cl6dbxfhc000nrsjwbquvc0qk" data-title="Manjaro" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/manjaro/" rel="tag">manjaro</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git-flow" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/21/git-flow/" class="article-date">
+  <time class="dt-published" datetime="2022-07-20T16:00:00.000Z" itemprop="datePublished">2022-07-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/21/git-flow/">Git Flow</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="GIT-Flow"><a href="#GIT-Flow" class="headerlink" title="GIT Flow"></a><em>GIT Flow</em></h2><h3 id="Initial"><a href="#Initial" class="headerlink" title="Initial"></a>Initial</h3><p>[master]$ git flow init<br>[develop]$ git push –set-upstream origin develop</p>
+<h3 id="Release"><a href="#Release" class="headerlink" title="Release"></a>Release</h3><p>[develop]$ git pull # Pull first and then choose an intial version number like V1.0.0.0 or V0.1.0.0 …<br>[develop]$ git flow release start V0.0.1.0 # VMajor.Minor.Release.Hotfix<br>[release&#x2F;V0.0.1.0]$ git flow release finish V0.0.1.0<br>[master]$ git push<br>[master]$ git push –tags</p>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>[master]$ git flow feature start ST-6319-DEV-Workflow-V2.0 # ST-JiraNo-feature-Name-Version<br>[feature]$ git add .<br>[feature]$ git commit -m ‘ST-6774: Code Review Doc-Init’ # ST-TaskJiraNo: Task Name-Action(Init&#x2F;Update&#x2F;Done&#x2F;Fix Bug&#x2F;Approved&#x2F;Rejected…)<br>[feature]$ git push –set-upstream origin feature&#x2F;ST-10185-Purchase-Permission<br>root&#x2F;client&#x2F;ERP yarn generate</p>
+<h4 id="1-Feature-Release"><a href="#1-Feature-Release" class="headerlink" title="1. Feature Release"></a>1. Feature Release</h4><p>Mode 1:<br>[feature]$ git flow feature finish ST-8284-EstimatedPaymentDate<br>Mode 2:<br>[feature]$ git flow feature publish ST-6319-DEV-Workflow-V2.0 # The new unpublished feature<br>[feature]$ git push # The published feature</p>
+<h4 id="2-Feature-Testing"><a href="#2-Feature-Testing" class="headerlink" title="2. Feature Testing"></a>2. Feature Testing</h4><p>[staging][develop]$ git pull<br>[staging][develop]$ git checkout feature&#x2F;ST-6319-DEV-Workflow-V2.0</p>
+<h4 id="3-Feature-Release"><a href="#3-Feature-Release" class="headerlink" title="3. Feature Release"></a>3. Feature Release</h4><p>[develop]$ git pull # Pull first<br>[develop]$ git flow release start V0.0.2.0 # VMajor.Minor.Release.Hotfix<br>[release&#x2F;V0.0.2.0]$ git flow release finish V0.0.2.0<br>[master]$ git push<br>[master]$ git push –tags</p>
+<h3 id="Hotfix"><a href="#Hotfix" class="headerlink" title="Hotfix"></a>Hotfix</h3><p>[develop]$ git pull # Pull first<br>[develop]$ git flow hotfix start V0.0.2.1 # VMajor.Minor.Release.Hotfix<br>[hotfix&#x2F;V0.0.2.1]$ git add .<br>[hotfix&#x2F;V0.0.2.1]$ git commit -m ‘ST-6774: Code Review Doc-Fix Bug’<br>[hotfix&#x2F;V0.0.2.1]$ git flow hotfix finish V0.0.2.1<br>[master]$ git push<br>[master]$ git push –tags</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/07/21/git-flow/" data-id="cl6dbxfh6000arsjw0rrodbnb" data-title="Git Flow" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/21/git/" class="article-date">
+  <time class="dt-published" datetime="2022-07-20T16:00:00.000Z" itemprop="datePublished">2022-07-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/21/git/">Git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#x6f;&#x2e;&#x79;&#x65;&#64;&#x67;&#109;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;">&#108;&#101;&#x6f;&#x2e;&#x79;&#x65;&#64;&#x67;&#109;&#x61;&#105;&#108;&#46;&#99;&#x6f;&#109;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
+
+<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
+<p>git add .<br>git commit ‘desc’<br>git pull<br>git push<br>git push –set-upstream origin feature&#x2F;ST-8498-Supplier-Assembly-Sku<br>git checkout branchName<br>git checkout -b feature&#x2F;ST-13074-Shipsage-Api origin&#x2F;feature&#x2F;ST-13074-Shipsage-Api</p>
+<p>#Stash<br>git stash<br>git stash list<br>git stash apply<br>git stash drop<br>git stash pop stash@{1} #apply &amp; drop</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/07/21/git/" data-id="cl6dbxfh8000ersjwc3b648nd" data-title="Git" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
 
     </footer>
   </div>
@@ -296,59 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/30/software-recommend%20/" data-id="cl6d8bp6t000f7ijwb5u96my8" data-title="Software Recommend" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-encoding" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/15/encoding/" class="article-date">
-  <time class="dt-published" datetime="2022-06-14T16:00:00.000Z" itemprop="datePublished">2022-06-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/15/encoding/">Encoding</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>0xAA：</p>
-<p>0x 16进制</p>
-<p>0O 8进制</p>
-<p>16进制转为10进制</p>
-<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/15/encoding/" data-id="cl6d8bp6l00047ijw9z4g5wv9" data-title="Encoding" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/06/30/software-recommend%20/" data-id="cl6dbxfhe000trsjwagzx9mqf" data-title="Software Recommend" class="article-share-link">Share</a>
       
       
       
@@ -410,12 +549,64 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/15/bandwidth-internetSpeed-flow/" data-id="cl6d8bp6n00057ijw1d0f1n38" data-title="带宽、网速、流量之间有什么关系" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/06/15/bandwidth-internetSpeed-flow/" data-id="cl6dbxfh10004rsjw2buxelal" data-title="带宽、网速、流量之间有什么关系" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bandwidth/" rel="tag">bandwidth</a></li></ul>
 
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-encoding" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/15/encoding/" class="article-date">
+  <time class="dt-published" datetime="2022-06-14T16:00:00.000Z" itemprop="datePublished">2022-06-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/06/15/encoding/">Encoding</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>0xAA：</p>
+<p>0x 16进制</p>
+<p>0O 8进制</p>
+<p>16进制转为10进制</p>
+<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/06/15/encoding/" data-id="cl6dbxfh50009rsjwgrzhc92n" data-title="Encoding" class="article-share-link">Share</a>
+      
+      
+      
     </footer>
   </div>
   
@@ -486,7 +677,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/10/VPN/" data-id="cl6d8bp6f00017ijw14148lsg" data-title="快速创建自己的VPN服务" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/06/10/VPN/" data-id="cl6dbxfh30005rsjwdz0ifpqw" data-title="快速创建自己的VPN服务" class="article-share-link">Share</a>
       
       
       
@@ -556,7 +747,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/05/30/typora/" data-id="cl6d8bp6v000j7ijw331ed9h3" data-title="Typora破解" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/05/30/typora/" data-id="cl6dbxfhe000rrsjweuj06cji" data-title="Typora破解" class="article-share-link">Share</a>
       
       
       
@@ -570,230 +761,12 @@
 
 
   
-    <article id="post-Yarn" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/05/Yarn/" class="article-date">
-  <time class="dt-published" datetime="2022-05-05T02:20:12.000Z" itemprop="datePublished">2022-05-05</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a>►<a class="article-category-link" href="/categories/Tools/Yarn/">Yarn</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/05/Yarn/">Yarn</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><em><strong>Yarn: 依赖包管理工具</strong></em></p>
-<p><a target="_blank" rel="noopener" href="http://yarnpkg.top/WorkFlow.html">官方文档</a></p>
-<h4 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn init</span><br></pre></td></tr></table></figure>
-
-<h4 id="管理依赖"><a href="#管理依赖" class="headerlink" title="管理依赖"></a>管理依赖</h4><h5 id="新增依赖"><a href="#新增依赖" class="headerlink" title="新增依赖"></a>新增依赖</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn add [package]</span><br><span class="line">yarn add [package]@[version]</span><br><span class="line">yarn add [package]@[tag]</span><br></pre></td></tr></table></figure>
-
-<h5 id="更新依赖"><a href="#更新依赖" class="headerlink" title="更新依赖"></a>更新依赖</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yarn upgrade [package]</span><br><span class="line">yarn upgrade [package]@[version]</span><br><span class="line">yarn upgrade [package]@[dist-tag]</span><br></pre></td></tr></table></figure>
-
-<h5 id="删除依赖"><a href="#删除依赖" class="headerlink" title="删除依赖"></a>删除依赖</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn remove [package]</span><br></pre></td></tr></table></figure>
-
-<h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="http://yarnpkg.top/Cli-install.html"><code>yarn install</code></a>命令用来安装一个项目的全部依赖。项目的这些依赖是在项目的<code>package.json</code>文件中描述的，并被储存在<code>yarn.lock</code>文件中</p>
-<p>通常在下面两种情况下需要安装依赖</p>
-<ol>
-<li><p>一个全新的项目刚刚被下载</p>
-</li>
-<li><p>依赖有了更新</p>
-</li>
-</ol>
-<hr>
-<h4 id="Yarn的优点"><a href="#Yarn的优点" class="headerlink" title="Yarn的优点"></a>Yarn的优点</h4><ul>
-<li><strong>速度快</strong> 。速度快主要来自以下两个方面：</li>
-</ul>
-<ol>
-<li>并行安装：无论 npm 还是 Yarn 在执行包的安装时，都会执行一系列任务。npm 是按照队列执行每个 package，也就是说必须要等到当前 package 安装完成之后，才能继续后面的安装。而 Yarn 是同步执行所有任务，提高了性能。</li>
-<li>离线模式：如果之前已经安装过一个软件包，用Yarn再次安装时之间从缓存中获取，就不用像npm那样再从网络下载了。</li>
-</ol>
-<ul>
-<li>安装<strong>版本统一</strong>：为了防止拉取到不同的版本，Yarn 有一个锁定文件 (lock file) 记录了被确切安装上的模块的版本号。每次只要新增了一个模块，Yarn 就会创建（或更新）yarn.lock 这个文件。这么做就保证了，每一次拉取同一个项目依赖时，使用的都是一样的模块版本。npm 其实也有办法实现处处使用相同版本的 packages，但需要开发者执行 npm shrinkwrap 命令。这个命令将会生成一个锁定文件，在执行 npm install 的时候，该锁定文件会先被读取，和 Yarn 读取 yarn.lock 文件一个道理。npm 和 Yarn 两者的不同之处在于，Yarn 默认会生成这样的锁定文件，而 npm 要通过 shrinkwrap 命令生成 npm-shrinkwrap.json 文件，只有当这个文件存在的时候，packages 版本信息才会被记录和更新。</li>
-<li><strong>更简洁的输出</strong>：npm 的输出信息比较冗长。在执行 npm install 的时候，命令行里会不断地打印出所有被安装上的依赖。相比之下，Yarn 简洁太多：默认情况下，结合了 emoji直观且直接地打印出必要的信息，也提供了一些命令供开发者查询额外的安装信息。</li>
-<li><strong>多注册来源处理：</strong>所有的依赖包，不管他被不同的库间接关联引用多少次，安装这个包时，只会从一个注册来源去装，要么是 npm 要么是 bower, 防止出现混乱不一致。</li>
-<li><strong>更好的语义化</strong>： yarn改变了一些npm命令的名称，比如 yarn add&#x2F;remove，感觉上比 npm 原本的 install&#x2F;uninstall 要更清晰。</li>
-</ul>
-<h4 id="Yarn和npm命令对比"><a href="#Yarn和npm命令对比" class="headerlink" title="Yarn和npm命令对比"></a>Yarn和npm命令对比</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install === yarn </span><br><span class="line">npm install taco --save === yarn add taco</span><br><span class="line">npm uninstall taco --save === yarn remove taco</span><br><span class="line">npm install taco --save-dev === yarn add taco --dev</span><br><span class="line">npm update --save === yarn upgrade</span><br></pre></td></tr></table></figure>
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/05/05/Yarn/" data-id="cl6d8bp6o00067ijw6najfkmt" data-title="Yarn" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-VueJs-NuxtJs-NodeJs" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/05/VueJs-NuxtJs-NodeJs/" class="article-date">
-  <time class="dt-published" datetime="2022-05-05T02:00:12.000Z" itemprop="datePublished">2022-05-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/JS/">JS</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/05/VueJs-NuxtJs-NodeJs/">Vue.js, Nuxt.js &amp; Node.js</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
-<p>JS依赖管理工具</p>
-<p><strong>NPM</strong></p>
-<p>Node.js自带的依赖管理工具</p>
-<p><strong>Vue.js</strong></p>
-<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a target="_blank" rel="noopener" href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<p><strong>Nuxt.js</strong></p>
-<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
-<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
-<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
-<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
-<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
-<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
-<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
-<p><strong>Node.js</strong></p>
-<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
-<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
-<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
-<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/05/05/VueJs-NuxtJs-NodeJs/" data-id="cl6d8bp6500007ijwfn5e9tbk" data-title="Vue.js, Nuxt.js &amp; Node.js" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/04/30/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2022-04-29T16:34:14.000Z" itemprop="datePublished">2022-04-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/04/30/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<h3 id="Clean-to-static-files"><a href="#Clean-to-static-files" class="headerlink" title="Clean to static files"></a>Clean to static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-
-<h3 id="Generate-static-files-amp-Deploy-to-remote-sites"><a href="#Generate-static-files-amp-Deploy-to-remote-sites" class="headerlink" title="Generate static files &amp; Deploy to remote sites"></a>Generate static files &amp; Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
-
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/04/30/hello-world/" data-id="cl6d8bp6q00097ijw3vw59i2g" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -803,7 +776,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/Yarn/">Yarn</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/linux-command/">linux command</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/Yarn/">Yarn</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/linux-command/">linux command</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -813,7 +786,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bandwidth/" rel="tag">bandwidth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-command/" rel="tag">linux command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/manjaro/" rel="tag">manjaro</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bandwidth/" rel="tag">bandwidth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/" rel="tag">docker compose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-command/" rel="tag">linux command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/manjaro/" rel="tag">manjaro</a></li></ul>
     </div>
   </div>
 
@@ -823,7 +796,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a> <a href="/tags/bandwidth/" style="font-size: 10px;">bandwidth</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/manjaro/" style="font-size: 10px;">manjaro</a>
+      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Git/" style="font-size: 20px;">Git</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a> <a href="/tags/bandwidth/" style="font-size: 10px;">bandwidth</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker compose</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/manjaro/" style="font-size: 10px;">manjaro</a>
     </div>
   </div>
 
@@ -832,7 +805,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/07/">July 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
     </div>
   </div>
 
@@ -845,6 +818,10 @@
       <ul>
         
           <li>
+            <a href="/2022/08/03/docker/">Docker &amp; Docker Compose</a>
+          </li>
+        
+          <li>
             <a href="/2022/07/27/linux/">Linux command</a>
           </li>
         
@@ -853,15 +830,11 @@
           </li>
         
           <li>
-            <a href="/2022/06/30/software-recommend%20/">Software Recommend</a>
+            <a href="/2022/07/21/git-flow/">Git Flow</a>
           </li>
         
           <li>
-            <a href="/2022/06/15/encoding/">Encoding</a>
-          </li>
-        
-          <li>
-            <a href="/2022/06/15/bandwidth-internetSpeed-flow/">带宽、网速、流量之间有什么关系</a>
+            <a href="/2022/07/21/git/">Git</a>
           </li>
         
       </ul>
