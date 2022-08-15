@@ -133,6 +133,82 @@
 
 
   
+    <article id="post-redis-application" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/05/redis-application/" class="article-date">
+  <time class="dt-published" datetime="2022-08-04T16:00:00.000Z" itemprop="datePublished">2022-08-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/redis/">redis</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/05/redis-application/">Redis应用场景</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Redis是一款内存高速缓存数据库。Redis全称为：Remote Dictionary Server（远程数据服务），使用C语言编写，Redis是一个key-value存储系统（键值存储系统），支持丰富的数据类型，如：String、list、set、zset、hash。</p>
+<p>Redis是一种支持key-value等多种数据结构的存储系统。可用于缓存，事件发布或订阅，高速队列等场景。使用C语言编写，支持网络，提供字符串，哈希，列表，队列，集合结构直接存取，基于内存，可持久化。</p>
+<p>1、热点数据的缓存</p>
+<p>由于redis访问速度块、支持的数据类型比较丰富，所以redis很适合用来存储热点数据，另外结合expire，我们可以设置过期时间然后再进行缓存更新操作，这个功能最为常见，我们几乎所有的项目都有所运用。</p>
+<p>2、限时业务的运用</p>
+<p>redis中可以使用expire命令设置一个键的生存时间，到时间后redis会删除它。利用这一特性可以运用在限时的优惠活动信息、手机验证码等业务场景。</p>
+<p>3、计数器相关问题</p>
+<p>redis由于incrby命令可以实现原子性的递增，所以可以运用于高并发的秒杀活动、分布式序列号的生成、具体业务还体现在比如限制一个手机号发多少条短信、一个接口一分钟限制多少请求、一个接口一天限制调用多少次等等。</p>
+<p>4、排行榜相关问题</p>
+<p>关系型数据库在排行榜方面查询速度普遍偏慢，所以可以借助redis的SortedSet进行热点数据的排序。</p>
+<p>5、分布式锁</p>
+<p>主要利用redis的setnx命令进行，setnx：”set if not exists”就是如果不存在则成功设置缓存同时返回1，否则返回0。</p>
+<p>6、延时操作</p>
+<p>7、分页、模糊搜索</p>
+<p>redis的set集合中提供了一个zrangebylex方法，语法如下：</p>
+<p>ZRANGEBYLEX key min max[LIMIT offset count]</p>
+<p>通过ZRANGEBYLEX zset-+LIMIT 0 10可以进行分页数据查询，其中-+表示获取全部数据</p>
+<p>zrangebylex key min max这个就可以返回字典区间的数据，利用这个特性可以进行模糊查询功能，这个也是目前我在redis中发现的唯一一个支持对存储内容进行模糊查询的特性。</p>
+<p>8、点赞、好友等相互关系的存储</p>
+<p>Redis set对外提供的功能与list类似是一个列表的功能，特殊之处在于set是可以自动排重的，当你需要存储一个列表数据，又不希望出现重复数据时，set是一个很好的选择</p>
+<p>9、队列</p>
+<p>由于redis有list push和list pop这样的命令，所以能够很方便的执行队列操作。</p>
+<p><em>转载至：<a target="_blank" rel="noopener" href="https://www.huaweicloud.com/zhishi/Redis.html">https://www.huaweicloud.com/zhishi/Redis.html</a></em></p>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/08/05/redis-application/" data-id="cl6umw51d0000y4jwhrfa4421" data-title="Redis应用场景" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/" rel="tag">redis</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/08/03/docker/" class="article-date">
@@ -291,11 +367,17 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#111;&#46;&#121;&#x65;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#108;&#101;&#111;&#46;&#121;&#x65;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#x6f;&#46;&#121;&#x65;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;">&#x6c;&#x65;&#x6f;&#46;&#121;&#x65;&#x40;&#103;&#x6d;&#x61;&#x69;&#x6c;&#46;&#x63;&#111;&#109;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
-<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal<br>git add .<br>git commit ‘desc’<br>git pull<br>git push<br>git push –set-upstream origin feature&#x2F;ST-8498-Supplier-Assembly-Sku<br>git checkout branchName<br>git checkout -b feature&#x2F;ST-13074-Shipsage-Api origin&#x2F;feature&#x2F;ST-13074-Shipsage-Api</p>
-<p>#Stash<br>git stash<br>git stash list<br>git stash apply<br>git stash drop<br>git stash pop stash@{1} #apply &amp; drop</p>
+<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br></pre></td></tr></table></figure>
+
+<p>#Stash</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop stash@&#123;1&#125; #apply &amp; drop</span><br></pre></td></tr></table></figure>
+
+<p>#GitHub 撤销某次 commit</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git reset &#123;commitId&#125;：回滚到某次提交。</span><br><span class="line">git reset --soft &#123;commitId&#125;：此次提交之后的修改会被退回到暂存区。</span><br><span class="line">git reset --hard &#123;commitId&#125;：此次提交之后的修改不做任何保留，git status 查看工作区是没有记录的。</span><br><span class="line">git revert &#123;commitId&#125;：放弃某次提交。git revert 之前的提交仍会保留在 git log 中，而此次撤销会做为一次新的提交。要撤销中间某次提交时，只需要对应的commitId即可。</span><br><span class="line">git rebase：当两个分支不在一条线上，需要执行 merge 操作时使用该命令。</span><br></pre></td></tr></table></figure>
 
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -676,82 +758,6 @@
 
 
   
-    <article id="post-VPN" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/10/VPN/" class="article-date">
-  <time class="dt-published" datetime="2022-06-09T16:00:00.000Z" itemprop="datePublished">2022-06-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/10/VPN/">快速创建自己的VPN服务</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>本文介绍的是来自github的开源项目<a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn">setup-ipsec-vpn</a>，想要全面了解项目的各项设置，可查看其详尽的说明文档。</p>
-<h3 id="Step-1-服务端安装"><a href="#Step-1-服务端安装" class="headerlink" title="Step 1. 服务端安装"></a>Step 1. 服务端安装</h3><p>首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。</p>
-<p>使用以下命令快速搭建 IPsec VPN 服务器：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://get.vpnsetup.net -qO vpn.sh &amp;&amp; sudo sh vpn.sh</span><br></pre></td></tr></table></figure>
-
-<p>你的 VPN 登录凭证将会被自动随机生成，并在安装完成后显示。</p>
-<p>VPN客户端有两种，所用登录凭证都在安装完成时，展示在界面上，记得保存</p>
-<p>a. IPsec&#x2F;L2TP</p>
-<p>通过在客户端设置VPN的用户名，密码，IPsec PSK. 这种方式不需要下载相应文件，仅需要配置即可使用，但这种方式比较繁琐的是，期间有可能遇到各种各样的报错，手机端（Android 12+）不支持。推荐使用下面这种</p>
-<p>b. IKEv2</p>
-<p>&#x2F;root&#x2F;vpnclient.p12 (for Windows &amp; Linux)<br>&#x2F;root&#x2F;vpnclient.sswan (for Android)<br>&#x2F;root&#x2F;vpnclient.mobileconfig (for iOS &amp; macOS)</p>
-<h3 id="Step-2-客户端安装"><a href="#Step-2-客户端安装" class="headerlink" title="Step 2. 客户端安装"></a>Step 2. 客户端安装</h3><p><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md">IKEv2 VPN 配置和使用指南</a></p>
-<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows:"></a>Windows:</h4><ol>
-<li><a target="_blank" rel="noopener" href="https://github.com/hwdsl2/vpn-extras/releases/latest/download/ikev2_config_import.cmd">ikev2_config_import.cmd</a> 下载cmd文件，并将cmd文件与上面的 .p12放在同个目录下，</li>
-<li>选择 <strong>以管理员身份运行</strong> 并按提示操作，输入账号名，IP地址即可。</li>
-<li>其中遇到一个错误并且没有列入官方的报错列表中，顺便记录下来 “parameter is incorrect” 相应的解决方案再 <a target="_blank" rel="noopener" href="https://github.com/trailofbits/algo/issues/1051">github issue</a> 中找到。</li>
-</ol>
-<p>Android, OS X (macOS), IOS 等手机端的，官方文档更加详细。</p>
-<p>*<strong>Linux 服务器购买渠道：</strong></p>
-<ol>
-<li><a target="_blank" rel="noopener" href="https://vultr.com/">vultr.com</a> 最低配置服务器，费用是$6&#x2F;month。（首次注册赠送100美金的优惠，仅有14天有效期）</li>
-<li><a target="_blank" rel="noopener" href="https://www.bwgyhw.cn/recommend">搬瓦工（国内）</a> <a target="_blank" rel="noopener" href="https://bwh81.net/vps-hosting.php">搬瓦工（国外）</a> 最优惠的 $49.99&#x2F;year，有常用优惠码减 5 ~ 6%，黑五、双11，元旦优惠码减 11 ~ 12%，服务器IP被baned后，需购买更换IP服务（$8&#x2F;次）</li>
-</ol>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/10/VPN/" data-id="cl6ovjqcf0001mqjwcw9x31yi" data-title="快速创建自己的VPN服务" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
 
 
   <nav id="page-nav">
@@ -767,7 +773,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/Yarn/">Yarn</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/computer/">computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/linux-command/">linux command</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/Yarn/">Yarn</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/computer/">computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/linux-command/">linux command</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a></li></ul>
     </div>
   </div>
 
@@ -777,7 +783,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git-Flow/" rel="tag">Git Flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bandwidth/" rel="tag">bandwidth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer/" rel="tag">computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/" rel="tag">docker compose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-command/" rel="tag">linux command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/manjaro/" rel="tag">manjaro</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git-Flow/" rel="tag">Git Flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bandwidth/" rel="tag">bandwidth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer/" rel="tag">computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/" rel="tag">docker compose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-command/" rel="tag">linux command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/manjaro/" rel="tag">manjaro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li></ul>
     </div>
   </div>
 
@@ -787,7 +793,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Git-Flow/" style="font-size: 10px;">Git Flow</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a> <a href="/tags/bandwidth/" style="font-size: 10px;">bandwidth</a> <a href="/tags/computer/" style="font-size: 10px;">computer</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker compose</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/manjaro/" style="font-size: 10px;">manjaro</a>
+      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Git-Flow/" style="font-size: 10px;">Git Flow</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a> <a href="/tags/bandwidth/" style="font-size: 10px;">bandwidth</a> <a href="/tags/computer/" style="font-size: 10px;">computer</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker compose</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/manjaro/" style="font-size: 10px;">manjaro</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a>
     </div>
   </div>
 
@@ -813,6 +819,10 @@
           </li>
         
           <li>
+            <a href="/2022/08/05/redis-application/">Redis应用场景</a>
+          </li>
+        
+          <li>
             <a href="/2022/08/03/docker/">Docker &amp; Docker Compose</a>
           </li>
         
@@ -822,10 +832,6 @@
         
           <li>
             <a href="/2022/07/21/git/">Git</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/16/linux/">Linux command</a>
           </li>
         
       </ul>
