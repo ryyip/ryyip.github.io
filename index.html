@@ -119,11 +119,88 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/08/11/computer-course/" data-id="cl6umzia300068vjwebf08x3u" data-title="Computer Course" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/08/11/computer-course/" data-id="cl6yx1kv90006oejw9a0c5ycv" data-title="Computer Course" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/computer/" rel="tag">computer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/course/" rel="tag">course</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-phpstorm-xdebug" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/08/05/phpstorm-xdebug/" class="article-date">
+  <time class="dt-published" datetime="2022-08-04T16:00:00.000Z" itemprop="datePublished">2022-08-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/xdebug/">xdebug</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/08/05/phpstorm-xdebug/">phpstorm设置xdebug</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>添加xdebug扩展，并加入一下设置</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">zend_extension=xdebug.so</span><br><span class="line">xdebug.mode=develop,coverage,debug,profile</span><br><span class="line">xdebug.start_with_request=yes</span><br><span class="line">xdebug.log=/dev/stdout</span><br><span class="line">xdebug.log_level=0</span><br><span class="line">xdebug.client_port=9003</span><br><span class="line"># idekey, 相当于连接密码，后面ide配置需要用到</span><br><span class="line">xdebug.idekey=docker</span><br><span class="line"># 填写docker宿主机的IP</span><br><span class="line">xdebug.client_host=&lt;YOUR_COMPUTER_IP&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>phpstorm 测试是否能连接 docker</p>
+<p><img src="/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug01.png" alt="phpstorm_debug01"></p>
+</li>
+<li><p>phpstorm 创建 PHP server</p>
+<p><img src="/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug02.png" alt="phpstorm_debug02"></p>
+<p><img src="/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug03.png" alt="phpstorm_debug03"></p>
+</li>
+<li><p>phpstorm 创建 PHP Remote Dedug</p>
+<p><img src="/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug04.png" alt="phpstorm_debug04"></p>
+<p><img src="/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug06.png" alt="phpstorm_debug06"></p>
+</li>
+<li><p>phpstorm 打开 listening for PHP debug connection</p>
+<p><img src="/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug07.png" alt="phpstorm_debug07"></p>
+</li>
+<li><p>phpstorm click in the debug button</p>
+<p><img src="/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug08.png" alt="phpstorm_debug08"></p>
+</li>
+</ol>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/08/05/phpstorm-xdebug/" data-id="cl6yx1kvj000soejwei56e392" data-title="phpstorm设置xdebug" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xdebug/" rel="tag">xdebug</a></li></ul>
 
     </footer>
   </div>
@@ -195,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/08/05/redis-application/" data-id="cl6umziah000s8vjwaoxr6vos" data-title="Redis应用场景" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/08/05/redis-application/" data-id="cl6yx1kvk000woejw8tdq1gel" data-title="Redis应用场景" class="article-share-link">Share</a>
       
       
       
@@ -267,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/08/03/docker/" data-id="cl6umzia5000a8vjwbcl6hmol" data-title="Docker &amp; Docker Compose" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/08/03/docker/" data-id="cl6yx1kva000aoejwgav7bugb" data-title="Docker &amp; Docker Compose" class="article-share-link">Share</a>
       
       
       
@@ -327,7 +404,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/21/git-flow/" data-id="cl6umzia9000f8vjwg38watnm" data-title="Git Flow" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/21/git-flow/" data-id="cl6yx1kve000foejwcxxp6qx5" data-title="Git Flow" class="article-share-link">Share</a>
       
       
       
@@ -367,7 +444,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#x6f;&#46;&#x79;&#101;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;">&#x6c;&#x65;&#x6f;&#46;&#x79;&#101;&#x40;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#x6f;&#x2e;&#x79;&#101;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#x6c;&#101;&#x6f;&#x2e;&#x79;&#101;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
@@ -391,7 +468,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/21/git/" data-id="cl6umziaa000g8vjw40y33xaw" data-title="Git" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/21/git/" data-id="cl6yx1kvf000goejwhxty329j" data-title="Git" class="article-share-link">Share</a>
       
       
       
@@ -464,7 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/16/linux/" data-id="cl6umziae000l8vjweyznf10d" data-title="Linux command" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/16/linux/" data-id="cl6yx1kvh000loejwaxtadb1u" data-title="Linux command" class="article-share-link">Share</a>
       
       
       
@@ -549,7 +626,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/15/manjaro/" data-id="cl6umziag000p8vjwgap7doeq" data-title="Manjaro" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/15/manjaro/" data-id="cl6yx1kvj000poejw9j9wbv8n" data-title="Manjaro" class="article-share-link">Share</a>
       
       
       
@@ -630,7 +707,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/30/software-recommend%20/" data-id="cl6umziak000z8vjwh2nwg5lf" data-title="Software Recommend" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/06/30/software-recommend%20/" data-id="cl6yx1kvl000zoejw7eobf2h6" data-title="Software Recommend" class="article-share-link">Share</a>
       
       
       
@@ -692,64 +769,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/15/bandwidth-internetSpeed-flow/" data-id="cl6umzia200058vjwfdvlb7ge" data-title="带宽、网速、流量之间有什么关系" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/06/15/bandwidth-internetSpeed-flow/" data-id="cl6yx1kv80005oejwdcjjfvbt" data-title="带宽、网速、流量之间有什么关系" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bandwidth/" rel="tag">bandwidth</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-encoding" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/06/15/encoding/" class="article-date">
-  <time class="dt-published" datetime="2022-06-14T16:00:00.000Z" itemprop="datePublished">2022-06-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/06/15/encoding/">Encoding</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>0xAA：</p>
-<p>0x 16进制</p>
-<p>0O 8进制</p>
-<p>16进制转为10进制</p>
-<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/15/encoding/" data-id="cl6umzia6000b8vjw3wvg7yuv" data-title="Encoding" class="article-share-link">Share</a>
-      
-      
-      
     </footer>
   </div>
   
@@ -773,7 +798,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/Yarn/">Yarn</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/computer/">computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/linux-command/">linux command</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Computer/">Computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/Yarn/">Yarn</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/computer/">computer</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/docker/">docker</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/linux-command/">linux command</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/xdebug/">xdebug</a></li></ul>
     </div>
   </div>
 
@@ -783,7 +808,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git-Flow/" rel="tag">Git Flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bandwidth/" rel="tag">bandwidth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer/" rel="tag">computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/" rel="tag">docker compose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-command/" rel="tag">linux command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/manjaro/" rel="tag">manjaro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dependent/" rel="tag">Dependent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git-Flow/" rel="tag">Git Flow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/" rel="tag">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nuxt-js/" rel="tag">Nuxt.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VPN/" rel="tag">VPN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js/" rel="tag">Vue.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Yarn/" rel="tag">Yarn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bandwidth/" rel="tag">bandwidth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/computer/" rel="tag">computer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/course/" rel="tag">course</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker-compose/" rel="tag">docker compose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-command/" rel="tag">linux command</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/manjaro/" rel="tag">manjaro</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/redis/" rel="tag">redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xdebug/" rel="tag">xdebug</a></li></ul>
     </div>
   </div>
 
@@ -793,7 +818,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Git-Flow/" style="font-size: 10px;">Git Flow</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a> <a href="/tags/bandwidth/" style="font-size: 10px;">bandwidth</a> <a href="/tags/computer/" style="font-size: 10px;">computer</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker compose</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/manjaro/" style="font-size: 10px;">manjaro</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a>
+      <a href="/tags/Dependent/" style="font-size: 10px;">Dependent</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Git-Flow/" style="font-size: 10px;">Git Flow</a> <a href="/tags/Node-js/" style="font-size: 10px;">Node.js</a> <a href="/tags/Nuxt-js/" style="font-size: 10px;">Nuxt.js</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/VPN/" style="font-size: 10px;">VPN</a> <a href="/tags/Vue-js/" style="font-size: 10px;">Vue.js</a> <a href="/tags/Yarn/" style="font-size: 10px;">Yarn</a> <a href="/tags/bandwidth/" style="font-size: 10px;">bandwidth</a> <a href="/tags/computer/" style="font-size: 10px;">computer</a> <a href="/tags/course/" style="font-size: 10px;">course</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/docker-compose/" style="font-size: 10px;">docker compose</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/linux-command/" style="font-size: 10px;">linux command</a> <a href="/tags/manjaro/" style="font-size: 10px;">manjaro</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/xdebug/" style="font-size: 10px;">xdebug</a>
     </div>
   </div>
 
@@ -819,6 +844,10 @@
           </li>
         
           <li>
+            <a href="/2022/08/05/phpstorm-xdebug/">phpstorm设置xdebug</a>
+          </li>
+        
+          <li>
             <a href="/2022/08/05/redis-application/">Redis应用场景</a>
           </li>
         
@@ -828,10 +857,6 @@
         
           <li>
             <a href="/2022/07/21/git-flow/">Git Flow</a>
-          </li>
-        
-          <li>
-            <a href="/2022/07/21/git/">Git</a>
           </li>
         
       </ul>
