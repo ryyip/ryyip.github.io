@@ -6,12 +6,12 @@
   
   <title>Git | Ryyip</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Generate ssh key该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pubssh-keygen -t rsa -b 4096 -C “&amp;#x6c;&amp;#x65;&amp;#x6f;&amp;#46;&amp;#121;&amp;#101;&amp;#x40;&amp;#x67;&amp;#109;&amp;#x61;&amp;#105;&amp;#108;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;“ssh-keygen -">
+  <meta name="description" content="Generate ssh key该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pubssh-keygen -t rsa -b 4096 -C “&amp;#x6c;&amp;#x65;&amp;#111;&amp;#46;&amp;#121;&amp;#101;&amp;#64;&amp;#x67;&amp;#x6d;&amp;#97;&amp;#105;&amp;#x6c;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;“ssh-keygen -t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git">
 <meta property="og:url" content="https://ryyip.github.io/2022/07/21/git/index.html">
 <meta property="og:site_name" content="Ryyip">
-<meta property="og:description" content="Generate ssh key该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pubssh-keygen -t rsa -b 4096 -C “&amp;#x6c;&amp;#x65;&amp;#x6f;&amp;#46;&amp;#121;&amp;#101;&amp;#x40;&amp;#x67;&amp;#109;&amp;#x61;&amp;#105;&amp;#108;&amp;#x2e;&amp;#99;&amp;#x6f;&amp;#x6d;“ssh-keygen -">
+<meta property="og:description" content="Generate ssh key该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pubssh-keygen -t rsa -b 4096 -C “&amp;#x6c;&amp;#x65;&amp;#111;&amp;#46;&amp;#121;&amp;#101;&amp;#64;&amp;#x67;&amp;#x6d;&amp;#97;&amp;#105;&amp;#x6c;&amp;#x2e;&amp;#x63;&amp;#111;&amp;#x6d;“ssh-keygen -t">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-20T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-08-15T05:55:33.007Z">
@@ -100,7 +100,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#x6f;&#46;&#121;&#101;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#x6c;&#x65;&#x6f;&#46;&#121;&#101;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#111;&#46;&#121;&#101;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x65;&#111;&#46;&#121;&#101;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
@@ -124,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/21/git/" data-id="cl6yxh4dv000fbwjw50oog7d1" data-title="Git" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/21/git/" data-id="cl6yxndzb000fdujw4okk66s8" data-title="Git" class="article-share-link">Share</a>
       
       
       
@@ -136,19 +136,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2022/08/03/docker/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2022/07/21/git-flow/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Docker &amp; Docker Compose
+          Git Flow
         
       </div>
     </a>
   
   
-    <a href="/2022/07/21/git-flow/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2022/07/16/linux/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Git Flow</div>
+      <div class="article-nav-title">Linux command</div>
     </a>
   
 </nav>
@@ -223,7 +223,7 @@
           </li>
         
           <li>
-            <a href="/2022/07/21/git/">Git</a>
+            <a href="/2022/07/21/git-flow/">Git Flow</a>
           </li>
         
       </ul>
