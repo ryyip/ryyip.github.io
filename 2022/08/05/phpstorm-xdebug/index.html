@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   
   
-  <title>phpstorm设置xdebug | Ryyip</title>
+  <title>phpstorm &amp; vscode setting xdebug | Ryyip</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="添加xdebug扩展，并加入一下设置  12345678910zend_extension&#x3D;xdebug.soxdebug.mode&#x3D;develop,coverage,debug,profilexdebug.start_with_request&#x3D;yesxdebug.log&#x3D;&#x2F;dev&#x2F;stdoutxdebug.log_level&#x3D;0xdebug.client_port&#x3D;9003# idekey,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="phpstorm设置xdebug">
+<meta property="og:title" content="phpstorm &amp; vscode setting xdebug">
 <meta property="og:url" content="https://ryyip.github.io/2022/08/05/phpstorm-xdebug/index.html">
 <meta property="og:site_name" content="Ryyip">
 <meta property="og:description" content="添加xdebug扩展，并加入一下设置  12345678910zend_extension&#x3D;xdebug.soxdebug.mode&#x3D;develop,coverage,debug,profilexdebug.start_with_request&#x3D;yesxdebug.log&#x3D;&#x2F;dev&#x2F;stdoutxdebug.log_level&#x3D;0xdebug.client_port&#x3D;9003# idekey,">
@@ -20,8 +20,10 @@
 <meta property="og:image" content="https://ryyip.github.io/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug06.png">
 <meta property="og:image" content="https://ryyip.github.io/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug07.png">
 <meta property="og:image" content="https://ryyip.github.io/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug08.png">
+<meta property="og:image" content="https://ryyip.github.io/home/leo/www/html/hexo-blog/source/sr/vscode_php_debug01.png">
+<meta property="og:image" content="https://ryyip.github.io/home/leo/www/html/hexo-blog/source/sr/vscode_php_debug02.png">
 <meta property="article:published_time" content="2022-08-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-18T10:42:58.805Z">
+<meta property="article:modified_time" content="2022-08-18T10:54:49.859Z">
 <meta property="article:author" content="Leo Ye">
 <meta property="article:tag" content="xdebug">
 <meta name="twitter:card" content="summary">
@@ -100,7 +102,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      phpstorm设置xdebug
+      phpstorm &amp; vscode setting xdebug
     </h1>
   
 
@@ -132,6 +134,19 @@
 <p><img src="/home/leo/www/html/hexo-blog/source/sr/phpstorm_debug08.png" alt="phpstorm_debug08"></p>
 </li>
 </ol>
+<p><em>转载至：<a target="_blank" rel="noopener" href="https://dev.to/jackmiras/xdebug-in-phpstorm-with-docker-2al8">https://dev.to/jackmiras/xdebug-in-phpstorm-with-docker-2al8</a></em></p>
+<p>VSCode PHP Xdebug</p>
+<ol>
+<li><p>Download VSCode PHP Xdebug extension</p>
+</li>
+<li><p>You can generate the file by clicking in <em>Run and Debug &gt; create a launch.json file &gt; Docker: Debug in Container</em>, as the following screenshot shows:</p>
+<p><img src="/home/leo/www/html/hexo-blog/source/sr/vscode_php_debug01.png" alt="vscode_php_debug01"></p>
+<p><img src="/home/leo/www/html/hexo-blog/source/sr/vscode_php_debug02.png" alt="vscode_php_debug02"></p>
+</li>
+<li><p>configure the <strong>launch.json</strong> file you have to add in the <code>configurations</code> array an object with the properties name, type, request, port, and pathMappings which will leave you with a file looking like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;Listen for XDebug on Docker&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;php&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;port&quot;: 9003,</span><br><span class="line">            &quot;pathMappings&quot;: &#123;</span><br><span class="line">                &quot;/var/www/html/&quot;: &quot;$&#123;workspaceFolder&#125;&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><em>转载至：<a target="_blank" rel="noopener" href="https://dev.to/jackmiras/xdebug-in-vscode-with-docker-379l">https://dev.to/jackmiras/xdebug-in-vscode-with-docker-379l</a></em></p>
 
 <div id="gitalk-container"></div>
 <script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
@@ -145,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/08/05/phpstorm-xdebug/" data-id="cl6yx1kvj000soejwei56e392" data-title="phpstorm设置xdebug" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/08/05/phpstorm-xdebug/" data-id="cl6yx1kvj000soejwei56e392" data-title="phpstorm &amp; vscode setting xdebug" class="article-share-link">Share</a>
       
       
       
@@ -232,7 +247,7 @@
           </li>
         
           <li>
-            <a href="/2022/08/05/phpstorm-xdebug/">phpstorm设置xdebug</a>
+            <a href="/2022/08/05/phpstorm-xdebug/">phpstorm &amp; vscode setting xdebug</a>
           </li>
         
           <li>
