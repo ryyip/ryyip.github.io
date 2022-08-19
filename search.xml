@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>快速创建自己的VPN服务</title>
+    <url>/2022/06/10/VPN/</url>
+    <content><![CDATA[<p>本文介绍的是来自github的开源项目<a href="https://github.com/hwdsl2/setup-ipsec-vpn">setup-ipsec-vpn</a>，想要全面了解项目的各项设置，可查看其详尽的说明文档。</p>
+<h3 id="Step-1-服务端安装"><a href="#Step-1-服务端安装" class="headerlink" title="Step 1. 服务端安装"></a>Step 1. 服务端安装</h3><p>首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。</p>
+<p>使用以下命令快速搭建 IPsec VPN 服务器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://get.vpnsetup.net -qO vpn.sh &amp;&amp; sudo sh vpn.sh</span><br></pre></td></tr></table></figure>
+
+<p>你的 VPN 登录凭证将会被自动随机生成，并在安装完成后显示。</p>
+<p>VPN客户端有两种，所用登录凭证都在安装完成时，展示在界面上，记得保存</p>
+<p>a. IPsec&#x2F;L2TP</p>
+<p>通过在客户端设置VPN的用户名，密码，IPsec PSK. 这种方式不需要下载相应文件，仅需要配置即可使用，但这种方式比较繁琐的是，期间有可能遇到各种各样的报错，手机端（Android 12+）不支持。推荐使用下面这种</p>
+<p>b. IKEv2</p>
+<p>&#x2F;root&#x2F;vpnclient.p12 (for Windows &amp; Linux)<br>&#x2F;root&#x2F;vpnclient.sswan (for Android)<br>&#x2F;root&#x2F;vpnclient.mobileconfig (for iOS &amp; macOS)</p>
+<h3 id="Step-2-客户端安装"><a href="#Step-2-客户端安装" class="headerlink" title="Step 2. 客户端安装"></a>Step 2. 客户端安装</h3><p><a href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md">IKEv2 VPN 配置和使用指南</a></p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows:"></a>Windows:</h4><ol>
+<li><a href="https://github.com/hwdsl2/vpn-extras/releases/latest/download/ikev2_config_import.cmd">ikev2_config_import.cmd</a> 下载cmd文件，并将cmd文件与上面的 .p12放在同个目录下，</li>
+<li>选择 <strong>以管理员身份运行</strong> 并按提示操作，输入账号名，IP地址即可。</li>
+<li>其中遇到一个错误并且没有列入官方的报错列表中，顺便记录下来 “parameter is incorrect” 相应的解决方案再 <a href="https://github.com/trailofbits/algo/issues/1051">github issue</a> 中找到。</li>
+</ol>
+<p>Android, OS X (macOS), IOS 等手机端的，官方文档更加详细。</p>
+<p>*<strong>Linux 服务器购买渠道：</strong></p>
+<ol>
+<li><a href="https://vultr.com/">vultr.com</a> 最低配置服务器，费用是$6&#x2F;month。（首次注册赠送100美金的优惠，仅有14天有效期）</li>
+<li><a href="https://www.bwgyhw.cn/recommend">搬瓦工（国内）</a> <a href="https://bwh81.net/vps-hosting.php">搬瓦工（国外）</a> 最优惠的 $49.99&#x2F;year，有常用优惠码减 5 ~ 6%，黑五、双11，元旦优惠码减 11 ~ 12%，服务器IP被baned后，需购买更换IP服务（$8&#x2F;次）</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>VPN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue.js, Nuxt.js &amp; Node.js</title>
     <url>/2022/05/05/VueJs-NuxtJs-NodeJs/</url>
     <content><![CDATA[<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
@@ -80,40 +114,6 @@
       </tags>
   </entry>
   <entry>
-    <title>快速创建自己的VPN服务</title>
-    <url>/2022/06/10/VPN/</url>
-    <content><![CDATA[<p>本文介绍的是来自github的开源项目<a href="https://github.com/hwdsl2/setup-ipsec-vpn">setup-ipsec-vpn</a>，想要全面了解项目的各项设置，可查看其详尽的说明文档。</p>
-<h3 id="Step-1-服务端安装"><a href="#Step-1-服务端安装" class="headerlink" title="Step 1. 服务端安装"></a>Step 1. 服务端安装</h3><p>首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。</p>
-<p>使用以下命令快速搭建 IPsec VPN 服务器：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://get.vpnsetup.net -qO vpn.sh &amp;&amp; sudo sh vpn.sh</span><br></pre></td></tr></table></figure>
-
-<p>你的 VPN 登录凭证将会被自动随机生成，并在安装完成后显示。</p>
-<p>VPN客户端有两种，所用登录凭证都在安装完成时，展示在界面上，记得保存</p>
-<p>a. IPsec&#x2F;L2TP</p>
-<p>通过在客户端设置VPN的用户名，密码，IPsec PSK. 这种方式不需要下载相应文件，仅需要配置即可使用，但这种方式比较繁琐的是，期间有可能遇到各种各样的报错，手机端（Android 12+）不支持。推荐使用下面这种</p>
-<p>b. IKEv2</p>
-<p>&#x2F;root&#x2F;vpnclient.p12 (for Windows &amp; Linux)<br>&#x2F;root&#x2F;vpnclient.sswan (for Android)<br>&#x2F;root&#x2F;vpnclient.mobileconfig (for iOS &amp; macOS)</p>
-<h3 id="Step-2-客户端安装"><a href="#Step-2-客户端安装" class="headerlink" title="Step 2. 客户端安装"></a>Step 2. 客户端安装</h3><p><a href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md">IKEv2 VPN 配置和使用指南</a></p>
-<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows:"></a>Windows:</h4><ol>
-<li><a href="https://github.com/hwdsl2/vpn-extras/releases/latest/download/ikev2_config_import.cmd">ikev2_config_import.cmd</a> 下载cmd文件，并将cmd文件与上面的 .p12放在同个目录下，</li>
-<li>选择 <strong>以管理员身份运行</strong> 并按提示操作，输入账号名，IP地址即可。</li>
-<li>其中遇到一个错误并且没有列入官方的报错列表中，顺便记录下来 “parameter is incorrect” 相应的解决方案再 <a href="https://github.com/trailofbits/algo/issues/1051">github issue</a> 中找到。</li>
-</ol>
-<p>Android, OS X (macOS), IOS 等手机端的，官方文档更加详细。</p>
-<p>*<strong>Linux 服务器购买渠道：</strong></p>
-<ol>
-<li><a href="https://vultr.com/">vultr.com</a> 最低配置服务器，费用是$6&#x2F;month。（首次注册赠送100美金的优惠，仅有14天有效期）</li>
-<li><a href="https://www.bwgyhw.cn/recommend">搬瓦工（国内）</a> <a href="https://bwh81.net/vps-hosting.php">搬瓦工（国外）</a> 最优惠的 $49.99&#x2F;year，有常用优惠码减 5 ~ 6%，黑五、双11，元旦优惠码减 11 ~ 12%，服务器IP被baned后，需购买更换IP服务（$8&#x2F;次）</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>VPN</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>带宽、网速、流量之间有什么关系</title>
     <url>/2022/06/15/bandwidth-internetSpeed-flow/</url>
     <content><![CDATA[<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>1、带宽的统计单位是：比特&#x2F;秒（bps）：100M&#x3D;100Mbps；</p>
@@ -157,16 +157,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Encoding</title>
-    <url>/2022/06/15/encoding/</url>
-    <content><![CDATA[<p>0xAA：</p>
-<p>0x 16进制</p>
-<p>0O 8进制</p>
-<p>16进制转为10进制</p>
-<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Docker &amp; Docker Compose</title>
     <url>/2022/08/03/docker/</url>
     <content><![CDATA[<p>​		上个月将系统更换成了Manjaro，期间顺理了相关软件推荐，命令的简要使用等，今天总结一下docker的使用及遇到的问题。</p>
@@ -198,6 +188,16 @@
       </tags>
   </entry>
   <entry>
+    <title>Encoding</title>
+    <url>/2022/06/15/encoding/</url>
+    <content><![CDATA[<p>0xAA：</p>
+<p>0x 16进制</p>
+<p>0O 8进制</p>
+<p>16进制转为10进制</p>
+<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Git Flow</title>
     <url>/2022/07/21/git-flow/</url>
     <content><![CDATA[<h2 id="GIT-Flow"><a href="#GIT-Flow" class="headerlink" title="GIT Flow"></a><em>GIT Flow</em></h2><h3 id="Initial"><a href="#Initial" class="headerlink" title="Initial"></a>Initial</h3><p>[master]$ git flow init<br>[develop]$ git push –set-upstream origin develop</p>
@@ -218,7 +218,7 @@
   <entry>
     <title>Git</title>
     <url>/2022/07/21/git/</url>
-    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#111;&#x2e;&#121;&#x65;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#108;&#101;&#111;&#x2e;&#121;&#x65;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#x6f;&#46;&#x79;&#x65;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x6c;&#101;&#x6f;&#46;&#x79;&#x65;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
