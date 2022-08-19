@@ -147,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/08/18/phpstorm-xdebug/" data-id="cl6yxndzh000qdujw62qyce14" data-title="PHPStorm &amp; VSCode Setting Xdebug" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/08/18/phpstorm-xdebug/" data-id="cl6zv9h10000vxkjw2nfpafa1" data-title="PHPStorm &amp; VSCode Setting Xdebug" class="article-share-link">Share</a>
       
       
       
@@ -209,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/08/11/computer-course/" data-id="cl6yxndz8000adujw7xangu5m" data-title="Computer Course" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/08/11/computer-course/" data-id="cl6zv9h0q0006xkjw6tkj7ubb" data-title="Computer Course" class="article-share-link">Share</a>
       
       
       
@@ -285,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/08/05/redis-application/" data-id="cl6yxndzl000zdujw5nx0ex9f" data-title="Redis应用场景" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/08/05/redis-application/" data-id="cl6zv9h0z000rxkjwa5yc3p3q" data-title="Redis应用场景" class="article-share-link">Share</a>
       
       
       
@@ -357,11 +357,75 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/08/03/docker/" data-id="cl6yxndz60006dujw4ekna18x" data-title="Docker &amp; Docker Compose" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/08/03/docker/" data-id="cl6zv9h0r000axkjw4dkhdc3i" data-title="Docker &amp; Docker Compose" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker-compose/" rel="tag">docker compose</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/07/21/git/" class="article-date">
+  <time class="dt-published" datetime="2022-07-20T16:00:00.000Z" itemprop="datePublished">2022-07-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2022/07/21/git/">Git</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#111;&#x2e;&#x79;&#101;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;">&#x6c;&#101;&#111;&#x2e;&#x79;&#101;&#64;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
+
+<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br></pre></td></tr></table></figure>
+
+<p>#Stash</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop stash@&#123;1&#125; #apply &amp; drop</span><br></pre></td></tr></table></figure>
+
+<p>#GitHub 撤销某次 commit</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git reset &#123;commitId&#125;：回滚到某次提交。</span><br><span class="line">git reset --soft &#123;commitId&#125;：此次提交之后的修改会被退回到暂存区。</span><br><span class="line">git reset --hard &#123;commitId&#125;：此次提交之后的修改不做任何保留，git status 查看工作区是没有记录的。</span><br><span class="line">git revert &#123;commitId&#125;：放弃某次提交。git revert 之前的提交仍会保留在 git log 中，而此次撤销会做为一次新的提交。要撤销中间某次提交时，只需要对应的commitId即可。</span><br><span class="line">git rebase：当两个分支不在一条线上，需要执行 merge 操作时使用该命令。</span><br></pre></td></tr></table></figure>
+
+<div id="gitalk-container"></div>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+		<script>
+		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
+	    gitalkConfig.id = md5(location.pathname);
+		var gitalk = new Gitalk(gitalkConfig);
+	    gitalk.render("gitalk-container");
+	    </script>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ryyip.github.io/2022/07/21/git/" data-id="cl6zv9h0u000fxkjw8eaa2nbm" data-title="Git" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
 
     </footer>
   </div>
@@ -417,75 +481,11 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/21/git-flow/" data-id="cl6yxndz9000bdujwhn4e87nh" data-title="Git Flow" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/21/git-flow/" data-id="cl6zv9h0w000kxkjwglbwbdzu" data-title="Git Flow" class="article-share-link">Share</a>
       
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git-Flow/" rel="tag">Git Flow</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-git" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/07/21/git/" class="article-date">
-  <time class="dt-published" datetime="2022-07-20T16:00:00.000Z" itemprop="datePublished">2022-07-21</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tools/">Tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/07/21/git/">Git</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#111;&#46;&#121;&#101;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x65;&#111;&#46;&#121;&#101;&#64;&#x67;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
-
-<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br></pre></td></tr></table></figure>
-
-<p>#Stash</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop stash@&#123;1&#125; #apply &amp; drop</span><br></pre></td></tr></table></figure>
-
-<p>#GitHub 撤销某次 commit</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git reset &#123;commitId&#125;：回滚到某次提交。</span><br><span class="line">git reset --soft &#123;commitId&#125;：此次提交之后的修改会被退回到暂存区。</span><br><span class="line">git reset --hard &#123;commitId&#125;：此次提交之后的修改不做任何保留，git status 查看工作区是没有记录的。</span><br><span class="line">git revert &#123;commitId&#125;：放弃某次提交。git revert 之前的提交仍会保留在 git log 中，而此次撤销会做为一次新的提交。要撤销中间某次提交时，只需要对应的commitId即可。</span><br><span class="line">git rebase：当两个分支不在一条线上，需要执行 merge 操作时使用该命令。</span><br></pre></td></tr></table></figure>
-
-<div id="gitalk-container"></div>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.12.0/js/md5.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"><script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-		<script>
-		var gitalkConfig = {"enable":true,"clientID":"44c27e5e7dd2f7e7282d","clientSecret":"121de2f19feafcee9a2dc1b1593f2a80565b55f6","repo":"ryyip.github.io","owner":"ryyip","admin":"ryyip","distractionFreeMode":true};
-	    gitalkConfig.id = md5(location.pathname);
-		var gitalk = new Gitalk(gitalkConfig);
-	    gitalk.render("gitalk-container");
-	    </script>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/21/git/" data-id="cl6yxndzb000fdujw4okk66s8" data-title="Git" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li></ul>
 
     </footer>
   </div>
@@ -554,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/16/linux/" data-id="cl6yxndzf000mdujwhd3j5ahu" data-title="Linux command" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/16/linux/" data-id="cl6zv9h0x000lxkjw2qeh6aaa" data-title="Linux command" class="article-share-link">Share</a>
       
       
       
@@ -639,7 +639,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/07/15/manjaro/" data-id="cl6yxndzi000sdujw47z8dg80" data-title="Manjaro" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/07/15/manjaro/" data-id="cl6zv9h0y000pxkjwbk5penh5" data-title="Manjaro" class="article-share-link">Share</a>
       
       
       
@@ -720,7 +720,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/30/software-recommend%20/" data-id="cl6yxndzj000wdujw9la4d4zi" data-title="Software Recommend" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/06/30/software-recommend%20/" data-id="cl6zv9h10000zxkjw46fkh8fn" data-title="Software Recommend" class="article-share-link">Share</a>
       
       
       
@@ -782,7 +782,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://ryyip.github.io/2022/06/15/bandwidth-internetSpeed-flow/" data-id="cl6yxndz50005dujw3nad6ys8" data-title="带宽、网速、流量之间有什么关系" class="article-share-link">Share</a>
+      <a data-url="https://ryyip.github.io/2022/06/15/bandwidth-internetSpeed-flow/" data-id="cl6zv9h0p0005xkjw7kryg38d" data-title="带宽、网速、流量之间有什么关系" class="article-share-link">Share</a>
       
       
       
@@ -869,7 +869,7 @@
           </li>
         
           <li>
-            <a href="/2022/07/21/git-flow/">Git Flow</a>
+            <a href="/2022/07/21/git/">Git</a>
           </li>
         
       </ul>
