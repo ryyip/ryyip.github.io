@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Vue.js, Nuxt.js &amp; Node.js</title>
+    <url>/2022/05/05/VueJs-NuxtJs-NodeJs/</url>
+    <content><![CDATA[<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
+<p>JS依赖管理工具</p>
+<p><strong>NPM</strong></p>
+<p>Node.js自带的依赖管理工具</p>
+<p><strong>Vue.js</strong></p>
+<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p><strong>Nuxt.js</strong></p>
+<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
+<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
+<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
+<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
+<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
+<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
+<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
+<p><strong>Node.js</strong></p>
+<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
+<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
+<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>Vue.js</tag>
+        <tag>Nuxt.js</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Yarn</title>
+    <url>/2022/05/05/Yarn/</url>
+    <content><![CDATA[<p><em><strong>Yarn: 依赖包管理工具</strong></em></p>
+<p><a href="http://yarnpkg.top/WorkFlow.html">官方文档</a></p>
+<h4 id="项目初始化"><a href="#项目初始化" class="headerlink" title="项目初始化"></a>项目初始化</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn init</span><br></pre></td></tr></table></figure>
+
+<h4 id="管理依赖"><a href="#管理依赖" class="headerlink" title="管理依赖"></a>管理依赖</h4><h5 id="新增依赖"><a href="#新增依赖" class="headerlink" title="新增依赖"></a>新增依赖</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn add [package]</span><br><span class="line">yarn add [package]@[version]</span><br><span class="line">yarn add [package]@[tag]</span><br></pre></td></tr></table></figure>
+
+<h5 id="更新依赖"><a href="#更新依赖" class="headerlink" title="更新依赖"></a>更新依赖</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn upgrade [package]</span><br><span class="line">yarn upgrade [package]@[version]</span><br><span class="line">yarn upgrade [package]@[dist-tag]</span><br></pre></td></tr></table></figure>
+
+<h5 id="删除依赖"><a href="#删除依赖" class="headerlink" title="删除依赖"></a>删除依赖</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn remove [package]</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">yarn install</span><br></pre></td></tr></table></figure>
+
+<p><a href="http://yarnpkg.top/Cli-install.html"><code>yarn install</code></a>命令用来安装一个项目的全部依赖。项目的这些依赖是在项目的<code>package.json</code>文件中描述的，并被储存在<code>yarn.lock</code>文件中</p>
+<p>通常在下面两种情况下需要安装依赖</p>
+<ol>
+<li><p>一个全新的项目刚刚被下载</p>
+</li>
+<li><p>依赖有了更新</p>
+</li>
+</ol>
+<hr>
+<h4 id="Yarn的优点"><a href="#Yarn的优点" class="headerlink" title="Yarn的优点"></a>Yarn的优点</h4><ul>
+<li><strong>速度快</strong> 。速度快主要来自以下两个方面：</li>
+</ul>
+<ol>
+<li>并行安装：无论 npm 还是 Yarn 在执行包的安装时，都会执行一系列任务。npm 是按照队列执行每个 package，也就是说必须要等到当前 package 安装完成之后，才能继续后面的安装。而 Yarn 是同步执行所有任务，提高了性能。</li>
+<li>离线模式：如果之前已经安装过一个软件包，用Yarn再次安装时之间从缓存中获取，就不用像npm那样再从网络下载了。</li>
+</ol>
+<ul>
+<li>安装<strong>版本统一</strong>：为了防止拉取到不同的版本，Yarn 有一个锁定文件 (lock file) 记录了被确切安装上的模块的版本号。每次只要新增了一个模块，Yarn 就会创建（或更新）yarn.lock 这个文件。这么做就保证了，每一次拉取同一个项目依赖时，使用的都是一样的模块版本。npm 其实也有办法实现处处使用相同版本的 packages，但需要开发者执行 npm shrinkwrap 命令。这个命令将会生成一个锁定文件，在执行 npm install 的时候，该锁定文件会先被读取，和 Yarn 读取 yarn.lock 文件一个道理。npm 和 Yarn 两者的不同之处在于，Yarn 默认会生成这样的锁定文件，而 npm 要通过 shrinkwrap 命令生成 npm-shrinkwrap.json 文件，只有当这个文件存在的时候，packages 版本信息才会被记录和更新。</li>
+<li><strong>更简洁的输出</strong>：npm 的输出信息比较冗长。在执行 npm install 的时候，命令行里会不断地打印出所有被安装上的依赖。相比之下，Yarn 简洁太多：默认情况下，结合了 emoji直观且直接地打印出必要的信息，也提供了一些命令供开发者查询额外的安装信息。</li>
+<li><strong>多注册来源处理：</strong>所有的依赖包，不管他被不同的库间接关联引用多少次，安装这个包时，只会从一个注册来源去装，要么是 npm 要么是 bower, 防止出现混乱不一致。</li>
+<li><strong>更好的语义化</strong>： yarn改变了一些npm命令的名称，比如 yarn add&#x2F;remove，感觉上比 npm 原本的 install&#x2F;uninstall 要更清晰。</li>
+</ul>
+<h4 id="Yarn和npm命令对比"><a href="#Yarn和npm命令对比" class="headerlink" title="Yarn和npm命令对比"></a>Yarn和npm命令对比</h4><figure class="highlight text"><table><tr><td class="code"><pre><span class="line">npm install === yarn </span><br><span class="line">npm install taco --save === yarn add taco</span><br><span class="line">npm uninstall taco --save === yarn remove taco</span><br><span class="line">npm install taco --save-dev === yarn add taco --dev</span><br><span class="line">npm update --save === yarn upgrade</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Tools</category>
+        <category>Yarn</category>
+      </categories>
+      <tags>
+        <tag>Yarn</tag>
+        <tag>Dependent</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快速创建自己的VPN服务</title>
+    <url>/2022/06/10/VPN/</url>
+    <content><![CDATA[<p>本文介绍的是来自github的开源项目<a href="https://github.com/hwdsl2/setup-ipsec-vpn">setup-ipsec-vpn</a>，想要全面了解项目的各项设置，可查看其详尽的说明文档。</p>
+<h3 id="Step-1-服务端安装"><a href="#Step-1-服务端安装" class="headerlink" title="Step 1. 服务端安装"></a>Step 1. 服务端安装</h3><p>首先，在你的 Linux 服务器* 上全新安装 Ubuntu, Debian 或者 CentOS。</p>
+<p>使用以下命令快速搭建 IPsec VPN 服务器：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://get.vpnsetup.net -qO vpn.sh &amp;&amp; sudo sh vpn.sh</span><br></pre></td></tr></table></figure>
+
+<p>你的 VPN 登录凭证将会被自动随机生成，并在安装完成后显示。</p>
+<p>VPN客户端有两种，所用登录凭证都在安装完成时，展示在界面上，记得保存</p>
+<p>a. IPsec&#x2F;L2TP</p>
+<p>通过在客户端设置VPN的用户名，密码，IPsec PSK. 这种方式不需要下载相应文件，仅需要配置即可使用，但这种方式比较繁琐的是，期间有可能遇到各种各样的报错，手机端（Android 12+）不支持。推荐使用下面这种</p>
+<p>b. IKEv2</p>
+<p>&#x2F;root&#x2F;vpnclient.p12 (for Windows &amp; Linux)<br>&#x2F;root&#x2F;vpnclient.sswan (for Android)<br>&#x2F;root&#x2F;vpnclient.mobileconfig (for iOS &amp; macOS)</p>
+<h3 id="Step-2-客户端安装"><a href="#Step-2-客户端安装" class="headerlink" title="Step 2. 客户端安装"></a>Step 2. 客户端安装</h3><p><a href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/docs/ikev2-howto-zh.md">IKEv2 VPN 配置和使用指南</a></p>
+<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows:"></a>Windows:</h4><ol>
+<li><a href="https://github.com/hwdsl2/vpn-extras/releases/latest/download/ikev2_config_import.cmd">ikev2_config_import.cmd</a> 下载cmd文件，并将cmd文件与上面的 .p12放在同个目录下，</li>
+<li>选择 <strong>以管理员身份运行</strong> 并按提示操作，输入账号名，IP地址即可。</li>
+<li>其中遇到一个错误并且没有列入官方的报错列表中，顺便记录下来 “parameter is incorrect” 相应的解决方案再 <a href="https://github.com/trailofbits/algo/issues/1051">github issue</a> 中找到。</li>
+</ol>
+<p>Android, OS X (macOS), IOS 等手机端的，官方文档更加详细。</p>
+<p>*<strong>Linux 服务器购买渠道：</strong></p>
+<ol>
+<li><a href="https://vultr.com/">vultr.com</a> 最低配置服务器，费用是$6&#x2F;month。（首次注册赠送100美金的优惠，仅有14天有效期）</li>
+<li><a href="https://www.bwgyhw.cn/recommend">搬瓦工（国内）</a> <a href="https://bwh81.net/vps-hosting.php">搬瓦工（国外）</a> 最优惠的 $49.99&#x2F;year，有常用优惠码减 5 ~ 6%，黑五、双11，元旦优惠码减 11 ~ 12%，服务器IP被baned后，需购买更换IP服务（$8&#x2F;次）</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>VPN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>带宽、网速、流量之间有什么关系</title>
+    <url>/2022/06/15/bandwidth-internetSpeed-flow/</url>
+    <content><![CDATA[<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>1、带宽的统计单位是：比特&#x2F;秒（bps）：100M&#x3D;100Mbps；</p>
+<p>2、网速是数据传输的速度，单位是：字节&#x2F;秒（B&#x2F;s KB&#x2F;s MB&#x2F;s）：1MB&#x2F;s&#x3D;1024KB&#x2F;s ；1KB&#x2F;s&#x3D;1024B&#x2F;s。</p>
+<p>3、流量是用户上网发送和接收的数据量总和，单位是：字节（Byte）；</p>
+<p>比特是信息的最小单位：1字节&#x3D;8比特（1B&#x3D;8bit或者1B&#x3D;8b）；1字节&#x2F;秒&#x3D;8比特&#x2F;秒（1B&#x2F;s&#x3D;8bps）</p>
+<h3 id="如何换算"><a href="#如何换算" class="headerlink" title="如何换算"></a>如何换算</h3><p>我们这里来用实例看下：比如200M宽带下载速度是多少？</p>
+<p>首先，运营商所说的200M宽带光纤，完整单位是200Mbps，而我们电脑中所说的下载速度单位是：MB。因此200M宽带下载速度并不代表下载速度就是200Mb&#x2F;s，而是需要按照如下公式进行换算：</p>
+<p>1Mbps&#x3D;1024Kbps&#x3D;1024&#x2F;8KBps&#x3D;128KB&#x2F;s</p>
+<p>也就是说 1M 的宽带下载速度不会超过 128KB&#x2F;s ，也就是理论上1秒钟，可以下载128K的内容，实际上1M宽带，下载速度100k&#x2F;s就属于正常，毕竟理论值不一定能达到。</p>
+<p>200M宽带的下载速度理论上为：128KB&#x2F;s x 200 &#x3D; 25600 KB&#x2F;s &#x3D; 25.6MB&#x2F;s</p>
+<p>正常的下载速度是：25M；当然，这是理论上的下载速度，在实际使用的过程中，可能会略低于&#x2F;高于25M，一般来说上下浮动1M都属于正常的，即24-26都属于正常的。</p>
+<p>如果你家网速测试小于25M太多的话，要么是连的假200M带宽，要么就是其它的路由器、光猫没有使用千兆的。</p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+      </categories>
+      <tags>
+        <tag>bandwidth</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Computer Course</title>
+    <url>/2022/08/11/computer-course/</url>
+    <content><![CDATA[<p>1【浙江大学】数据结构 陈越（全149讲）<a href="https://www.bilibili.com/video/BV1vq4y1v75A?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a> <a href="https://open.163.com/newview/movie/free?pid=AEUHNOPC5&mid=FEUHNOPCU">网易公开课</a></p>
+<!--https://www.icourse163.org -->
+
+<p>2【C语言】翁恺C语言程序编程全系列 <a href="https://www.bilibili.com/video/BV1sJ411E7St?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
+<p>3 大学计算机基础  <a href="https://www.icourse163.org/course/NUDT-17003?from=searchPage">跳转</a></p>
+<p>4 计算机组成原理（哈工大刘宏伟）135讲（全）高清 <a href="https://www.bilibili.com/video/BV1t4411e7LH?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
+<!--转载自http://www.feemic.cn/mooc/icourse163/1205914219和http://www.feemic.cn/mooc/icourse163/1205913215 转载自慕课网哈工大刘宏伟的计算机组成原理，超清视频，讲义可在下方链接下载。 百度云：https://pan.baidu.com/s/1dqyr-PzSfjJKMSibyaUL3Q 提取码：vs1f-->
+
+<p>5 CMU15-445</p>
+]]></content>
+      <categories>
+        <category>computer</category>
+      </categories>
+      <tags>
+        <tag>computer</tag>
+        <tag>course</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Encoding</title>
+    <url>/2022/06/15/encoding/</url>
+    <content><![CDATA[<p>0xAA：</p>
+<p>0x 16进制</p>
+<p>0O 8进制</p>
+<p>16进制转为10进制</p>
+<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Docker &amp; Docker Compose</title>
+    <url>/2022/08/03/docker/</url>
+    <content><![CDATA[<p>​		上个月将系统更换成了Manjaro，期间顺理了相关软件推荐，命令的简要使用等，今天总结一下docker的使用及遇到的问题。</p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul>
+<li>image (相当于镜像，里面各项配置)</li>
+<li>container (相当与一台台虚拟机)</li>
+<li>docker-compose (多容器合作，App容器，数据库容器)</li>
+<li>Portainer (容器可视化管理软件)</li>
+</ul>
+<h4 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h4><p>dockerfile (自动化脚本，用于创建镜像)</p>
+<p>docker-compose.yml (docker compose 配置文件)</p>
+<h4 id="镜像源地址修改"><a href="#镜像源地址修改" class="headerlink" title="镜像源地址修改"></a>镜像源地址修改</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;http://hub-mirror.c.163.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">#重启docker</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br><span class="line"></span><br><span class="line">#腾讯云的镜像地址</span><br><span class="line">https://mirror.ccs.tencentyun.com</span><br><span class="line"></span><br><span class="line">#网易的镜像地址</span><br><span class="line">http://hub-mirror.c.163.com</span><br><span class="line"></span><br><span class="line">#阿里云镜像地址，需要到自己的阿里云&quot;容器镜像服务-&gt;镜像加速器&quot;去复制自己的镜像地址</span><br><span class="line">https://xxxx.mirror.aliyuncs.com</span><br><span class="line"></span><br><span class="line">#daocloud发布的镜像地址</span><br><span class="line">http://f1361db2.m.daocloud.io</span><br></pre></td></tr></table></figure>
+
+<h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#创建container (第一次会先下载对应的镜像)</span><br><span class="line">docker run -itd -v /sys/fs/cgroup:/sys/fs/cgroup:ro --privileged=true --name=lnmp 2233466866/lnmp</span><br><span class="line">#查看容器信息</span><br><span class="line">docker inspect lnmp | grep IPAddress</span><br><span class="line">#进入容器console(*部分容器支持/bin/bash,部分支持/bin/sh)</span><br><span class="line">docker exec -it lnmp /bin/bash</span><br><span class="line">docker exec -it cgi /bin/bash</span><br><span class="line">docker exec -it proxy /bin/sh</span><br><span class="line">#在宿主机直接运行 指定容器 的命令</span><br><span class="line">docker exec -it cgi /bin/bash -c &quot;cd /var/www/html/app.gaatu.com &amp;&amp; php artisan migrate&quot;</span><br><span class="line">#复制容器内的文件或文件夹到宿主机</span><br><span class="line">docker cp cgi:/usr/local/etc/php/php.ini ~/docker-compose/docker-leo/docker/config/cgi/php.ini</span><br><span class="line"></span><br><span class="line">#查询所有container</span><br><span class="line">docker ps -a</span><br><span class="line">#查询所有image</span><br><span class="line">docker images</span><br><span class="line">#停止container</span><br><span class="line">docker stop containerName</span><br><span class="line">docker stop $(docker ps -a -q)</span><br><span class="line">#删除container</span><br><span class="line">docker rm containerName</span><br><span class="line">docker rm $(docker ps -a -q)</span><br><span class="line">#删除image</span><br><span class="line">docker rmi imageName</span><br><span class="line">docker rmi $(docker images -q)</span><br><span class="line"></span><br><span class="line">#Docker Composer</span><br><span class="line">docker-compose -f docker-compose.yml up -d </span><br><span class="line">docker-compose up -d</span><br><span class="line">docker-compose down -d</span><br><span class="line"></span><br><span class="line">#Docker仓库</span><br><span class="line">docker login</span><br><span class="line">docker tag &lt;IMAGE_ID&gt;|&lt;IMAGE_NAME&gt; &lt;REGISTRY_HOST&gt;/&lt;APPNAME&gt;:&lt;APPVERSION&gt;</span><br><span class="line">docker push &lt;REGISTRY_HOST&gt;/&lt;APPNAME&gt;:&lt;APPVERSION&gt;</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">docker tag 92bd352be65f ryyip/php7.2-fpm:1.1</span><br><span class="line">docker tag docker-leo_php72 ryyip/php7.2-fpm:1.1</span><br><span class="line">docker push ryyip/php7.2-fpm:1.1</span><br></pre></td></tr></table></figure>
+
+<h4 id="Container-Problems"><a href="#Container-Problems" class="headerlink" title="Container Problems"></a>Container Problems</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#image: mysql:8.0.29</span><br><span class="line">error: the server requested authentication method unknown to the client</span><br><span class="line"></span><br><span class="line">$ docker-compose exec mysql bash</span><br><span class="line">$ mysql -u root -p</span><br><span class="line">(login as root)</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;root&#x27;;</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;root&#x27;;</span><br><span class="line">ALTER USER &#x27;default&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;secret&#x27;;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#image: php:7.2-fpm</span><br><span class="line"></span><br><span class="line">#重启php服务(该容器自带的特定命令)</span><br><span class="line">kill -USR2 1</span><br></pre></td></tr></table></figure>
+
+<h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">https://github.com/ryyip/docker-leo</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>docker compose</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git Flow</title>
+    <url>/2022/07/21/git-flow/</url>
+    <content><![CDATA[<h2 id="GIT-Flow"><a href="#GIT-Flow" class="headerlink" title="GIT Flow"></a><em>GIT Flow</em></h2><h3 id="Initial"><a href="#Initial" class="headerlink" title="Initial"></a>Initial</h3><p>[master]$ git flow init<br>[develop]$ git push –set-upstream origin develop</p>
+<h3 id="Release"><a href="#Release" class="headerlink" title="Release"></a>Release</h3><p>[develop]$ git pull # Pull first and then choose an intial version number like V1.0.0.0 or V0.1.0.0 …<br>[develop]$ git flow release start V0.0.1.0 # VMajor.Minor.Release.Hotfix<br>[release&#x2F;V0.0.1.0]$ git flow release finish V0.0.1.0<br>[master]$ git push<br>[master]$ git push –tags</p>
+<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>[master]$ git flow feature start ST-6319-DEV-Workflow-V2.0 # ST-JiraNo-feature-Name-Version<br>[feature]$ git add .<br>[feature]$ git commit -m ‘ST-6774: Code Review Doc-Init’ # ST-TaskJiraNo: Task Name-Action(Init&#x2F;Update&#x2F;Done&#x2F;Fix Bug&#x2F;Approved&#x2F;Rejected…)<br>[feature]$ git push –set-upstream origin feature&#x2F;ST-10185-Purchase-Permission<br>root&#x2F;client&#x2F;ERP yarn generate</p>
+<h4 id="1-Feature-Release"><a href="#1-Feature-Release" class="headerlink" title="1. Feature Release"></a>1. Feature Release</h4><p>Mode 1:<br>[feature]$ git flow feature finish ST-8284-EstimatedPaymentDate<br>Mode 2:<br>[feature]$ git flow feature publish ST-6319-DEV-Workflow-V2.0 # The new unpublished feature<br>[feature]$ git push # The published feature</p>
+<h4 id="2-Feature-Testing"><a href="#2-Feature-Testing" class="headerlink" title="2. Feature Testing"></a>2. Feature Testing</h4><p>[staging][develop]$ git pull<br>[staging][develop]$ git checkout feature&#x2F;ST-6319-DEV-Workflow-V2.0</p>
+<h4 id="3-Feature-Release"><a href="#3-Feature-Release" class="headerlink" title="3. Feature Release"></a>3. Feature Release</h4><p>[develop]$ git pull # Pull first<br>[develop]$ git flow release start V0.0.2.0 # VMajor.Minor.Release.Hotfix<br>[release&#x2F;V0.0.2.0]$ git flow release finish V0.0.2.0<br>[master]$ git push<br>[master]$ git push –tags</p>
+<h3 id="Hotfix"><a href="#Hotfix" class="headerlink" title="Hotfix"></a>Hotfix</h3><p>[develop]$ git pull # Pull first<br>[develop]$ git flow hotfix start V0.0.2.1 # VMajor.Minor.Release.Hotfix<br>[hotfix&#x2F;V0.0.2.1]$ git add .<br>[hotfix&#x2F;V0.0.2.1]$ git commit -m ‘ST-6774: Code Review Doc-Fix Bug’<br>[hotfix&#x2F;V0.0.2.1]$ git flow hotfix finish V0.0.2.1<br>[master]$ git push<br>[master]$ git push –tags</p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Git Flow</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git</title>
+    <url>/2022/07/21/git/</url>
+    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#111;&#x2e;&#121;&#x65;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#108;&#101;&#111;&#x2e;&#121;&#x65;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
+
+<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br></pre></td></tr></table></figure>
+
+<p>#Stash</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop stash@&#123;1&#125; #apply &amp; drop</span><br></pre></td></tr></table></figure>
+
+<p>#GitHub 撤销某次 commit</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset &#123;commitId&#125;：回滚到某次提交。</span><br><span class="line">git reset --soft &#123;commitId&#125;：此次提交之后的修改会被退回到暂存区。</span><br><span class="line">git reset --hard &#123;commitId&#125;：此次提交之后的修改不做任何保留，git status 查看工作区是没有记录的。</span><br><span class="line">git revert &#123;commitId&#125;：放弃某次提交。git revert 之前的提交仍会保留在 git log 中，而此次撤销会做为一次新的提交。要撤销中间某次提交时，只需要对应的commitId即可。</span><br><span class="line">git rebase：当两个分支不在一条线上，需要执行 merge 操作时使用该命令。</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2022/04/30/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h3 id="Clean-to-static-files"><a href="#Clean-to-static-files" class="headerlink" title="Clean to static files"></a>Clean to static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<h3 id="Generate-static-files-amp-Deploy-to-remote-sites"><a href="#Generate-static-files-amp-Deploy-to-remote-sites" class="headerlink" title="Generate static files &amp; Deploy to remote sites"></a>Generate static files &amp; Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>Linux command</title>
+    <url>/2022/07/16/linux/</url>
+    <content><![CDATA[<h3 id="User-amp-Group"><a href="#User-amp-Group" class="headerlink" title="User &amp; Group"></a>User &amp; Group</h3><p>切换root<br>sudo su</p>
+<p>切换用户<br>su leo</p>
+<ol>
+<li>chgrp：更改文件属组<br>chgrp [-R] 属组名 文件名</li>
+<li>chown：更改文件属主，也可以同时更改文件属组<br>chown [–R] 属主名 文件名<br>chown [-R] 属主名:属组名 文件名</li>
+<li>chmod: 更改文件权限<br>chmod [-R] 755 文件名</li>
+</ol>
+<p>查看当前用户所属组: groups</p>
+<p>查看指定用户所属组: groups leo</p>
+<p>直接查看组文件: cat &#x2F;etc&#x2F;group</p>
+<p>wget <a href="http://example.com/file.tar">http://example.com/file.tar</a> -O &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar<br>curl <a href="http://example.com/file.tar">http://example.com/file.tar</a> -o &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar</p>
+<p>cgroups<br>cgroups(Control Groups) 是 linux 内核提供的一种机制，这种机制可以根据需求把一系列系统任务及其子任务整合(或分隔)到按资源划分等级的不同组内，从而为系统资源管理提供一个统一的框架。简单说，cgroups 可以限制、记录任务组所使用的物理资源。本质上来说，cgroups 是内核附加在程序上的一系列钩子(hook)，通过程序运行时对资源的调度触发相应的钩子以达到资源追踪和限制的目的。</p>
+<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p>#lsof(list open files)是一个列出当前系统打开文件的工具。<br>lsof -i:端口号</p>
+<p>#netstat -tunlp 用于显示 tcp，udp 的端口和进程等相关情况。<br>netstat -tunlp | grep 端口号</p>
+<p>sudo update-alternatives –set php &#x2F;usr&#x2F;bin&#x2F;php7.2</p>
+<h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><p>快速创建文件<br>echo &gt; test.txt</p>
+<h3 id="Setting"><a href="#Setting" class="headerlink" title="Setting"></a>Setting</h3><p>source命令<br>通常用于重新执行刚修改的初始化文件，使之立即生效，而不必注销并重新登录。因为linux所有的操作都会变成文件的格式存在。<br>当我修改了&#x2F;etc&#x2F;profile文件，我想让它立刻生效，而不用重新登录；这时就想到用source命令，如:source &#x2F;etc&#x2F;profile<br>语法<br>source filename</p>
+<h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p>Host app-staging.local.com<br>  HostName app-staging<br>  User ubuntu<br>  IdentityFile ~&#x2F;Personal&#x2F;AWS-CN.pem<br>  Port 22</p>
+<p>Host *<br>  IdentitiesOnly&#x3D;yes<br>  ServerAliveInterval 60<br>  AddKeysToAgent yes<br>  IdentityFile ~&#x2F;.ssh&#x2F;AWS-CN.pem</p>
+<h3 id="System"><a href="#System" class="headerlink" title="System"></a>System</h3><p>查看系统版本<br>cat &#x2F;etc&#x2F;os-release<br>lsb_release -a<br>hostnamectl</p>
+]]></content>
+      <categories>
+        <category>linux</category>
+        <category>linux command</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>linux command</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Manjaro</title>
+    <url>/2022/07/15/manjaro/</url>
+    <content><![CDATA[<p>镜像源修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># change to pacman china mirrors</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
+
+<p>中文输入法安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Install sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line"></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"></span><br><span class="line"># export LC_ALL=zh_CN.UTF-8 # 这个是控制系统界面的语言类型的，这一行意味着显示中文。这里还是注销了吧。</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=“@im=fcitx”</span><br></pre></td></tr></table></figure>
+
+<p>pacman</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
+
+<p>推荐软件安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br><span class="line">github-desktop</span><br><span class="line">SmartGit (社区版每次使用都需要等待30s)</span><br><span class="line">gitgb</span><br></pre></td></tr></table></figure>
+
+<p>软件安装方式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
+
+<p>Antojump</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/Program/Installer</span><br><span class="line">git clone https://github.com/wting/autojump.git</span><br><span class="line">cd autojump</span><br><span class="line">./install.py</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br><span class="line">autojump -v</span><br></pre></td></tr></table></figure>
+
+<p>设置命令行的别称</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">alias ll=&#x27;ls -l&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>SSH Error:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SSH Error:</span><br><span class="line">ssh erp-staging.gaatu.com</span><br><span class="line">sign_and_send_pubkey: no mutual signature supported</span><br><span class="line">ubuntu@erp-staging.gaatu.com&#x27;s password:</span><br><span class="line">ubuntu@erp-staging.gaatu.com: Permission denied (publickey,password).</span><br><span class="line"></span><br><span class="line">Solution: </span><br><span class="line">set the ~/.ssh/config</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line">or</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-dss</span><br></pre></td></tr></table></figure>
+
+<p>Keyring</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">After forgetting the password to the “Default keyring”, resolved the issue as follows:</span><br><span class="line"></span><br><span class="line">1.Navigate to local Home folder in file manager and displayed hidden folders with Ctrl+H</span><br><span class="line">2.Navigate to /home/.local/share/keyrings/</span><br><span class="line">3.Deleted all files with “.keyring” file ending.</span><br><span class="line">4.Then launched application to receive a prompt to create a new password for the Default keyring.</span><br><span class="line">5.Specified the new password and confirmed.</span><br><span class="line">Now can use apps that require access to the Default keyring.</span><br><span class="line"></span><br><span class="line">cd /home/.local/share/keyrings</span><br><span class="line">rm *.keyring</span><br></pre></td></tr></table></figure>
+
+<p>Debtap: </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Install debtap:</span><br><span class="line">  yay -S debtap sudo debtap -u</span><br><span class="line">Convert .deb packages Into Arch Linux Packages using debtap:</span><br><span class="line">  debtap packagename.deb</span><br><span class="line">install the package in the system:</span><br><span class="line">  sudo pacman -U package-name</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>manjaro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PHPStorm &amp; VSCode Setting Xdebug</title>
+    <url>/2022/08/18/phpstorm-xdebug/</url>
+    <content><![CDATA[<ol>
+<li>添加xdebug扩展，并加入一下设置</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">zend_extension=xdebug.so</span><br><span class="line">xdebug.mode=develop,coverage,debug,profile</span><br><span class="line">xdebug.start_with_request=yes</span><br><span class="line">xdebug.log=/dev/stdout</span><br><span class="line">xdebug.log_level=0</span><br><span class="line">xdebug.client_port=9003</span><br><span class="line"># idekey, 相当于连接密码，后面ide配置需要用到</span><br><span class="line">xdebug.idekey=docker</span><br><span class="line"># 填写docker宿主机的IP</span><br><span class="line">xdebug.client_host=&lt;YOUR_COMPUTER_IP&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>phpstorm 测试是否能连接 docker</p>
+<p><img src="/../src/phpstorm_debug01.png" alt="phpstorm_debug01"></p>
+</li>
+<li><p>phpstorm 创建 PHP server</p>
+<p><img src="/../src/phpstorm_debug02.png" alt="phpstorm_debug02"></p>
+<p><img src="/../src/phpstorm_debug03.png" alt="phpstorm_debug03"></p>
+</li>
+<li><p>phpstorm 创建 PHP Remote Dedug</p>
+<p><img src="/../src/phpstorm_debug04.png" alt="phpstorm_debug04"></p>
+<p><img src="/../src/phpstorm_debug06.png" alt="phpstorm_debug06"></p>
+</li>
+<li><p>phpstorm 打开 listening for PHP debug connection</p>
+<p><img src="/../src/phpstorm_debug07.png" alt="phpstorm_debug07"></p>
+</li>
+<li><p>phpstorm click in the debug button</p>
+<p><img src="/../src/phpstorm_debug08.png" alt="phpstorm_debug08"></p>
+</li>
+</ol>
+<p><em>转载至：<a href="https://dev.to/jackmiras/xdebug-in-phpstorm-with-docker-2al8">https://dev.to/jackmiras/xdebug-in-phpstorm-with-docker-2al8</a></em></p>
+<p>VSCode PHP Xdebug</p>
+<ol>
+<li><p>Download VSCode PHP Xdebug extension</p>
+</li>
+<li><p>You can generate the file by clicking in <em>Run and Debug &gt; create a launch.json file &gt; Docker: Debug in Container</em>, as the following screenshot shows:</p>
+<p><img src="/../src/vscode_php_debug01.png" alt="vscode_php_debug01"></p>
+<p><img src="/../src/vscode_php_debug02.png" alt="vscode_php_debug02"></p>
+</li>
+<li><p>configure the <strong>launch.json</strong> file you have to add in the <code>configurations</code> array an object with the properties name, type, request, port, and pathMappings which will leave you with a file looking like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</span><br><span class="line">    &quot;configurations&quot;: [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;name&quot;: &quot;Listen for XDebug on Docker&quot;,</span><br><span class="line">            &quot;type&quot;: &quot;php&quot;,</span><br><span class="line">            &quot;request&quot;: &quot;launch&quot;,</span><br><span class="line">            &quot;port&quot;: 9003,</span><br><span class="line">            &quot;pathMappings&quot;: &#123;</span><br><span class="line">                &quot;/var/www/html/&quot;: &quot;$&#123;workspaceFolder&#125;&quot;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p><em>转载至：<a href="https://dev.to/jackmiras/xdebug-in-vscode-with-docker-379l">https://dev.to/jackmiras/xdebug-in-vscode-with-docker-379l</a></em></p>
+]]></content>
+      <categories>
+        <category>xdebug</category>
+      </categories>
+      <tags>
+        <tag>xdebug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis应用场景</title>
+    <url>/2022/08/05/redis-application/</url>
+    <content><![CDATA[<p>Redis是一款内存高速缓存数据库。Redis全称为：Remote Dictionary Server（远程数据服务），使用C语言编写，Redis是一个key-value存储系统（键值存储系统），支持丰富的数据类型，如：String、list、set、zset、hash。</p>
+<p>Redis是一种支持key-value等多种数据结构的存储系统。可用于缓存，事件发布或订阅，高速队列等场景。使用C语言编写，支持网络，提供字符串，哈希，列表，队列，集合结构直接存取，基于内存，可持久化。</p>
+<p>1、热点数据的缓存</p>
+<p>由于redis访问速度块、支持的数据类型比较丰富，所以redis很适合用来存储热点数据，另外结合expire，我们可以设置过期时间然后再进行缓存更新操作，这个功能最为常见，我们几乎所有的项目都有所运用。</p>
+<p>2、限时业务的运用</p>
+<p>redis中可以使用expire命令设置一个键的生存时间，到时间后redis会删除它。利用这一特性可以运用在限时的优惠活动信息、手机验证码等业务场景。</p>
+<p>3、计数器相关问题</p>
+<p>redis由于incrby命令可以实现原子性的递增，所以可以运用于高并发的秒杀活动、分布式序列号的生成、具体业务还体现在比如限制一个手机号发多少条短信、一个接口一分钟限制多少请求、一个接口一天限制调用多少次等等。</p>
+<p>4、排行榜相关问题</p>
+<p>关系型数据库在排行榜方面查询速度普遍偏慢，所以可以借助redis的SortedSet进行热点数据的排序。</p>
+<p>5、分布式锁</p>
+<p>主要利用redis的setnx命令进行，setnx：”set if not exists”就是如果不存在则成功设置缓存同时返回1，否则返回0。</p>
+<p>6、延时操作</p>
+<p>7、分页、模糊搜索</p>
+<p>redis的set集合中提供了一个zrangebylex方法，语法如下：</p>
+<p>ZRANGEBYLEX key min max[LIMIT offset count]</p>
+<p>通过ZRANGEBYLEX zset-+LIMIT 0 10可以进行分页数据查询，其中-+表示获取全部数据</p>
+<p>zrangebylex key min max这个就可以返回字典区间的数据，利用这个特性可以进行模糊查询功能，这个也是目前我在redis中发现的唯一一个支持对存储内容进行模糊查询的特性。</p>
+<p>8、点赞、好友等相互关系的存储</p>
+<p>Redis set对外提供的功能与list类似是一个列表的功能，特殊之处在于set是可以自动排重的，当你需要存储一个列表数据，又不希望出现重复数据时，set是一个很好的选择</p>
+<p>9、队列</p>
+<p>由于redis有list push和list pop这样的命令，所以能够很方便的执行队列操作。</p>
+<p><em>转载至：<a href="https://www.huaweicloud.com/zhishi/Redis.html">https://www.huaweicloud.com/zhishi/Redis.html</a></em></p>
+]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Software Recommend</title>
+    <url>/2022/06/30/software-recommend%20/</url>
+    <content><![CDATA[<ol>
+<li><p>Launchy: alt+space 调用所有快捷方式</p>
+</li>
+<li><p>Typora: Markdown editor</p>
+</li>
+<li><p>DiskGenius: 硬盘管理及数据恢复</p>
+</li>
+<li><p>FinalShell: 国产好用的shell应用</p>
+</li>
+<li><p>Everything: 超好用超高效的文件检索工具</p>
+</li>
+<li><p>PotPlayer: 视频播放</p>
+</li>
+<li><p>Picasa: Picture viewer</p>
+</li>
+<li><p>Todesk &amp; 向日葵：远程桌面控制软件</p>
+</li>
+<li><p>yEd Graph Editor: ERD, PRD, 流程图等绘制软件</p>
+</li>
+<li><p>EVCapture&#x2F;EV录屏 &amp; Captura录屏</p>
+</li>
+<li><p>Fiddler: 网络请求监控</p>
+</li>
+<li><p>Tampermonkey(油猴): Chrome 插件</p>
+</li>
+<li><p>Lingoes: 翻译软件</p>
+</li>
+<li><p>FadeTop: 是一个简单有趣的休息提醒软件</p>
+</li>
+<li><p>Ventoy: PE制作工具，支持多系统</p>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Typora破解</title>
+    <url>/2022/05/30/typora/</url>
+    <content><![CDATA[<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">提示：Typora破解和下载（仅供学习）</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://www.typora.io/windows/typora-setup-x64.exe">https://www.typora.io/windows/typora-setup-x64.exe</a>　（官方，仅安装包）<br><a href="https://lanzouv.com/b04cdi4if">https://lanzouv.com/b04cdi4if</a>　（含破解文件）<br>密码：dyuh</p>
+</blockquote>
+<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>安装后</p>
+<h3 id="1、覆盖文件"><a href="#1、覆盖文件" class="headerlink" title="1、覆盖文件"></a>1、覆盖文件</h3><p>将 app.asar.txt 文件名中的“.txt”去掉，并覆盖至安装路径的“resources”文件夹内，参考路径：<br>C:\Program Files\Typora\resources<br><code>提示：可自定义安装路径</code></p>
+<h3 id="2、输入序列号"><a href="#2、输入序列号" class="headerlink" title="2、输入序列号"></a>2、输入序列号</h3><p>①打开 typora ，点击“输入序列号”：</p>
+<p>②邮箱一栏中任意填写（但须保证邮箱地址格式正确），输入序列号(<strong>在key.txt文件中，任选一条</strong>)，点击“激活”。</p>
+<blockquote>
+<p>DZTX2H-6MCQZT-QL4GCT-5EBWFX</p>
+<p>G7LPKN-HP4NLD-FA3BGF-6JDQ5R</p>
+<p>3MH4Y8-YJWT37-G5JL9Y-UHNQDJ</p>
+<p>85ZPHY-ELQ9FQ-94J3VP-D92YLU</p>
+<p>VEZ7NV-USYN3G-8TL2N3-DADUG4</p>
+</blockquote>
+<p><img src="https://img2022.cnblogs.com/blog/731947/202202/731947-20220218031448652-466663591.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Typora</tag>
+      </tags>
+  </entry>
+</search>
