@@ -218,7 +218,7 @@
   <entry>
     <title>Git</title>
     <url>/2022/07/21/git/</url>
-    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#x6f;&#46;&#x79;&#x65;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x6c;&#101;&#x6f;&#46;&#x79;&#x65;&#64;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#111;&#46;&#121;&#101;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#x6c;&#101;&#111;&#46;&#121;&#101;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
@@ -305,7 +305,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
 
 <p>推荐软件安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br><span class="line">github-desktop</span><br><span class="line">SmartGit (社区版每次使用都需要等待30s)</span><br><span class="line">gitgb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">  IntelliJ IDEA Keybindings</span><br><span class="line">  PHP Namespace Resolver</span><br><span class="line">  Vue Language Features (Volar)</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br><span class="line">github-desktop</span><br><span class="line">SmartGit (社区版每次使用都需要等待30s)</span><br><span class="line">gitgb</span><br></pre></td></tr></table></figure>
 
 <p>软件安装方式</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
@@ -385,40 +385,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Redis应用场景</title>
-    <url>/2022/08/05/redis-application/</url>
-    <content><![CDATA[<p>Redis是一款内存高速缓存数据库。Redis全称为：Remote Dictionary Server（远程数据服务），使用C语言编写，Redis是一个key-value存储系统（键值存储系统），支持丰富的数据类型，如：String、list、set、zset、hash。</p>
-<p>Redis是一种支持key-value等多种数据结构的存储系统。可用于缓存，事件发布或订阅，高速队列等场景。使用C语言编写，支持网络，提供字符串，哈希，列表，队列，集合结构直接存取，基于内存，可持久化。</p>
-<p>1、热点数据的缓存</p>
-<p>由于redis访问速度块、支持的数据类型比较丰富，所以redis很适合用来存储热点数据，另外结合expire，我们可以设置过期时间然后再进行缓存更新操作，这个功能最为常见，我们几乎所有的项目都有所运用。</p>
-<p>2、限时业务的运用</p>
-<p>redis中可以使用expire命令设置一个键的生存时间，到时间后redis会删除它。利用这一特性可以运用在限时的优惠活动信息、手机验证码等业务场景。</p>
-<p>3、计数器相关问题</p>
-<p>redis由于incrby命令可以实现原子性的递增，所以可以运用于高并发的秒杀活动、分布式序列号的生成、具体业务还体现在比如限制一个手机号发多少条短信、一个接口一分钟限制多少请求、一个接口一天限制调用多少次等等。</p>
-<p>4、排行榜相关问题</p>
-<p>关系型数据库在排行榜方面查询速度普遍偏慢，所以可以借助redis的SortedSet进行热点数据的排序。</p>
-<p>5、分布式锁</p>
-<p>主要利用redis的setnx命令进行，setnx：”set if not exists”就是如果不存在则成功设置缓存同时返回1，否则返回0。</p>
-<p>6、延时操作</p>
-<p>7、分页、模糊搜索</p>
-<p>redis的set集合中提供了一个zrangebylex方法，语法如下：</p>
-<p>ZRANGEBYLEX key min max[LIMIT offset count]</p>
-<p>通过ZRANGEBYLEX zset-+LIMIT 0 10可以进行分页数据查询，其中-+表示获取全部数据</p>
-<p>zrangebylex key min max这个就可以返回字典区间的数据，利用这个特性可以进行模糊查询功能，这个也是目前我在redis中发现的唯一一个支持对存储内容进行模糊查询的特性。</p>
-<p>8、点赞、好友等相互关系的存储</p>
-<p>Redis set对外提供的功能与list类似是一个列表的功能，特殊之处在于set是可以自动排重的，当你需要存储一个列表数据，又不希望出现重复数据时，set是一个很好的选择</p>
-<p>9、队列</p>
-<p>由于redis有list push和list pop这样的命令，所以能够很方便的执行队列操作。</p>
-<p><em>转载至：<a href="https://www.huaweicloud.com/zhishi/Redis.html">https://www.huaweicloud.com/zhishi/Redis.html</a></em></p>
-]]></content>
-      <categories>
-        <category>redis</category>
-      </categories>
-      <tags>
-        <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Software Recommend</title>
     <url>/2022/06/30/software-recommend%20/</url>
     <content><![CDATA[<ol>
@@ -454,6 +420,40 @@
 </li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Redis应用场景</title>
+    <url>/2022/08/05/redis-application/</url>
+    <content><![CDATA[<p>Redis是一款内存高速缓存数据库。Redis全称为：Remote Dictionary Server（远程数据服务），使用C语言编写，Redis是一个key-value存储系统（键值存储系统），支持丰富的数据类型，如：String、list、set、zset、hash。</p>
+<p>Redis是一种支持key-value等多种数据结构的存储系统。可用于缓存，事件发布或订阅，高速队列等场景。使用C语言编写，支持网络，提供字符串，哈希，列表，队列，集合结构直接存取，基于内存，可持久化。</p>
+<p>1、热点数据的缓存</p>
+<p>由于redis访问速度块、支持的数据类型比较丰富，所以redis很适合用来存储热点数据，另外结合expire，我们可以设置过期时间然后再进行缓存更新操作，这个功能最为常见，我们几乎所有的项目都有所运用。</p>
+<p>2、限时业务的运用</p>
+<p>redis中可以使用expire命令设置一个键的生存时间，到时间后redis会删除它。利用这一特性可以运用在限时的优惠活动信息、手机验证码等业务场景。</p>
+<p>3、计数器相关问题</p>
+<p>redis由于incrby命令可以实现原子性的递增，所以可以运用于高并发的秒杀活动、分布式序列号的生成、具体业务还体现在比如限制一个手机号发多少条短信、一个接口一分钟限制多少请求、一个接口一天限制调用多少次等等。</p>
+<p>4、排行榜相关问题</p>
+<p>关系型数据库在排行榜方面查询速度普遍偏慢，所以可以借助redis的SortedSet进行热点数据的排序。</p>
+<p>5、分布式锁</p>
+<p>主要利用redis的setnx命令进行，setnx：”set if not exists”就是如果不存在则成功设置缓存同时返回1，否则返回0。</p>
+<p>6、延时操作</p>
+<p>7、分页、模糊搜索</p>
+<p>redis的set集合中提供了一个zrangebylex方法，语法如下：</p>
+<p>ZRANGEBYLEX key min max[LIMIT offset count]</p>
+<p>通过ZRANGEBYLEX zset-+LIMIT 0 10可以进行分页数据查询，其中-+表示获取全部数据</p>
+<p>zrangebylex key min max这个就可以返回字典区间的数据，利用这个特性可以进行模糊查询功能，这个也是目前我在redis中发现的唯一一个支持对存储内容进行模糊查询的特性。</p>
+<p>8、点赞、好友等相互关系的存储</p>
+<p>Redis set对外提供的功能与list类似是一个列表的功能，特殊之处在于set是可以自动排重的，当你需要存储一个列表数据，又不希望出现重复数据时，set是一个很好的选择</p>
+<p>9、队列</p>
+<p>由于redis有list push和list pop这样的命令，所以能够很方便的执行队列操作。</p>
+<p><em>转载至：<a href="https://www.huaweicloud.com/zhishi/Redis.html">https://www.huaweicloud.com/zhishi/Redis.html</a></em></p>
+]]></content>
+      <categories>
+        <category>redis</category>
+      </categories>
+      <tags>
+        <tag>redis</tag>
+      </tags>
   </entry>
   <entry>
     <title>Typora破解</title>
