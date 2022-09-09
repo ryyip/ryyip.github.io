@@ -114,6 +114,27 @@
       </tags>
   </entry>
   <entry>
+    <title>Computer Course</title>
+    <url>/2022/08/11/computer-course/</url>
+    <content><![CDATA[<p>1【浙江大学】数据结构 陈越（全149讲）<a href="https://www.bilibili.com/video/BV1vq4y1v75A?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a> <a href="https://open.163.com/newview/movie/free?pid=AEUHNOPC5&mid=FEUHNOPCU">网易公开课</a></p>
+<!--https://www.icourse163.org -->
+
+<p>2【C语言】翁恺C语言程序编程全系列 <a href="https://www.bilibili.com/video/BV1sJ411E7St?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
+<p>3 大学计算机基础  <a href="https://www.icourse163.org/course/NUDT-17003?from=searchPage">跳转</a></p>
+<p>4 计算机组成原理（哈工大刘宏伟）135讲（全）高清 <a href="https://www.bilibili.com/video/BV1t4411e7LH?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
+<!--转载自http://www.feemic.cn/mooc/icourse163/1205914219和http://www.feemic.cn/mooc/icourse163/1205913215 转载自慕课网哈工大刘宏伟的计算机组成原理，超清视频，讲义可在下方链接下载。 百度云：https://pan.baidu.com/s/1dqyr-PzSfjJKMSibyaUL3Q 提取码：vs1f-->
+
+<p>5 CMU15-445</p>
+]]></content>
+      <categories>
+        <category>computer</category>
+      </categories>
+      <tags>
+        <tag>computer</tag>
+        <tag>course</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>带宽、网速、流量之间有什么关系</title>
     <url>/2022/06/15/bandwidth-internetSpeed-flow/</url>
     <content><![CDATA[<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>1、带宽的统计单位是：比特&#x2F;秒（bps）：100M&#x3D;100Mbps；</p>
@@ -136,30 +157,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Computer Course</title>
-    <url>/2022/08/11/computer-course/</url>
-    <content><![CDATA[<p>1【浙江大学】数据结构 陈越（全149讲）<a href="https://www.bilibili.com/video/BV1vq4y1v75A?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a> <a href="https://open.163.com/newview/movie/free?pid=AEUHNOPC5&mid=FEUHNOPCU">网易公开课</a></p>
-<!--https://www.icourse163.org -->
-
-<p>2【C语言】翁恺C语言程序编程全系列 <a href="https://www.bilibili.com/video/BV1sJ411E7St?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
-<p>3 大学计算机基础  <a href="https://www.icourse163.org/course/NUDT-17003?from=searchPage">跳转</a></p>
-<p>4 计算机组成原理（哈工大刘宏伟）135讲（全）高清 <a href="https://www.bilibili.com/video/BV1t4411e7LH?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
-<!--转载自http://www.feemic.cn/mooc/icourse163/1205914219和http://www.feemic.cn/mooc/icourse163/1205913215 转载自慕课网哈工大刘宏伟的计算机组成原理，超清视频，讲义可在下方链接下载。 百度云：https://pan.baidu.com/s/1dqyr-PzSfjJKMSibyaUL3Q 提取码：vs1f-->
-
-<p>5 CMU15-445</p>
-]]></content>
-      <categories>
-        <category>computer</category>
-      </categories>
-      <tags>
-        <tag>computer</tag>
-        <tag>course</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker &amp; Docker Compose</title>
     <url>/2022/08/03/docker/</url>
-    <content><![CDATA[<p>​		上个月将系统更换成了Manjaro，期间顺理了相关软件推荐，命令的简要使用等，今天总结一下docker的使用及遇到的问题。</p>
+    <content><![CDATA[<p>上个月将系统更换成了Manjaro，期间顺理了相关软件推荐，命令的简要使用等，今天总结一下docker的使用及遇到的问题。</p>
 <h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul>
 <li>image (相当于镜像，里面各项配置)</li>
 <li>container (相当与一台台虚拟机)</li>
@@ -218,7 +218,7 @@
   <entry>
     <title>Git</title>
     <url>/2022/07/21/git/</url>
-    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#x6f;&#46;&#x79;&#101;&#64;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#109;">&#108;&#101;&#x6f;&#46;&#x79;&#101;&#64;&#103;&#109;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#109;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#x6f;&#x2e;&#x79;&#x65;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;">&#x6c;&#101;&#x6f;&#x2e;&#x79;&#x65;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
@@ -278,7 +278,7 @@
 <p>直接查看组文件: cat &#x2F;etc&#x2F;group</p>
 <p>wget <a href="http://example.com/file.tar">http://example.com/file.tar</a> -O &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar<br>curl <a href="http://example.com/file.tar">http://example.com/file.tar</a> -o &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar</p>
 <p>cgroups<br>cgroups(Control Groups) 是 linux 内核提供的一种机制，这种机制可以根据需求把一系列系统任务及其子任务整合(或分隔)到按资源划分等级的不同组内，从而为系统资源管理提供一个统一的框架。简单说，cgroups 可以限制、记录任务组所使用的物理资源。本质上来说，cgroups 是内核附加在程序上的一系列钩子(hook)，通过程序运行时对资源的调度触发相应的钩子以达到资源追踪和限制的目的。</p>
-<h4 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h4><p>#lsof(list open files)是一个列出当前系统打开文件的工具。<br>lsof -i:端口号</p>
+<h3 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h3><p>#lsof(list open files)是一个列出当前系统打开文件的工具。<br>lsof -i:端口号</p>
 <p>#netstat -tunlp 用于显示 tcp，udp 的端口和进程等相关情况。<br>netstat -tunlp | grep 端口号</p>
 <p>sudo update-alternatives –set php &#x2F;usr&#x2F;bin&#x2F;php7.2</p>
 <h3 id="File"><a href="#File" class="headerlink" title="File"></a>File</h3><p>快速创建文件<br>echo &gt; test.txt</p>
@@ -286,6 +286,7 @@
 <h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p>Host app-staging.local.com<br>  HostName app-staging<br>  User ubuntu<br>  IdentityFile ~&#x2F;Personal&#x2F;AWS-CN.pem<br>  Port 22</p>
 <p>Host *<br>  IdentitiesOnly&#x3D;yes<br>  ServerAliveInterval 60<br>  AddKeysToAgent yes<br>  IdentityFile ~&#x2F;.ssh&#x2F;AWS-CN.pem</p>
 <h3 id="System"><a href="#System" class="headerlink" title="System"></a>System</h3><p>查看系统版本<br>cat &#x2F;etc&#x2F;os-release<br>lsb_release -a<br>hostnamectl</p>
+<h3 id="Path"><a href="#Path" class="headerlink" title="$Path"></a>$Path</h3><p>查看环境变量<br>echo $PATH<br>添加环境变量<br>export PATH&#x3D;$PATH:&#x2F;place&#x2F;with&#x2F;the&#x2F;file<br>export PATH&#x3D;$PATH:&#x2F;home&#x2F;leo&#x2F;Program&#x2F;GoLand-2022.2.2&#x2F;bin&#x2F;</p>
 ]]></content>
       <categories>
         <category>linux</category>
@@ -309,7 +310,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
 
 <p>推荐软件安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">  IntelliJ IDEA Keybindings</span><br><span class="line">  PHP Namespace Resolver</span><br><span class="line">  Vue Language Features (Volar)</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br><span class="line">github-desktop</span><br><span class="line">SmartGit (社区版每次使用都需要等待30s)</span><br><span class="line">gitgb</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">  IntelliJ IDEA Keybindings</span><br><span class="line">  PHP Namespace Resolver</span><br><span class="line">  Vue Language Features (Volar)</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br><span class="line">github-desktop</span><br><span class="line">SmartGit (社区版每次使用都需要等待30s)</span><br><span class="line">gitg</span><br></pre></td></tr></table></figure>
 
 <p>软件安装方式</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
@@ -389,43 +390,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Software Recommend</title>
-    <url>/2022/06/30/software-recommend%20/</url>
-    <content><![CDATA[<ol>
-<li><p>Launchy: alt+space 调用所有快捷方式</p>
-</li>
-<li><p>Typora: Markdown editor</p>
-</li>
-<li><p>DiskGenius: 硬盘管理及数据恢复</p>
-</li>
-<li><p>FinalShell: 国产好用的shell应用</p>
-</li>
-<li><p>Everything: 超好用超高效的文件检索工具</p>
-</li>
-<li><p>PotPlayer: 视频播放</p>
-</li>
-<li><p>Picasa: Picture viewer</p>
-</li>
-<li><p>Todesk &amp; 向日葵：远程桌面控制软件</p>
-</li>
-<li><p>yEd Graph Editor: ERD, PRD, 流程图等绘制软件</p>
-</li>
-<li><p>EVCapture&#x2F;EV录屏 &amp; Captura录屏</p>
-</li>
-<li><p>Fiddler: 网络请求监控</p>
-</li>
-<li><p>Tampermonkey(油猴): Chrome 插件</p>
-</li>
-<li><p>Lingoes: 翻译软件</p>
-</li>
-<li><p>FadeTop: 是一个简单有趣的休息提醒软件</p>
-</li>
-<li><p>Ventoy: PE制作工具，支持多系统</p>
-</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>Redis应用场景</title>
     <url>/2022/08/05/redis-application/</url>
     <content><![CDATA[<p>Redis是一款内存高速缓存数据库。Redis全称为：Remote Dictionary Server（远程数据服务），使用C语言编写，Redis是一个key-value存储系统（键值存储系统），支持丰富的数据类型，如：String、list、set、zset、hash。</p>
@@ -486,5 +450,42 @@
       <tags>
         <tag>Typora</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Software Recommend</title>
+    <url>/2022/06/30/software-recommend%20/</url>
+    <content><![CDATA[<ol>
+<li><p>Launchy: alt+space 调用所有快捷方式</p>
+</li>
+<li><p>Typora: Markdown editor</p>
+</li>
+<li><p>DiskGenius: 硬盘管理及数据恢复</p>
+</li>
+<li><p>FinalShell: 国产好用的shell应用</p>
+</li>
+<li><p>Everything: 超好用超高效的文件检索工具</p>
+</li>
+<li><p>PotPlayer: 视频播放</p>
+</li>
+<li><p>Picasa: Picture viewer</p>
+</li>
+<li><p>Todesk &amp; 向日葵：远程桌面控制软件</p>
+</li>
+<li><p>yEd Graph Editor: ERD, PRD, 流程图等绘制软件</p>
+</li>
+<li><p>EVCapture&#x2F;EV录屏 &amp; Captura录屏</p>
+</li>
+<li><p>Fiddler: 网络请求监控</p>
+</li>
+<li><p>Tampermonkey(油猴): Chrome 插件</p>
+</li>
+<li><p>Lingoes: 翻译软件</p>
+</li>
+<li><p>FadeTop: 是一个简单有趣的休息提醒软件</p>
+</li>
+<li><p>Ventoy: PE制作工具，支持多系统</p>
+</li>
+</ol>
+]]></content>
   </entry>
 </search>
