@@ -35,38 +35,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js, Nuxt.js &amp; Node.js</title>
-    <url>/2022/05/05/VueJs-NuxtJs-NodeJs/</url>
-    <content><![CDATA[<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
-<p>JS依赖管理工具</p>
-<p><strong>NPM</strong></p>
-<p>Node.js自带的依赖管理工具</p>
-<p><strong>Vue.js</strong></p>
-<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<p><strong>Nuxt.js</strong></p>
-<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
-<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
-<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
-<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
-<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
-<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
-<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
-<p><strong>Node.js</strong></p>
-<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
-<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
-<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
-<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>Vue.js</tag>
-        <tag>Nuxt.js</tag>
-        <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Yarn</title>
     <url>/2022/05/05/Yarn/</url>
     <content><![CDATA[<p><em><strong>Yarn: 依赖包管理工具</strong></em></p>
@@ -114,24 +82,35 @@
       </tags>
   </entry>
   <entry>
-    <title>Computer Course</title>
-    <url>/2022/08/11/computer-course/</url>
-    <content><![CDATA[<p>1【浙江大学】数据结构 陈越（全149讲）<a href="https://www.bilibili.com/video/BV1vq4y1v75A?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a> <a href="https://open.163.com/newview/movie/free?pid=AEUHNOPC5&mid=FEUHNOPCU">网易公开课</a></p>
-<!--https://www.icourse163.org -->
-
-<p>2【C语言】翁恺C语言程序编程全系列 <a href="https://www.bilibili.com/video/BV1sJ411E7St?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
-<p>3 大学计算机基础  <a href="https://www.icourse163.org/course/NUDT-17003?from=searchPage">跳转</a></p>
-<p>4 计算机组成原理（哈工大刘宏伟）135讲（全）高清 <a href="https://www.bilibili.com/video/BV1t4411e7LH?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
-<!--转载自http://www.feemic.cn/mooc/icourse163/1205914219和http://www.feemic.cn/mooc/icourse163/1205913215 转载自慕课网哈工大刘宏伟的计算机组成原理，超清视频，讲义可在下方链接下载。 百度云：https://pan.baidu.com/s/1dqyr-PzSfjJKMSibyaUL3Q 提取码：vs1f-->
-
-<p>5 CMU15-445</p>
+    <title>Vue.js, Nuxt.js &amp; Node.js</title>
+    <url>/2022/05/05/VueJs-NuxtJs-NodeJs/</url>
+    <content><![CDATA[<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
+<p>JS依赖管理工具</p>
+<p><strong>NPM</strong></p>
+<p>Node.js自带的依赖管理工具</p>
+<p><strong>Vue.js</strong></p>
+<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p><strong>Nuxt.js</strong></p>
+<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
+<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
+<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
+<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
+<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
+<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
+<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
+<p><strong>Node.js</strong></p>
+<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
+<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
+<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
 ]]></content>
       <categories>
-        <category>computer</category>
+        <category>JS</category>
       </categories>
       <tags>
-        <tag>computer</tag>
-        <tag>course</tag>
+        <tag>Vue.js</tag>
+        <tag>Nuxt.js</tag>
+        <tag>Node.js</tag>
       </tags>
   </entry>
   <entry>
@@ -157,6 +136,37 @@
       </tags>
   </entry>
   <entry>
+    <title>Computer Course</title>
+    <url>/2022/08/11/computer-course/</url>
+    <content><![CDATA[<p>1【浙江大学】数据结构 陈越（全149讲）<a href="https://www.bilibili.com/video/BV1vq4y1v75A?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a> <a href="https://open.163.com/newview/movie/free?pid=AEUHNOPC5&mid=FEUHNOPCU">网易公开课</a></p>
+<!--https://www.icourse163.org -->
+
+<p>2【C语言】翁恺C语言程序编程全系列 <a href="https://www.bilibili.com/video/BV1sJ411E7St?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
+<p>3 大学计算机基础  <a href="https://www.icourse163.org/course/NUDT-17003?from=searchPage">跳转</a></p>
+<p>4 计算机组成原理（哈工大刘宏伟）135讲（全）高清 <a href="https://www.bilibili.com/video/BV1t4411e7LH?spm_id_from=333.337.search-card.all.click&vd_source=84025c8fc457e9665cb0608cc873b735">B站</a></p>
+<!--转载自http://www.feemic.cn/mooc/icourse163/1205914219和http://www.feemic.cn/mooc/icourse163/1205913215 转载自慕课网哈工大刘宏伟的计算机组成原理，超清视频，讲义可在下方链接下载。 百度云：https://pan.baidu.com/s/1dqyr-PzSfjJKMSibyaUL3Q 提取码：vs1f-->
+
+<p>5 CMU15-445</p>
+]]></content>
+      <categories>
+        <category>computer</category>
+      </categories>
+      <tags>
+        <tag>computer</tag>
+        <tag>course</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Encoding</title>
+    <url>/2022/06/15/encoding/</url>
+    <content><![CDATA[<p>0xAA：</p>
+<p>0x 16进制</p>
+<p>0O 8进制</p>
+<p>16进制转为10进制</p>
+<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Docker &amp; Docker Compose</title>
     <url>/2022/08/03/docker/</url>
     <content><![CDATA[<p>上个月将系统更换成了Manjaro，期间顺理了相关软件推荐，命令的简要使用等，今天总结一下docker的使用及遇到的问题。</p>
@@ -170,7 +180,7 @@
 <p>docker-compose.yml (docker compose 配置文件)</p>
 <h4 id="镜像源地址修改"><a href="#镜像源地址修改" class="headerlink" title="镜像源地址修改"></a>镜像源地址修改</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /etc/docker</span><br><span class="line">tee /etc/docker/daemon.json &lt;&lt;-&#x27;EOF&#x27;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;registry-mirrors&quot;: [&quot;http://hub-mirror.c.163.com&quot;]</span><br><span class="line">&#125;</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">#重启docker</span><br><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br><span class="line"></span><br><span class="line">#腾讯云的镜像地址</span><br><span class="line">https://mirror.ccs.tencentyun.com</span><br><span class="line"></span><br><span class="line">#网易的镜像地址</span><br><span class="line">http://hub-mirror.c.163.com</span><br><span class="line"></span><br><span class="line">#阿里云镜像地址，需要到自己的阿里云&quot;容器镜像服务-&gt;镜像加速器&quot;去复制自己的镜像地址</span><br><span class="line">https://xxxx.mirror.aliyuncs.com</span><br><span class="line"></span><br><span class="line">#daocloud发布的镜像地址</span><br><span class="line">http://f1361db2.m.daocloud.io</span><br></pre></td></tr></table></figure>
 
-<h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#创建container (第一次会先下载对应的镜像)</span><br><span class="line">docker run -itd -v /sys/fs/cgroup:/sys/fs/cgroup:ro --privileged=true --name=lnmp 2233466866/lnmp</span><br><span class="line">#查看容器信息</span><br><span class="line">docker inspect lnmp | grep IPAddress</span><br><span class="line">#进入容器console(*部分容器支持/bin/bash,部分支持/bin/sh)</span><br><span class="line">docker exec -it lnmp /bin/bash</span><br><span class="line">docker exec -it cgi /bin/bash</span><br><span class="line">docker exec -it proxy /bin/sh</span><br><span class="line">#在宿主机直接运行 指定容器 的命令</span><br><span class="line">docker exec -it cgi /bin/bash -c &quot;cd /var/www/html/app.gaatu.com &amp;&amp; php artisan migrate&quot;</span><br><span class="line">#复制容器内的文件或文件夹到宿主机</span><br><span class="line">docker cp cgi:/usr/local/etc/php/php.ini ~/docker-compose/docker-leo/docker/config/cgi/php.ini</span><br><span class="line"></span><br><span class="line">#查询所有container</span><br><span class="line">docker ps -a</span><br><span class="line">#查询所有image</span><br><span class="line">docker images</span><br><span class="line">#停止container</span><br><span class="line">docker stop containerName</span><br><span class="line">docker stop $(docker ps -a -q)</span><br><span class="line">#删除container</span><br><span class="line">docker rm containerName</span><br><span class="line">docker rm $(docker ps -a -q)</span><br><span class="line">#删除image</span><br><span class="line">docker rmi imageName</span><br><span class="line">docker rmi $(docker images -q)</span><br><span class="line"></span><br><span class="line">#Docker Composer</span><br><span class="line">docker-compose -f docker-compose.yml up -d </span><br><span class="line">docker-compose up -d</span><br><span class="line">docker-compose down -d</span><br><span class="line"></span><br><span class="line">#Docker仓库</span><br><span class="line">docker login</span><br><span class="line">docker tag &lt;IMAGE_ID&gt;|&lt;IMAGE_NAME&gt; &lt;REGISTRY_HOST&gt;/&lt;APPNAME&gt;:&lt;APPVERSION&gt;</span><br><span class="line">docker push &lt;REGISTRY_HOST&gt;/&lt;APPNAME&gt;:&lt;APPVERSION&gt;</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">docker tag 92bd352be65f ryyip/php7.2-fpm:1.1</span><br><span class="line">docker tag docker-leo_php72 ryyip/php7.2-fpm:1.1</span><br><span class="line">docker push ryyip/php7.2-fpm:1.1</span><br></pre></td></tr></table></figure>
+<h4 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#创建container (第一次会先下载对应的镜像)</span><br><span class="line">docker run -itd -v /sys/fs/cgroup:/sys/fs/cgroup:ro --privileged=true --name=lnmp 2233466866/lnmp</span><br><span class="line">#查看容器信息</span><br><span class="line">docker inspect lnmp | grep IPAddress</span><br><span class="line">#进入容器console(*部分容器支持/bin/bash,部分支持/bin/sh)</span><br><span class="line">docker exec -it lnmp /bin/bash</span><br><span class="line">docker exec -it cgi /bin/bash</span><br><span class="line">docker exec -it proxy /bin/sh</span><br><span class="line">#在宿主机直接运行 指定容器 的命令</span><br><span class="line">docker exec -it cgi /bin/bash -c &quot;cd /var/www/html/app.gaatu.com &amp;&amp; php artisan migrate&quot;</span><br><span class="line">#复制容器内的文件或文件夹到宿主机</span><br><span class="line">docker cp cgi:/usr/local/etc/php/php.ini ~/docker-compose/docker-leo/docker/config/cgi/php.ini</span><br><span class="line">docker cp redis:/data ~/www/java/Jusic-Serve-Houses/docker/redis/</span><br><span class="line"></span><br><span class="line">#查询所有container</span><br><span class="line">docker ps -a</span><br><span class="line">#查询所有image</span><br><span class="line">docker images</span><br><span class="line">#停止container</span><br><span class="line">docker stop containerName</span><br><span class="line">docker stop $(docker ps -a -q)</span><br><span class="line">#删除container</span><br><span class="line">docker rm containerName</span><br><span class="line">docker rm $(docker ps -a -q)</span><br><span class="line">#删除image</span><br><span class="line">docker rmi imageName</span><br><span class="line">docker rmi $(docker images -q)</span><br><span class="line"></span><br><span class="line">#Docker Composer</span><br><span class="line">docker-compose -f docker-compose.yml up -d </span><br><span class="line">docker-compose up -d</span><br><span class="line">docker-compose down -d</span><br><span class="line"></span><br><span class="line">#Docker仓库</span><br><span class="line">docker login</span><br><span class="line">docker tag &lt;IMAGE_ID&gt;|&lt;IMAGE_NAME&gt; &lt;REGISTRY_HOST&gt;/&lt;APPNAME&gt;:&lt;APPVERSION&gt;</span><br><span class="line">docker push &lt;REGISTRY_HOST&gt;/&lt;APPNAME&gt;:&lt;APPVERSION&gt;</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">docker tag 92bd352be65f ryyip/php7.2-fpm:1.1</span><br><span class="line">docker tag docker-leo_php72 ryyip/php7.2-fpm:1.1</span><br><span class="line">docker push ryyip/php7.2-fpm:1.1</span><br></pre></td></tr></table></figure>
 
 <h4 id="Container-Problems"><a href="#Container-Problems" class="headerlink" title="Container Problems"></a>Container Problems</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#image: mysql:8.0.29</span><br><span class="line">error: the server requested authentication method unknown to the client</span><br><span class="line"></span><br><span class="line">$ docker-compose exec mysql bash</span><br><span class="line">$ mysql -u root -p</span><br><span class="line">(login as root)</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;root&#x27;;</span><br><span class="line">ALTER USER &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;root&#x27;;</span><br><span class="line">ALTER USER &#x27;default&#x27;@&#x27;%&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;secret&#x27;;</span><br></pre></td></tr></table></figure>
 
@@ -186,16 +196,6 @@
         <tag>docker</tag>
         <tag>docker compose</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Encoding</title>
-    <url>/2022/06/15/encoding/</url>
-    <content><![CDATA[<p>0xAA：</p>
-<p>0x 16进制</p>
-<p>0O 8进制</p>
-<p>16进制转为10进制</p>
-<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
-]]></content>
   </entry>
   <entry>
     <title>Git Flow</title>
@@ -218,11 +218,11 @@
   <entry>
     <title>Git</title>
     <url>/2022/07/21/git/</url>
-    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#x6f;&#x2e;&#x79;&#x65;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;">&#x6c;&#101;&#x6f;&#x2e;&#x79;&#x65;&#x40;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#x6f;&#x2e;&#x79;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x6c;&#x65;&#x6f;&#x2e;&#x79;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br><span class="line"></span><br><span class="line">git merge develop</span><br><span class="line">git merge origin/develop</span><br></pre></td></tr></table></figure>
 
 <p>#Stash</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop stash@&#123;1&#125; #apply &amp; drop</span><br></pre></td></tr></table></figure>
@@ -301,50 +301,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Manjaro</title>
-    <url>/2022/07/15/manjaro/</url>
-    <content><![CDATA[<p>镜像源修改</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># change to pacman china mirrors</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
-
-<p>中文输入法安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Install sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line"></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"></span><br><span class="line"># export LC_ALL=zh_CN.UTF-8 # 这个是控制系统界面的语言类型的，这一行意味着显示中文。这里还是注销了吧。</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=“@im=fcitx”</span><br></pre></td></tr></table></figure>
-
-<p>pacman</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
-
-<p>推荐软件安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">  IntelliJ IDEA Keybindings</span><br><span class="line">  PHP Namespace Resolver</span><br><span class="line">  Vue Language Features (Volar)</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br><span class="line">github-desktop</span><br><span class="line">SmartGit (社区版每次使用都需要等待30s)</span><br><span class="line">gitg</span><br></pre></td></tr></table></figure>
-
-<p>软件安装方式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
-
-<p>Antojump</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/Program/Installer</span><br><span class="line">git clone https://github.com/wting/autojump.git</span><br><span class="line">cd autojump</span><br><span class="line">./install.py</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br><span class="line">autojump -v</span><br></pre></td></tr></table></figure>
-
-<p>设置命令行的别称</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">alias ll=&#x27;ls -l&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>SSH Error:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SSH Error:</span><br><span class="line">ssh erp-staging.gaatu.com</span><br><span class="line">sign_and_send_pubkey: no mutual signature supported</span><br><span class="line">ubuntu@erp-staging.gaatu.com&#x27;s password:</span><br><span class="line">ubuntu@erp-staging.gaatu.com: Permission denied (publickey,password).</span><br><span class="line"></span><br><span class="line">Solution: </span><br><span class="line">set the ~/.ssh/config</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line">or</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-dss</span><br></pre></td></tr></table></figure>
-
-<p>Keyring</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">After forgetting the password to the “Default keyring”, resolved the issue as follows:</span><br><span class="line"></span><br><span class="line">1.Navigate to local Home folder in file manager and displayed hidden folders with Ctrl+H</span><br><span class="line">2.Navigate to /home/.local/share/keyrings/</span><br><span class="line">3.Deleted all files with “.keyring” file ending.</span><br><span class="line">4.Then launched application to receive a prompt to create a new password for the Default keyring.</span><br><span class="line">5.Specified the new password and confirmed.</span><br><span class="line">Now can use apps that require access to the Default keyring.</span><br><span class="line"></span><br><span class="line">cd /home/.local/share/keyrings</span><br><span class="line">rm *.keyring</span><br></pre></td></tr></table></figure>
-
-<p>Debtap: </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Install debtap:</span><br><span class="line">  yay -S debtap sudo debtap -u</span><br><span class="line">Convert .deb packages Into Arch Linux Packages using debtap:</span><br><span class="line">  debtap packagename.deb</span><br><span class="line">install the package in the system:</span><br><span class="line">  sudo pacman -U package-name</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>manjaro</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PHPStorm &amp; VSCode Setting Xdebug</title>
     <url>/2022/08/18/phpstorm-xdebug/</url>
     <content><![CDATA[<ol>
@@ -393,6 +349,50 @@
       </tags>
   </entry>
   <entry>
+    <title>Manjaro</title>
+    <url>/2022/07/15/manjaro/</url>
+    <content><![CDATA[<p>镜像源修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># change to pacman china mirrors</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
+
+<p>中文输入法安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Install sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line"></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"></span><br><span class="line"># export LC_ALL=zh_CN.UTF-8 # 这个是控制系统界面的语言类型的，这一行意味着显示中文。这里还是注销了吧。</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=“@im=fcitx”</span><br></pre></td></tr></table></figure>
+
+<p>pacman</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
+
+<p>推荐软件安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">  IntelliJ IDEA Keybindings</span><br><span class="line">  PHP Namespace Resolver</span><br><span class="line">  Vue Language Features (Volar)</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br><span class="line">github-desktop</span><br><span class="line">SmartGit (社区版每次使用都需要等待30s)</span><br><span class="line">gitg</span><br></pre></td></tr></table></figure>
+
+<p>软件安装方式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
+
+<p>Antojump</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/Program/Installer</span><br><span class="line">git clone https://github.com/wting/autojump.git</span><br><span class="line">cd autojump</span><br><span class="line">./install.py</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br><span class="line">autojump -v</span><br></pre></td></tr></table></figure>
+
+<p>设置命令行的别称</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">alias ll=&#x27;ls -l&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>SSH Error:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SSH Error:</span><br><span class="line">ssh erp-staging.gaatu.com</span><br><span class="line">sign_and_send_pubkey: no mutual signature supported</span><br><span class="line">ubuntu@erp-staging.gaatu.com&#x27;s password:</span><br><span class="line">ubuntu@erp-staging.gaatu.com: Permission denied (publickey,password).</span><br><span class="line"></span><br><span class="line">Solution: </span><br><span class="line">set the ~/.ssh/config</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line">or</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-dss</span><br></pre></td></tr></table></figure>
+
+<p>Keyring</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">After forgetting the password to the “Default keyring”, resolved the issue as follows:</span><br><span class="line"></span><br><span class="line">1.Navigate to local Home folder in file manager and displayed hidden folders with Ctrl+H</span><br><span class="line">2.Navigate to /home/.local/share/keyrings/</span><br><span class="line">3.Deleted all files with “.keyring” file ending.</span><br><span class="line">4.Then launched application to receive a prompt to create a new password for the Default keyring.</span><br><span class="line">5.Specified the new password and confirmed.</span><br><span class="line">Now can use apps that require access to the Default keyring.</span><br><span class="line"></span><br><span class="line">cd /home/.local/share/keyrings</span><br><span class="line">rm *.keyring</span><br></pre></td></tr></table></figure>
+
+<p>Debtap: </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Install debtap:</span><br><span class="line">  yay -S debtap sudo debtap -u</span><br><span class="line">Convert .deb packages Into Arch Linux Packages using debtap:</span><br><span class="line">  debtap packagename.deb</span><br><span class="line">install the package in the system:</span><br><span class="line">  sudo pacman -U package-name</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>manjaro</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Redis应用场景</title>
     <url>/2022/08/05/redis-application/</url>
     <content><![CDATA[<p>Redis是一款内存高速缓存数据库。Redis全称为：Remote Dictionary Server（远程数据服务），使用C语言编写，Redis是一个key-value存储系统（键值存储系统），支持丰富的数据类型，如：String、list、set、zset、hash。</p>
@@ -424,34 +424,6 @@
       </categories>
       <tags>
         <tag>redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Typora破解</title>
-    <url>/2022/05/30/typora/</url>
-    <content><![CDATA[<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">提示：Typora破解和下载（仅供学习）</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p><a href="https://www.typora.io/windows/typora-setup-x64.exe">https://www.typora.io/windows/typora-setup-x64.exe</a>　（官方，仅安装包）<br><a href="https://lanzouv.com/b04cdi4if">https://lanzouv.com/b04cdi4if</a>　（含破解文件）<br>密码：dyuh</p>
-</blockquote>
-<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>安装后</p>
-<h3 id="1、覆盖文件"><a href="#1、覆盖文件" class="headerlink" title="1、覆盖文件"></a>1、覆盖文件</h3><p>将 app.asar.txt 文件名中的“.txt”去掉，并覆盖至安装路径的“resources”文件夹内，参考路径：<br>C:\Program Files\Typora\resources<br><code>提示：可自定义安装路径</code></p>
-<h3 id="2、输入序列号"><a href="#2、输入序列号" class="headerlink" title="2、输入序列号"></a>2、输入序列号</h3><p>①打开 typora ，点击“输入序列号”：</p>
-<p>②邮箱一栏中任意填写（但须保证邮箱地址格式正确），输入序列号(<strong>在key.txt文件中，任选一条</strong>)，点击“激活”。</p>
-<blockquote>
-<p>DZTX2H-6MCQZT-QL4GCT-5EBWFX</p>
-<p>G7LPKN-HP4NLD-FA3BGF-6JDQ5R</p>
-<p>3MH4Y8-YJWT37-G5JL9Y-UHNQDJ</p>
-<p>85ZPHY-ELQ9FQ-94J3VP-D92YLU</p>
-<p>VEZ7NV-USYN3G-8TL2N3-DADUG4</p>
-</blockquote>
-<p><img src="https://img2022.cnblogs.com/blog/731947/202202/731947-20220218031448652-466663591.png" alt="img"></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Typora</tag>
       </tags>
   </entry>
   <entry>
@@ -490,5 +462,33 @@
 </li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Typora破解</title>
+    <url>/2022/05/30/typora/</url>
+    <content><![CDATA[<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">提示：Typora破解和下载（仅供学习）</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><a href="https://www.typora.io/windows/typora-setup-x64.exe">https://www.typora.io/windows/typora-setup-x64.exe</a>　（官方，仅安装包）<br><a href="https://lanzouv.com/b04cdi4if">https://lanzouv.com/b04cdi4if</a>　（含破解文件）<br>密码：dyuh</p>
+</blockquote>
+<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><p>安装后</p>
+<h3 id="1、覆盖文件"><a href="#1、覆盖文件" class="headerlink" title="1、覆盖文件"></a>1、覆盖文件</h3><p>将 app.asar.txt 文件名中的“.txt”去掉，并覆盖至安装路径的“resources”文件夹内，参考路径：<br>C:\Program Files\Typora\resources<br><code>提示：可自定义安装路径</code></p>
+<h3 id="2、输入序列号"><a href="#2、输入序列号" class="headerlink" title="2、输入序列号"></a>2、输入序列号</h3><p>①打开 typora ，点击“输入序列号”：</p>
+<p>②邮箱一栏中任意填写（但须保证邮箱地址格式正确），输入序列号(<strong>在key.txt文件中，任选一条</strong>)，点击“激活”。</p>
+<blockquote>
+<p>DZTX2H-6MCQZT-QL4GCT-5EBWFX</p>
+<p>G7LPKN-HP4NLD-FA3BGF-6JDQ5R</p>
+<p>3MH4Y8-YJWT37-G5JL9Y-UHNQDJ</p>
+<p>85ZPHY-ELQ9FQ-94J3VP-D92YLU</p>
+<p>VEZ7NV-USYN3G-8TL2N3-DADUG4</p>
+</blockquote>
+<p><img src="https://img2022.cnblogs.com/blog/731947/202202/731947-20220218031448652-466663591.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Typora</tag>
+      </tags>
   </entry>
 </search>
