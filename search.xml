@@ -218,21 +218,20 @@
   <entry>
     <title>Git</title>
     <url>/2022/07/21/git/</url>
-    <content><![CDATA[<h4 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h4><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#x6f;&#x2e;&#x79;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x6c;&#x65;&#x6f;&#x2e;&#x79;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+    <content><![CDATA[<h3 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h3><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#x6f;&#46;&#121;&#x65;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x65;&#x6f;&#46;&#121;&#x65;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
-<h4 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h4><p>#Normal</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br><span class="line"></span><br><span class="line">git merge develop</span><br><span class="line">git merge origin/develop</span><br></pre></td></tr></table></figure>
+<h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><h4 id="Normal"><a href="#Normal" class="headerlink" title="Normal"></a>Normal</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git commit -m &#x27;&#x27; --no-verify</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br><span class="line"></span><br><span class="line">git merge develop</span><br><span class="line">git merge origin/develop</span><br></pre></td></tr></table></figure>
 
-<p>#Stash</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop stash@&#123;1&#125; #apply &amp; drop</span><br></pre></td></tr></table></figure>
+<h4 id="Stash"><a href="#Stash" class="headerlink" title="Stash"></a>Stash</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git stash</span><br><span class="line">git stash list</span><br><span class="line">git stash apply</span><br><span class="line">git stash drop</span><br><span class="line">git stash pop stash@&#123;1&#125; #apply &amp; drop</span><br></pre></td></tr></table></figure>
 
 <p>#GitHub 撤销某次 commit</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset &#123;commitId&#125;：回滚到某次提交。</span><br><span class="line">git reset --soft &#123;commitId&#125;：此次提交之后的修改会被退回到暂存区。</span><br><span class="line">git reset --hard &#123;commitId&#125;：此次提交之后的修改不做任何保留，git status 查看工作区是没有记录的。</span><br><span class="line">git revert &#123;commitId&#125;：放弃某次提交。git revert 之前的提交仍会保留在 git log 中，而此次撤销会做为一次新的提交。要撤销中间某次提交时，只需要对应的commitId即可。</span><br><span class="line">git rebase：当两个分支不在一条线上，需要执行 merge 操作时使用该命令。</span><br></pre></td></tr></table></figure>
 
+<h4 id="Delete"><a href="#Delete" class="headerlink" title="Delete"></a>Delete</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">删除一条分支：</span><br><span class="line">git branch -D branchName</span><br><span class="line"></span><br><span class="line">删除当前分支外的所有分支：</span><br><span class="line">git branch | xargs git branch -d</span><br><span class="line"></span><br><span class="line">删除分支名包含指定字符的分支：</span><br><span class="line">git branch | grep ‘dev*’ | xargs git branch -d</span><br><span class="line"></span><br><span class="line">|管道命令与xargs命令的区别：</span><br><span class="line">管道是实现“将前面的标准输出作为后面的标准输入</span><br><span class="line">xargs是实现“将标准输入作为命令的参数</span><br></pre></td></tr></table></figure>
 
 
-<p>git commit -m ‘’ –no-verify</p>
+
 ]]></content>
       <categories>
         <category>Tools</category>
@@ -290,6 +289,12 @@
 <h3 id="Path"><a href="#Path" class="headerlink" title="$Path"></a>$Path</h3><p>查看环境变量<br>echo $PATH<br>添加环境变量<br>export PATH&#x3D;$PATH:&#x2F;place&#x2F;with&#x2F;the&#x2F;file<br>export PATH&#x3D;$PATH:&#x2F;home&#x2F;leo&#x2F;Program&#x2F;GoLand-2022.2.2&#x2F;bin&#x2F;</p>
 <h3 id="Tail"><a href="#Tail" class="headerlink" title="Tail"></a>Tail</h3><p>监控文件变化</p>
 <p>tail本身的功能是显示文件的后多少行<br>tail filename 显示filename后十行<br>tail -n filename 显示filename后n行<br>tail -f filename  通过添加-f选项可以监控文件变化,文件有更新就会打印出来</p>
+<h3 id="xargs"><a href="#xargs" class="headerlink" title="xargs"></a>xargs</h3><p>|<br>管道命令，用于将一串命令串联起来。前面命令的输出可以作为后面命令的输入。</p>
+<p>git branch<br>用于列出本地所有分支。</p>
+<p>grep<br>搜索过滤命令。使用正则表达式搜索文本，并把匹配的行打印出来。</p>
+<p>xargs<br>参数传递命令。用于将标准输入作为命令的参数传给下一个命令。</p>
+<p>|管道命令与xargs命令的区别：</p>
+<p>管道是实现“将前面的标准输出作为后面的标准输入<br>xargs是实现“将标准输入作为命令的参数</p>
 ]]></content>
       <categories>
         <category>linux</category>
