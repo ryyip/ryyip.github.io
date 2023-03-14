@@ -152,18 +152,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -192,6 +192,93 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ryyip.github.io/2022/08/18/phpstorm-deployment/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leo Ye">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryyip">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ryyip">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/08/18/phpstorm-deployment/" class="post-title-link" itemprop="url">PHPStorm Setting Deployment</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-08-18 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-18T00:00:00+08:00">2022-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-03-14 09:17:47" itemprop="dateModified" datetime="2023-03-14T09:17:47+08:00">2023-03-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/PHPStorm/" itemprop="url" rel="index"><span itemprop="name">PHPStorm</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="1-Setting-SSH"><a href="#1-Setting-SSH" class="headerlink" title="1. Setting SSH"></a>1. Setting SSH</h3><p><img src="/../src/phpstorm_deployment_setting01.png" alt="phpstorm_deployment_setting01"></p>
+<h3 id="2-Setting-Host-amp-Connection"><a href="#2-Setting-Host-amp-Connection" class="headerlink" title="2. Setting Host &amp; Connection"></a>2. Setting Host &amp; Connection</h3><p><img src="/../src/phpstorm_deployment_setting02.png" alt="phpstorm_deployment_setting02"></p>
+<h3 id="3-Setting-Mapping"><a href="#3-Setting-Mapping" class="headerlink" title="3. Setting Mapping"></a>3. Setting Mapping</h3><p><img src="/../src/phpstorm_deployment_setting03.png" alt="phpstorm_deployment_setting03"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -774,7 +861,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h3><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#x6f;&#46;&#121;&#x65;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x65;&#x6f;&#46;&#121;&#x65;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+          <h3 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h3><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#x6f;&#x2e;&#121;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#108;&#101;&#x6f;&#x2e;&#121;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><h4 id="Normal"><a href="#Normal" class="headerlink" title="Normal"></a>Normal</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git commit -m &#x27;&#x27; --no-verify</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br><span class="line"></span><br><span class="line">git merge develop</span><br><span class="line">git merge origin/develop</span><br></pre></td></tr></table></figure>
@@ -1129,101 +1216,6 @@
 <li><p>Ventoy: PE制作工具，支持多系统</p>
 </li>
 </ol>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ryyip.github.io/2022/06/15/bandwidth-internetSpeed-flow/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leo Ye">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ryyip">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ryyip">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/15/bandwidth-internetSpeed-flow/" class="post-title-link" itemprop="url">带宽、网速、流量之间有什么关系</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-06-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-15T00:00:00+08:00">2022-06-15</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-27 09:34:37" itemprop="dateModified" datetime="2022-07-27T09:34:37+08:00">2022-07-27</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>1、带宽的统计单位是：比特&#x2F;秒（bps）：100M&#x3D;100Mbps；</p>
-<p>2、网速是数据传输的速度，单位是：字节&#x2F;秒（B&#x2F;s KB&#x2F;s MB&#x2F;s）：1MB&#x2F;s&#x3D;1024KB&#x2F;s ；1KB&#x2F;s&#x3D;1024B&#x2F;s。</p>
-<p>3、流量是用户上网发送和接收的数据量总和，单位是：字节（Byte）；</p>
-<p>比特是信息的最小单位：1字节&#x3D;8比特（1B&#x3D;8bit或者1B&#x3D;8b）；1字节&#x2F;秒&#x3D;8比特&#x2F;秒（1B&#x2F;s&#x3D;8bps）</p>
-<h3 id="如何换算"><a href="#如何换算" class="headerlink" title="如何换算"></a>如何换算</h3><p>我们这里来用实例看下：比如200M宽带下载速度是多少？</p>
-<p>首先，运营商所说的200M宽带光纤，完整单位是200Mbps，而我们电脑中所说的下载速度单位是：MB。因此200M宽带下载速度并不代表下载速度就是200Mb&#x2F;s，而是需要按照如下公式进行换算：</p>
-<p>1Mbps&#x3D;1024Kbps&#x3D;1024&#x2F;8KBps&#x3D;128KB&#x2F;s</p>
-<p>也就是说 1M 的宽带下载速度不会超过 128KB&#x2F;s ，也就是理论上1秒钟，可以下载128K的内容，实际上1M宽带，下载速度100k&#x2F;s就属于正常，毕竟理论值不一定能达到。</p>
-<p>200M宽带的下载速度理论上为：128KB&#x2F;s x 200 &#x3D; 25600 KB&#x2F;s &#x3D; 25.6MB&#x2F;s</p>
-<p>正常的下载速度是：25M；当然，这是理论上的下载速度，在实际使用的过程中，可能会略低于&#x2F;高于25M，一般来说上下浮动1M都属于正常的，即24-26都属于正常的。</p>
-<p>如果你家网速测试小于25M太多的话，要么是连的假200M带宽，要么就是其它的路由器、光猫没有使用千兆的。</p>
 
       
     </div>

@@ -35,6 +35,38 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue.js, Nuxt.js &amp; Node.js</title>
+    <url>/2022/05/05/VueJs-NuxtJs-NodeJs/</url>
+    <content><![CDATA[<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
+<p>JS依赖管理工具</p>
+<p><strong>NPM</strong></p>
+<p>Node.js自带的依赖管理工具</p>
+<p><strong>Vue.js</strong></p>
+<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p><strong>Nuxt.js</strong></p>
+<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
+<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
+<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
+<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
+<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
+<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
+<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
+<p><strong>Node.js</strong></p>
+<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
+<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
+<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>Vue.js</tag>
+        <tag>Nuxt.js</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Yarn</title>
     <url>/2022/05/05/Yarn/</url>
     <content><![CDATA[<p><em><strong>Yarn: 依赖包管理工具</strong></em></p>
@@ -82,38 +114,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue.js, Nuxt.js &amp; Node.js</title>
-    <url>/2022/05/05/VueJs-NuxtJs-NodeJs/</url>
-    <content><![CDATA[<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
-<p>JS依赖管理工具</p>
-<p><strong>NPM</strong></p>
-<p>Node.js自带的依赖管理工具</p>
-<p><strong>Vue.js</strong></p>
-<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<p><strong>Nuxt.js</strong></p>
-<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
-<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
-<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
-<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
-<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
-<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
-<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
-<p><strong>Node.js</strong></p>
-<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
-<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
-<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
-<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>Vue.js</tag>
-        <tag>Nuxt.js</tag>
-        <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>带宽、网速、流量之间有什么关系</title>
     <url>/2022/06/15/bandwidth-internetSpeed-flow/</url>
     <content><![CDATA[<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>1、带宽的统计单位是：比特&#x2F;秒（bps）：100M&#x3D;100Mbps；</p>
@@ -157,16 +157,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Encoding</title>
-    <url>/2022/06/15/encoding/</url>
-    <content><![CDATA[<p>0xAA：</p>
-<p>0x 16进制</p>
-<p>0O 8进制</p>
-<p>16进制转为10进制</p>
-<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Docker &amp; Docker Compose</title>
     <url>/2022/08/03/docker/</url>
     <content><![CDATA[<p>上个月将系统更换成了Manjaro，期间顺理了相关软件推荐，命令的简要使用等，今天总结一下docker的使用及遇到的问题。</p>
@@ -198,6 +188,16 @@
       </tags>
   </entry>
   <entry>
+    <title>Encoding</title>
+    <url>/2022/06/15/encoding/</url>
+    <content><![CDATA[<p>0xAA：</p>
+<p>0x 16进制</p>
+<p>0O 8进制</p>
+<p>16进制转为10进制</p>
+<p>AA &#x3D; 16*10+10 &#x3D; 170</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Git Flow</title>
     <url>/2022/07/21/git-flow/</url>
     <content><![CDATA[<h2 id="GIT-Flow"><a href="#GIT-Flow" class="headerlink" title="GIT Flow"></a><em>GIT Flow</em></h2><h3 id="Initial"><a href="#Initial" class="headerlink" title="Initial"></a>Initial</h3><p>[master]$ git flow init<br>[develop]$ git push –set-upstream origin develop</p>
@@ -218,7 +218,7 @@
   <entry>
     <title>Git</title>
     <url>/2022/07/21/git/</url>
-    <content><![CDATA[<h3 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h3><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#x65;&#x6f;&#46;&#121;&#x65;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x6c;&#x65;&#x6f;&#46;&#121;&#x65;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+    <content><![CDATA[<h3 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h3><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#x6f;&#x2e;&#121;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#108;&#101;&#x6f;&#x2e;&#121;&#101;&#64;&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><h4 id="Normal"><a href="#Normal" class="headerlink" title="Normal"></a>Normal</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git commit -m &#x27;&#x27; --no-verify</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br><span class="line"></span><br><span class="line">git merge develop</span><br><span class="line">git merge origin/develop</span><br></pre></td></tr></table></figure>
@@ -306,6 +306,64 @@
       </tags>
   </entry>
   <entry>
+    <title>Manjaro</title>
+    <url>/2022/07/15/manjaro/</url>
+    <content><![CDATA[<p>镜像源修改</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># change to pacman china mirrors</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
+
+<p>中文输入法安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Install sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line"></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"></span><br><span class="line"># export LC_ALL=zh_CN.UTF-8 # 这个是控制系统界面的语言类型的，这一行意味着显示中文。这里还是注销了吧。</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=“@im=fcitx”</span><br></pre></td></tr></table></figure>
+
+<p>pacman</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
+
+<p>推荐软件安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">  IntelliJ IDEA Keybindings</span><br><span class="line">  PHP Namespace Resolver</span><br><span class="line">  Vue Language Features (Volar)</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br><span class="line">github-desktop</span><br><span class="line">SmartGit (社区版每次使用都需要等待30s)</span><br><span class="line">gitg</span><br></pre></td></tr></table></figure>
+
+<p>软件安装方式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
+
+<p>Antojump</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/Program/Installer</span><br><span class="line">git clone https://github.com/wting/autojump.git</span><br><span class="line">cd autojump</span><br><span class="line">./install.py</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br><span class="line">autojump -v</span><br></pre></td></tr></table></figure>
+
+<p>设置命令行的别称</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">alias ll=&#x27;ls -l&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>SSH Error:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SSH Error:</span><br><span class="line">ssh erp-staging.gaatu.com</span><br><span class="line">sign_and_send_pubkey: no mutual signature supported</span><br><span class="line">ubuntu@erp-staging.gaatu.com&#x27;s password:</span><br><span class="line">ubuntu@erp-staging.gaatu.com: Permission denied (publickey,password).</span><br><span class="line"></span><br><span class="line">Solution: </span><br><span class="line">set the ~/.ssh/config</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line">or</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-dss</span><br></pre></td></tr></table></figure>
+
+<p>Keyring</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">After forgetting the password to the “Default keyring”, resolved the issue as follows:</span><br><span class="line"></span><br><span class="line">1.Navigate to local Home folder in file manager and displayed hidden folders with Ctrl+H</span><br><span class="line">2.Navigate to /home/.local/share/keyrings/</span><br><span class="line">3.Deleted all files with “.keyring” file ending.</span><br><span class="line">4.Then launched application to receive a prompt to create a new password for the Default keyring.</span><br><span class="line">5.Specified the new password and confirmed.</span><br><span class="line">Now can use apps that require access to the Default keyring.</span><br><span class="line"></span><br><span class="line">cd /home/.local/share/keyrings</span><br><span class="line">rm *.keyring</span><br></pre></td></tr></table></figure>
+
+<p>Debtap: </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Install debtap:</span><br><span class="line">  yay -S debtap sudo debtap -u</span><br><span class="line">Convert .deb packages Into Arch Linux Packages using debtap:</span><br><span class="line">  debtap packagename.deb</span><br><span class="line">install the package in the system:</span><br><span class="line">  sudo pacman -U package-name</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>manjaro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PHPStorm Setting Deployment</title>
+    <url>/2022/08/18/phpstorm-deployment/</url>
+    <content><![CDATA[<h3 id="1-Setting-SSH"><a href="#1-Setting-SSH" class="headerlink" title="1. Setting SSH"></a>1. Setting SSH</h3><p><img src="/../src/phpstorm_deployment_setting01.png" alt="phpstorm_deployment_setting01"></p>
+<h3 id="2-Setting-Host-amp-Connection"><a href="#2-Setting-Host-amp-Connection" class="headerlink" title="2. Setting Host &amp; Connection"></a>2. Setting Host &amp; Connection</h3><p><img src="/../src/phpstorm_deployment_setting02.png" alt="phpstorm_deployment_setting02"></p>
+<h3 id="3-Setting-Mapping"><a href="#3-Setting-Mapping" class="headerlink" title="3. Setting Mapping"></a>3. Setting Mapping</h3><p><img src="/../src/phpstorm_deployment_setting03.png" alt="phpstorm_deployment_setting03"></p>
+]]></content>
+      <categories>
+        <category>PHPStorm</category>
+      </categories>
+      <tags>
+        <tag>PHPStorm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PHPStorm &amp; VSCode Setting Xdebug</title>
     <url>/2022/08/18/phpstorm-xdebug/</url>
     <content><![CDATA[<ol>
@@ -351,50 +409,6 @@
       </categories>
       <tags>
         <tag>xdebug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Manjaro</title>
-    <url>/2022/07/15/manjaro/</url>
-    <content><![CDATA[<p>镜像源修改</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># change to pacman china mirrors</span><br><span class="line">sudo pacman-mirrors -i -c China -m rank</span><br></pre></td></tr></table></figure>
-
-<p>中文输入法安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Install sogoupinyin</span><br><span class="line">sudo pacman -S fcitx-im fcitx-configtool fcitx-googlepinyin</span><br><span class="line">sudo pacman -S fcitx-sogoupinyin</span><br><span class="line"></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"></span><br><span class="line"># export LC_ALL=zh_CN.UTF-8 # 这个是控制系统界面的语言类型的，这一行意味着显示中文。这里还是注销了吧。</span><br><span class="line">export GTK_IM_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS=“@im=fcitx”</span><br></pre></td></tr></table></figure>
-
-<p>pacman</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pacman -S [packageName]</span><br><span class="line">pacman -Rcns [packageName]</span><br><span class="line">pacman -Ss keyword</span><br><span class="line">pacman -Qs keyword</span><br><span class="line">#将在同步包数据库后再执行安装。</span><br><span class="line">pacman -Sy package_name </span><br><span class="line">#安装本地包，其扩展名为pkg.tar.gz或pkg.tar.xz</span><br><span class="line">pacman -U local_package_name</span><br><span class="line">#安装一个远程包（不在 pacman 配置的源里面）</span><br><span class="line">pacman -U url</span><br></pre></td></tr></table></figure>
-
-<p>推荐软件安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">DBeaver</span><br><span class="line">wechat-uos</span><br><span class="line">dingtalk-bin</span><br><span class="line">wps</span><br><span class="line">vscode</span><br><span class="line">  remote-ssh</span><br><span class="line">  remote-container</span><br><span class="line">  docker</span><br><span class="line">  jira and bitbucket</span><br><span class="line">  IntelliJ IDEA Keybindings</span><br><span class="line">  PHP Namespace Resolver</span><br><span class="line">  Vue Language Features (Volar)</span><br><span class="line">latte-dock （类似苹果的悬浮工具栏）</span><br><span class="line">github-desktop</span><br><span class="line">SmartGit (社区版每次使用都需要等待30s)</span><br><span class="line">gitg</span><br></pre></td></tr></table></figure>
-
-<p>软件安装方式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">安装方式一：</span><br><span class="line">sudo pacman -S yay</span><br><span class="line">sudo pacman -S snapd</span><br><span class="line">yay -S teams</span><br><span class="line">yay -S dingtalk-bin</span><br><span class="line">yay -S sqlectron-gui #轻量级sql-gui</span><br><span class="line">yay -S docker &amp;&amp; systemctl status docker</span><br><span class="line">sudo snap install dbeaver-ce </span><br><span class="line"></span><br><span class="line">安装方式二：</span><br><span class="line">wget安装包，再用pacman命令安装</span><br><span class="line"># Todesk https://www.todesk.com/linux.html</span><br><span class="line">wget https://dl.todesk.com/linux/todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line">sudo pacman -U todesk_4.1.0_x86_64.pkg.tar.zst</span><br><span class="line"></span><br><span class="line">安装方式三：</span><br><span class="line">手动下班安装包，在用tar -xzvf解压，再打开文件启用安装程序</span><br><span class="line"># Download the phpstorm from https://www.jetbrains.com/zh-cn/phpstorm/download/other.html</span><br><span class="line"># cd Download Path</span><br><span class="line">cd /home/leo/Program/</span><br><span class="line"># 解压</span><br><span class="line">tar -xzvf PhpStorm-211.7628.25.tar.gz</span><br><span class="line">cd $path</span><br><span class="line">/bin/phpstorm.sh</span><br><span class="line"></span><br><span class="line"># Add phpstorm desktop</span><br><span class="line">sudo nano /usr/share/application/phpstorm.desktop</span><br><span class="line"># Input the setting code below</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Name=Phpstorm</span><br><span class="line">GenericName=PHP Editor</span><br><span class="line">Exec=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.sh</span><br><span class="line">Icon=/home/leo/Program/PhpStorm-211.7628.25/bin/phpstorm.svg</span><br><span class="line">Type=Application</span><br><span class="line">StartupNotify=true</span><br><span class="line">Categories=Developmemt;IDE;</span><br><span class="line">MimeType=text/markdown;text/x-markdown;</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line"># Add PATH</span><br><span class="line">echo $path</span><br><span class="line">sudo nano /etc/profile</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">export PATH=$PATH:~/Program/PhpStorm-211.7628.25/bin/</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">source /etc/profile</span><br><span class="line">echo $path</span><br><span class="line"></span><br><span class="line">安装方式四：</span><br><span class="line">Debtap用于将debian的软件安装包，转化成manjaro的软件安装包格式，再用pacman进行安装，但并非所有的deb包都可以安装成功，并且过程比较慢。</span><br></pre></td></tr></table></figure>
-
-<p>Antojump</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/Program/Installer</span><br><span class="line">git clone https://github.com/wting/autojump.git</span><br><span class="line">cd autojump</span><br><span class="line">./install.py</span><br><span class="line">vim ~/.zshrc</span><br><span class="line">source ~/.zshrc</span><br><span class="line">autojump -v</span><br></pre></td></tr></table></figure>
-
-<p>设置命令行的别称</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">alias ll=&#x27;ls -l&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>SSH Error:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">SSH Error:</span><br><span class="line">ssh erp-staging.gaatu.com</span><br><span class="line">sign_and_send_pubkey: no mutual signature supported</span><br><span class="line">ubuntu@erp-staging.gaatu.com&#x27;s password:</span><br><span class="line">ubuntu@erp-staging.gaatu.com: Permission denied (publickey,password).</span><br><span class="line"></span><br><span class="line">Solution: </span><br><span class="line">set the ~/.ssh/config</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-rsa</span><br><span class="line">or</span><br><span class="line">PubkeyAcceptedKeyTypes=+ssh-dss</span><br></pre></td></tr></table></figure>
-
-<p>Keyring</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">After forgetting the password to the “Default keyring”, resolved the issue as follows:</span><br><span class="line"></span><br><span class="line">1.Navigate to local Home folder in file manager and displayed hidden folders with Ctrl+H</span><br><span class="line">2.Navigate to /home/.local/share/keyrings/</span><br><span class="line">3.Deleted all files with “.keyring” file ending.</span><br><span class="line">4.Then launched application to receive a prompt to create a new password for the Default keyring.</span><br><span class="line">5.Specified the new password and confirmed.</span><br><span class="line">Now can use apps that require access to the Default keyring.</span><br><span class="line"></span><br><span class="line">cd /home/.local/share/keyrings</span><br><span class="line">rm *.keyring</span><br></pre></td></tr></table></figure>
-
-<p>Debtap: </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Install debtap:</span><br><span class="line">  yay -S debtap sudo debtap -u</span><br><span class="line">Convert .deb packages Into Arch Linux Packages using debtap:</span><br><span class="line">  debtap packagename.deb</span><br><span class="line">install the package in the system:</span><br><span class="line">  sudo pacman -U package-name</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-        <tag>manjaro</tag>
       </tags>
   </entry>
   <entry>

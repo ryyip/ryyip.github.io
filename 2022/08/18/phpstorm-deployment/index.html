@@ -22,28 +22,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"ryyip.github.io","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="GIT FlowInitial[master]$ git flow init[develop]$ git push –set-upstream origin develop Release[develop]$ git pull # Pull first and then choose an intial version number like V1.0.0.0 or V0.1.0.0 …[deve">
+    <meta name="description" content="1. Setting SSH 2. Setting Host &amp; Connection 3. Setting Mapping">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git Flow">
-<meta property="og:url" content="https://ryyip.github.io/2022/07/21/git-flow/index.html">
+<meta property="og:title" content="PHPStorm Setting Deployment">
+<meta property="og:url" content="https://ryyip.github.io/2022/08/18/phpstorm-deployment/index.html">
 <meta property="og:site_name" content="Ryyip">
-<meta property="og:description" content="GIT FlowInitial[master]$ git flow init[develop]$ git push –set-upstream origin develop Release[develop]$ git pull # Pull first and then choose an intial version number like V1.0.0.0 or V0.1.0.0 …[deve">
+<meta property="og:description" content="1. Setting SSH 2. Setting Host &amp; Connection 3. Setting Mapping">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-07-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-03T08:11:12.578Z">
+<meta property="og:image" content="https://ryyip.github.io/src/phpstorm_deployment_setting01.png">
+<meta property="og:image" content="https://ryyip.github.io/src/phpstorm_deployment_setting02.png">
+<meta property="og:image" content="https://ryyip.github.io/src/phpstorm_deployment_setting03.png">
+<meta property="article:published_time" content="2022-08-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-14T01:17:47.200Z">
 <meta property="article:author" content="Leo Ye">
-<meta property="article:tag" content="Git Flow">
+<meta property="article:tag" content="PHPStorm">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ryyip.github.io/src/phpstorm_deployment_setting01.png">
 
 
-<link rel="canonical" href="https://ryyip.github.io/2022/07/21/git-flow/">
+<link rel="canonical" href="https://ryyip.github.io/2022/08/18/phpstorm-deployment/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ryyip.github.io/2022/07/21/git-flow/","path":"2022/07/21/git-flow/","title":"Git Flow"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://ryyip.github.io/2022/08/18/phpstorm-deployment/","path":"2022/08/18/phpstorm-deployment/","title":"PHPStorm Setting Deployment"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Git Flow | Ryyip</title>
+<title>PHPStorm Setting Deployment | Ryyip</title>
   
 
 
@@ -145,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GIT-Flow"><span class="nav-number">1.</span> <span class="nav-text">GIT Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Initial"><span class="nav-number">1.1.</span> <span class="nav-text">Initial</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Release"><span class="nav-number">1.2.</span> <span class="nav-text">Release</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature"><span class="nav-number">1.3.</span> <span class="nav-text">Feature</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Feature-Release"><span class="nav-number">1.3.1.</span> <span class="nav-text">1. Feature Release</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Feature-Testing"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. Feature Testing</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Feature-Release"><span class="nav-number">1.3.3.</span> <span class="nav-text">3. Feature Release</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hotfix"><span class="nav-number">1.4.</span> <span class="nav-text">Hotfix</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Setting-SSH"><span class="nav-number">1.</span> <span class="nav-text">1. Setting SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Setting-Host-amp-Connection"><span class="nav-number">2.</span> <span class="nav-text">2. Setting Host &amp; Connection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Setting-Mapping"><span class="nav-number">3.</span> <span class="nav-text">3. Setting Mapping</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -208,7 +212,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://ryyip.github.io/2022/07/21/git-flow/">
+    <link itemprop="mainEntityOfPage" href="https://ryyip.github.io/2022/08/18/phpstorm-deployment/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -221,12 +225,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Git Flow | Ryyip">
+      <meta itemprop="name" content="PHPStorm Setting Deployment | Ryyip">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Git Flow
+          PHPStorm Setting Deployment
         </h1>
 
         <div class="post-meta-container">
@@ -237,14 +241,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-07-21 00:00:00" itemprop="dateCreated datePublished" datetime="2022-07-21T00:00:00+08:00">2022-07-21</time>
+      <time title="Created: 2022-08-18 00:00:00" itemprop="dateCreated datePublished" datetime="2022-08-18T00:00:00+08:00">2022-08-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-03 16:11:12" itemprop="dateModified" datetime="2022-08-03T16:11:12+08:00">2022-08-03</time>
+      <time title="Modified: 2023-03-14 09:17:47" itemprop="dateModified" datetime="2023-03-14T09:17:47+08:00">2023-03-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,7 +256,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Tools/" itemprop="url" rel="index"><span itemprop="name">Tools</span></a>
+          <a href="/categories/PHPStorm/" itemprop="url" rel="index"><span itemprop="name">PHPStorm</span></a>
         </span>
     </span>
 
@@ -266,13 +270,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="GIT-Flow"><a href="#GIT-Flow" class="headerlink" title="GIT Flow"></a><em>GIT Flow</em></h2><h3 id="Initial"><a href="#Initial" class="headerlink" title="Initial"></a>Initial</h3><p>[master]$ git flow init<br>[develop]$ git push –set-upstream origin develop</p>
-<h3 id="Release"><a href="#Release" class="headerlink" title="Release"></a>Release</h3><p>[develop]$ git pull # Pull first and then choose an intial version number like V1.0.0.0 or V0.1.0.0 …<br>[develop]$ git flow release start V0.0.1.0 # VMajor.Minor.Release.Hotfix<br>[release&#x2F;V0.0.1.0]$ git flow release finish V0.0.1.0<br>[master]$ git push<br>[master]$ git push –tags</p>
-<h3 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h3><p>[master]$ git flow feature start ST-6319-DEV-Workflow-V2.0 # ST-JiraNo-feature-Name-Version<br>[feature]$ git add .<br>[feature]$ git commit -m ‘ST-6774: Code Review Doc-Init’ # ST-TaskJiraNo: Task Name-Action(Init&#x2F;Update&#x2F;Done&#x2F;Fix Bug&#x2F;Approved&#x2F;Rejected…)<br>[feature]$ git push –set-upstream origin feature&#x2F;ST-10185-Purchase-Permission<br>root&#x2F;client&#x2F;ERP yarn generate</p>
-<h4 id="1-Feature-Release"><a href="#1-Feature-Release" class="headerlink" title="1. Feature Release"></a>1. Feature Release</h4><p>Mode 1:<br>[feature]$ git flow feature finish ST-8284-EstimatedPaymentDate<br>Mode 2:<br>[feature]$ git flow feature publish ST-6319-DEV-Workflow-V2.0 # The new unpublished feature<br>[feature]$ git push # The published feature</p>
-<h4 id="2-Feature-Testing"><a href="#2-Feature-Testing" class="headerlink" title="2. Feature Testing"></a>2. Feature Testing</h4><p>[staging][develop]$ git pull<br>[staging][develop]$ git checkout feature&#x2F;ST-6319-DEV-Workflow-V2.0</p>
-<h4 id="3-Feature-Release"><a href="#3-Feature-Release" class="headerlink" title="3. Feature Release"></a>3. Feature Release</h4><p>[develop]$ git pull # Pull first<br>[develop]$ git flow release start V0.0.2.0 # VMajor.Minor.Release.Hotfix<br>[release&#x2F;V0.0.2.0]$ git flow release finish V0.0.2.0<br>[master]$ git push<br>[master]$ git push –tags</p>
-<h3 id="Hotfix"><a href="#Hotfix" class="headerlink" title="Hotfix"></a>Hotfix</h3><p>[develop]$ git pull # Pull first<br>[develop]$ git flow hotfix start V0.0.2.1 # VMajor.Minor.Release.Hotfix<br>[hotfix&#x2F;V0.0.2.1]$ git add .<br>[hotfix&#x2F;V0.0.2.1]$ git commit -m ‘ST-6774: Code Review Doc-Fix Bug’<br>[hotfix&#x2F;V0.0.2.1]$ git flow hotfix finish V0.0.2.1<br>[master]$ git push<br>[master]$ git push –tags</p>
+        <h3 id="1-Setting-SSH"><a href="#1-Setting-SSH" class="headerlink" title="1. Setting SSH"></a>1. Setting SSH</h3><p><img src="/../src/phpstorm_deployment_setting01.png" alt="phpstorm_deployment_setting01"></p>
+<h3 id="2-Setting-Host-amp-Connection"><a href="#2-Setting-Host-amp-Connection" class="headerlink" title="2. Setting Host &amp; Connection"></a>2. Setting Host &amp; Connection</h3><p><img src="/../src/phpstorm_deployment_setting02.png" alt="phpstorm_deployment_setting02"></p>
+<h3 id="3-Setting-Mapping"><a href="#3-Setting-Mapping" class="headerlink" title="3. Setting Mapping"></a>3. Setting Mapping</h3><p><img src="/../src/phpstorm_deployment_setting03.png" alt="phpstorm_deployment_setting03"></p>
 
     </div>
 
@@ -282,21 +282,18 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Git-Flow/" rel="tag"># Git Flow</a>
+              <a href="/tags/PHPStorm/" rel="tag"># PHPStorm</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/07/21/git/" rel="prev" title="Git">
-                  <i class="fa fa-chevron-left"></i> Git
+                <a href="/2022/08/18/phpstorm-xdebug/" rel="prev" title="PHPStorm & VSCode Setting Xdebug">
+                  <i class="fa fa-chevron-left"></i> PHPStorm & VSCode Setting Xdebug
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/08/03/docker/" rel="next" title="Docker & Docker Compose">
-                  Docker & Docker Compose <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
