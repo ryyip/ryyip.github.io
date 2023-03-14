@@ -351,7 +351,7 @@
   </entry>
   <entry>
     <title>PHPStorm Setting Deployment</title>
-    <url>/2022/08/18/phpstorm-deployment/</url>
+    <url>/2022/08/20/phpstorm-deployment/</url>
     <content><![CDATA[<h3 id="1-Setting-SSH"><a href="#1-Setting-SSH" class="headerlink" title="1. Setting SSH"></a>1. Setting SSH</h3><p><img src="/../src/phpstorm_deployment_setting01.png" alt="phpstorm_deployment_setting01"></p>
 <h3 id="2-Setting-Host-amp-Connection"><a href="#2-Setting-Host-amp-Connection" class="headerlink" title="2. Setting Host &amp; Connection"></a>2. Setting Host &amp; Connection</h3><p><img src="/../src/phpstorm_deployment_setting02.png" alt="phpstorm_deployment_setting02"></p>
 <h3 id="3-Setting-Mapping"><a href="#3-Setting-Mapping" class="headerlink" title="3. Setting Mapping"></a>3. Setting Mapping</h3><p><img src="/../src/phpstorm_deployment_setting03.png" alt="phpstorm_deployment_setting03"></p>
