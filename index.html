@@ -152,18 +152,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">22</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -192,6 +192,114 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://ryyip.github.io/2023/03/27/php-container/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Leo Ye">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ryyip">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Ryyip">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/03/27/php-container/" class="post-title-link" itemprop="url">容器的介绍及应用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2023-03-27 00:00:00 / Modified: 14:37:49" itemprop="dateCreated datePublished" datetime="2023-03-27T00:00:00+08:00">2023-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/container/" itemprop="url" rel="index"><span itemprop="name">container</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/container/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>可以理解为一个盒子，事先将项目中可能用到的类扔进去，在项目中直接从容器中拿，也就是避免了直接在项目中到处new，造成大量耦合。取而代之的是在项目类里面增设setDi、getDi方法，通过Di（依赖注入）统一管理类。</p>
+<p> 1.定义了一个存储接口，以及两个类实现</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Storage</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">open</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DatabaseStorage</span> <span class="keyword">implements</span> <span class="title">Storage</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">open</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;open db Storage&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FileStorage</span> <span class="keyword">implements</span> <span class="title">Storage</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">open</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;open file Storage&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2.创建一个容器</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 容器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Container</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$binds</span>; <span class="comment">// 绑定闭包</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$instances</span>; <span class="comment">// 绑定实例</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 向容器中注册服务</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $abstract 服务名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $conctete 服务体</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">bind</span>(<span class="params"><span class="variable">$abstract</span>, <span class="variable">$concrete</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果是个闭包则绑定到binds中</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$concrete</span> <span class="keyword">instanceof</span> <span class="built_in">Closure</span>) &#123;</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;binds[<span class="variable">$abstract</span>] = <span class="variable">$concrete</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 否则绑定到实例数组中</span></span><br><span class="line">            <span class="variable language_">$this</span>-&gt;instances[<span class="variable">$abstract</span>] = <span class="variable">$concrete</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 从容器中获取服务</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $abstract 服务名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $params   实例化服务所需要传递的参数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">make</span>(<span class="params"><span class="variable">$abstract</span>, <span class="variable">$params</span> = []</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果是个实例就返回这个实例</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable language_">$this</span>-&gt;instances[<span class="variable">$abstract</span>])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;instances[<span class="variable">$abstract</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="title function_ invoke__">array_unshift</span>(<span class="variable">$params</span>, <span class="variable">$this</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 返回闭包执行结果</span></span><br><span class="line">        <span class="keyword">return</span> <span class="title function_ invoke__">call_user_func_array</span>(<span class="variable">$this</span>-&gt;binds[<span class="variable">$abstract</span>], <span class="variable">$params</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>3.使用容器，注册服务到容器中，并拿出来使用</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Container</span> = <span class="keyword">new</span> <span class="title class_">Container</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把名称为FileStorage，内容为闭包的服务，注册到容器</span></span><br><span class="line"><span class="variable">$Container</span>-&gt;<span class="title function_ invoke__">bind</span>(<span class="string">&#x27;FileStorage&#x27;</span>, function(<span class="variable">$Container</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">FileStorage</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 把名称为DatabaseStorage，内容为DatabaseStorage实例的服务注册到容器</span></span><br><span class="line"><span class="variable">$Container</span>-&gt;<span class="title function_ invoke__">bind</span>(<span class="string">&#x27;DatabaseStorage&#x27;</span>, <span class="keyword">new</span> <span class="title class_">DatabaseStorage</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从容器获取服务并使用</span></span><br><span class="line"><span class="variable">$FileStorage</span> = <span class="variable">$Container</span>-&gt;<span class="title function_ invoke__">make</span>(<span class="string">&#x27;FileStorage&#x27;</span>);</span><br><span class="line"><span class="variable">$FileStorage</span>-&gt;<span class="title function_ invoke__">open</span>(); <span class="comment">// open file Storage</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$DatabaseStorage</span> = <span class="variable">$Container</span>-&gt;<span class="title function_ invoke__">make</span>(<span class="string">&#x27;DatabaseStorage&#x27;</span>);</span><br><span class="line"><span class="variable">$DatabaseStorage</span>-&gt;<span class="title function_ invoke__">open</span>(); <span class="comment">// open db Storage</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>4.容器的另外两种实现方式<br> 通过魔术方法实现</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MagicContainer</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="variable">$ele</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;ele = [];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__set</span>(<span class="params"><span class="variable">$name</span>, <span class="variable">$value</span></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>] = <span class="variable">$value</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__get</span>(<span class="params"><span class="variable">$name</span></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__isset</span>(<span class="params"><span class="variable">$name</span></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">isset</span>(<span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__unset</span>(<span class="params"><span class="variable">$name</span></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>]))&#123;</span><br><span class="line">      <span class="keyword">unset</span>(<span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$container</span> = <span class="keyword">new</span> <span class="title class_">MagicContainer</span>();</span><br><span class="line"><span class="variable">$container</span>-&gt;logger = <span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$msg</span></span>)</span>&#123;</span><br><span class="line">  <span class="title function_ invoke__">file_put_contents</span>(<span class="string">&#x27;info.log&#x27;</span>,<span class="variable">$msg</span>.PHP_EOL,FILE_APPEND);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable">$logger</span> = <span class="variable">$container</span>-&gt;logger;</span><br><span class="line"><span class="variable">$logger</span>(<span class="string">&#x27;magic container works&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>通过ArrayAccess接口实现</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayContainer</span> <span class="keyword">implements</span> <span class="title">ArrayAccess</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="variable">$elements</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;elements = [];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetExists</span>(<span class="params"><span class="variable">$offset</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">isset</span>(<span class="variable language_">$this</span>-&gt;elements[<span class="variable">$offset</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetGet</span>(<span class="params"><span class="variable">$offset</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">offsetExists</span>(<span class="variable">$offset</span>))&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;elements[<span class="variable">$offset</span>];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetSet</span>(<span class="params"><span class="variable">$offset</span>, <span class="variable">$value</span></span>)</span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;elements[<span class="variable">$offset</span>] = <span class="variable">$value</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetUnset</span>(<span class="params"><span class="variable">$offset</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">offsetExists</span>(<span class="variable">$offset</span>))&#123;</span><br><span class="line">      <span class="keyword">unset</span>(<span class="variable language_">$this</span>-&gt;elements[<span class="variable">$offset</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$container</span> = <span class="keyword">new</span> <span class="title class_">ArrayContainer</span>();</span><br><span class="line"><span class="variable">$container</span>[<span class="string">&#x27;logger&#x27;</span>] = <span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$msg</span></span>)</span>&#123;</span><br><span class="line">  <span class="title function_ invoke__">file_put_contents</span>(<span class="string">&#x27;info.log&#x27;</span>,<span class="variable">$msg</span>.PHP_EOL,FILE_APPEND);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable">$logger</span> = <span class="variable">$container</span>[<span class="string">&#x27;logger&#x27;</span>];</span><br><span class="line"><span class="variable">$logger</span>(<span class="string">&#x27;array container works&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+<p>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f531beef7177">https://www.jianshu.com/p/f531beef7177</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -538,7 +646,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-08-15 18:46:18" itemprop="dateModified" datetime="2022-08-15T18:46:18+08:00">2022-08-15</time>
+      <time title="Modified: 2023-03-27 14:37:23" itemprop="dateModified" datetime="2023-03-27T14:37:23+08:00">2023-03-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -861,7 +969,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h3><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#111;&#x2e;&#x79;&#101;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#x6c;&#101;&#111;&#x2e;&#x79;&#101;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+          <h3 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h3><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#111;&#46;&#x79;&#101;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#108;&#101;&#111;&#46;&#x79;&#101;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><h4 id="Normal"><a href="#Normal" class="headerlink" title="Normal"></a>Normal</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git commit -m &#x27;&#x27; --no-verify</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br><span class="line"></span><br><span class="line">git merge develop</span><br><span class="line">git merge origin/develop</span><br></pre></td></tr></table></figure>
@@ -1109,113 +1217,6 @@
 
 
 
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://ryyip.github.io/2022/06/30/software-recommend%20/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Leo Ye">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ryyip">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Ryyip">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/30/software-recommend%20/" class="post-title-link" itemprop="url">Software Recommend</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2022-06-30 12:34:14" itemprop="dateCreated datePublished" datetime="2022-06-30T12:34:14+08:00">2022-06-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-07-26 18:21:30" itemprop="dateModified" datetime="2022-07-26T18:21:30+08:00">2022-07-26</time>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <ol>
-<li><p>Launchy: alt+space 调用所有快捷方式</p>
-</li>
-<li><p>Typora: Markdown editor</p>
-</li>
-<li><p>DiskGenius: 硬盘管理及数据恢复</p>
-</li>
-<li><p>FinalShell: 国产好用的shell应用</p>
-</li>
-<li><p>Everything: 超好用超高效的文件检索工具</p>
-</li>
-<li><p>PotPlayer: 视频播放</p>
-</li>
-<li><p>Picasa: Picture viewer</p>
-</li>
-<li><p>Todesk &amp; 向日葵：远程桌面控制软件</p>
-</li>
-<li><p>yEd Graph Editor: ERD, PRD, 流程图等绘制软件</p>
-</li>
-<li><p>EVCapture&#x2F;EV录屏 &amp; Captura录屏</p>
-</li>
-<li><p>Fiddler: 网络请求监控</p>
-</li>
-<li><p>Tampermonkey(油猴): Chrome 插件</p>
-</li>
-<li><p>Lingoes: 翻译软件</p>
-</li>
-<li><p>FadeTop: 是一个简单有趣的休息提醒软件</p>
-</li>
-<li><p>Ventoy: PE制作工具，支持多系统</p>
-</li>
-</ol>
 
       
     </div>

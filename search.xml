@@ -35,6 +35,60 @@
       </tags>
   </entry>
   <entry>
+    <title>带宽、网速、流量之间有什么关系</title>
+    <url>/2022/06/15/bandwidth-internetSpeed-flow/</url>
+    <content><![CDATA[<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>1、带宽的统计单位是：比特&#x2F;秒（bps）：100M&#x3D;100Mbps；</p>
+<p>2、网速是数据传输的速度，单位是：字节&#x2F;秒（B&#x2F;s KB&#x2F;s MB&#x2F;s）：1MB&#x2F;s&#x3D;1024KB&#x2F;s ；1KB&#x2F;s&#x3D;1024B&#x2F;s。</p>
+<p>3、流量是用户上网发送和接收的数据量总和，单位是：字节（Byte）；</p>
+<p>比特是信息的最小单位：1字节&#x3D;8比特（1B&#x3D;8bit或者1B&#x3D;8b）；1字节&#x2F;秒&#x3D;8比特&#x2F;秒（1B&#x2F;s&#x3D;8bps）</p>
+<h3 id="如何换算"><a href="#如何换算" class="headerlink" title="如何换算"></a>如何换算</h3><p>我们这里来用实例看下：比如200M宽带下载速度是多少？</p>
+<p>首先，运营商所说的200M宽带光纤，完整单位是200Mbps，而我们电脑中所说的下载速度单位是：MB。因此200M宽带下载速度并不代表下载速度就是200Mb&#x2F;s，而是需要按照如下公式进行换算：</p>
+<p>1Mbps&#x3D;1024Kbps&#x3D;1024&#x2F;8KBps&#x3D;128KB&#x2F;s</p>
+<p>也就是说 1M 的宽带下载速度不会超过 128KB&#x2F;s ，也就是理论上1秒钟，可以下载128K的内容，实际上1M宽带，下载速度100k&#x2F;s就属于正常，毕竟理论值不一定能达到。</p>
+<p>200M宽带的下载速度理论上为：128KB&#x2F;s x 200 &#x3D; 25600 KB&#x2F;s &#x3D; 25.6MB&#x2F;s</p>
+<p>正常的下载速度是：25M；当然，这是理论上的下载速度，在实际使用的过程中，可能会略低于&#x2F;高于25M，一般来说上下浮动1M都属于正常的，即24-26都属于正常的。</p>
+<p>如果你家网速测试小于25M太多的话，要么是连的假200M带宽，要么就是其它的路由器、光猫没有使用千兆的。</p>
+]]></content>
+      <categories>
+        <category>Computer</category>
+      </categories>
+      <tags>
+        <tag>bandwidth</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue.js, Nuxt.js &amp; Node.js</title>
+    <url>/2022/05/05/VueJs-NuxtJs-NodeJs/</url>
+    <content><![CDATA[<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
+<p>JS依赖管理工具</p>
+<p><strong>NPM</strong></p>
+<p>Node.js自带的依赖管理工具</p>
+<p><strong>Vue.js</strong></p>
+<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<p><strong>Nuxt.js</strong></p>
+<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
+<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
+<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
+<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
+<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
+<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
+<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
+<p><strong>Node.js</strong></p>
+<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
+<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
+<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>Vue.js</tag>
+        <tag>Nuxt.js</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Yarn</title>
     <url>/2022/05/05/Yarn/</url>
     <content><![CDATA[<p><em><strong>Yarn: 依赖包管理工具</strong></em></p>
@@ -79,60 +133,6 @@
       <tags>
         <tag>Yarn</tag>
         <tag>Dependent</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue.js, Nuxt.js &amp; Node.js</title>
-    <url>/2022/05/05/VueJs-NuxtJs-NodeJs/</url>
-    <content><![CDATA[<h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><p><strong>Yarn</strong></p>
-<p>JS依赖管理工具</p>
-<p><strong>NPM</strong></p>
-<p>Node.js自带的依赖管理工具</p>
-<p><strong>Vue.js</strong></p>
-<p>Vue (读音 &#x2F;vjuː&#x2F;，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与<a href="https://cn.vuejs.org/v2/guide/single-file-components.html">现代化的工具链</a>以及各种<a href="https://github.com/vuejs/awesome-vue#libraries--plugins">支持类库</a>结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
-<p><strong>Nuxt.js</strong></p>
-<p>Nuxt.js 是一个基于 Vue.js 的通用应用框架。（Vue.js脚手架）</p>
-<p>通过对客户端&#x2F;服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 <strong>UI 渲染</strong>。</p>
-<p>我们的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。</p>
-<p>Nuxt.js 预设了利用 Vue.js 开发<strong>服务端渲染</strong>的应用所需要的各种配置。</p>
-<p>除此之外，我们还提供了一种命令叫：<code>nuxt generate</code> ，为基于 Vue.js 的应用提供生成对应的静态站点的功能。</p>
-<p>我们相信这个命令所提供的功能，是向开发集成各种微服务（Microservices）的 Web 应用迈开的新一步。</p>
-<p>作为框架，Nuxt.js 为 <code>客户端/服务端</code> 这种典型的应用架构模式提供了许多有用的特性，例如异步数据加载、中间件支持、布局支持等。</p>
-<p><strong>Node.js</strong></p>
-<p>Node.js 是一个开源和跨平台的 JavaScript 运行时环境。 它几乎是任何类型项目的流行工具！</p>
-<p>Node.js 在浏览器之外运行 V8 JavaScript 引擎（Google Chrome 的内核）。 这使得 Node.js 的性能非常好。</p>
-<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
-<p>在Node.js没有出现之前，JavaScript语言只能被浏览器内核所解析执行。Node.js的出现使得JS，在浏览器之外也可运行，从而丰富了JS的使用范围及作用。使jS不再仅限于作为一门前端语言。它已可以作为后端语言，进行数据库操作，I&#x2F;O操作，文件解析等。</p>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>Vue.js</tag>
-        <tag>Nuxt.js</tag>
-        <tag>Node.js</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>带宽、网速、流量之间有什么关系</title>
-    <url>/2022/06/15/bandwidth-internetSpeed-flow/</url>
-    <content><![CDATA[<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>1、带宽的统计单位是：比特&#x2F;秒（bps）：100M&#x3D;100Mbps；</p>
-<p>2、网速是数据传输的速度，单位是：字节&#x2F;秒（B&#x2F;s KB&#x2F;s MB&#x2F;s）：1MB&#x2F;s&#x3D;1024KB&#x2F;s ；1KB&#x2F;s&#x3D;1024B&#x2F;s。</p>
-<p>3、流量是用户上网发送和接收的数据量总和，单位是：字节（Byte）；</p>
-<p>比特是信息的最小单位：1字节&#x3D;8比特（1B&#x3D;8bit或者1B&#x3D;8b）；1字节&#x2F;秒&#x3D;8比特&#x2F;秒（1B&#x2F;s&#x3D;8bps）</p>
-<h3 id="如何换算"><a href="#如何换算" class="headerlink" title="如何换算"></a>如何换算</h3><p>我们这里来用实例看下：比如200M宽带下载速度是多少？</p>
-<p>首先，运营商所说的200M宽带光纤，完整单位是200Mbps，而我们电脑中所说的下载速度单位是：MB。因此200M宽带下载速度并不代表下载速度就是200Mb&#x2F;s，而是需要按照如下公式进行换算：</p>
-<p>1Mbps&#x3D;1024Kbps&#x3D;1024&#x2F;8KBps&#x3D;128KB&#x2F;s</p>
-<p>也就是说 1M 的宽带下载速度不会超过 128KB&#x2F;s ，也就是理论上1秒钟，可以下载128K的内容，实际上1M宽带，下载速度100k&#x2F;s就属于正常，毕竟理论值不一定能达到。</p>
-<p>200M宽带的下载速度理论上为：128KB&#x2F;s x 200 &#x3D; 25600 KB&#x2F;s &#x3D; 25.6MB&#x2F;s</p>
-<p>正常的下载速度是：25M；当然，这是理论上的下载速度，在实际使用的过程中，可能会略低于&#x2F;高于25M，一般来说上下浮动1M都属于正常的，即24-26都属于正常的。</p>
-<p>如果你家网速测试小于25M太多的话，要么是连的假200M带宽，要么就是其它的路由器、光猫没有使用千兆的。</p>
-]]></content>
-      <categories>
-        <category>Computer</category>
-      </categories>
-      <tags>
-        <tag>bandwidth</tag>
       </tags>
   </entry>
   <entry>
@@ -218,7 +218,7 @@
   <entry>
     <title>Git</title>
     <url>/2022/07/21/git/</url>
-    <content><![CDATA[<h3 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h3><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#x6c;&#101;&#111;&#x2e;&#x79;&#101;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#x6c;&#101;&#111;&#x2e;&#x79;&#101;&#x40;&#103;&#109;&#x61;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
+    <content><![CDATA[<h3 id="Generate-ssh-key"><a href="#Generate-ssh-key" class="headerlink" title="Generate ssh key"></a>Generate ssh key</h3><p>该命令将在~&#x2F;.ssh目录下生成两个文件，私钥id_rsa，公钥id_rsa.pub<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:&#108;&#101;&#111;&#46;&#x79;&#101;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#108;&#101;&#111;&#46;&#x79;&#101;&#64;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a>“<br>ssh-keygen -t rsa -b 4096<br>cat ~&#x2F;.ssh&#x2F;id_rsa.pub<br>生成后，将公钥内容复制到 git &#x2F; bitbucket 代码托管站点</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ERROR:</span><br><span class="line">Git on Bitbucket: Always asked for password, even after uploading my public SSH key</span><br><span class="line">vim .git/config</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = https://Nicolas_Raoul@bitbucket.org/Nicolas_Raoul/therepo.git</span><br><span class="line">to</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">        fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">        url = git@bitbucket.org:Nicolas_Raoul/therepo.git</span><br><span class="line"></span><br><span class="line">Using the command:</span><br><span class="line">git remote set-url origin git@github.com:username/repo.git</span><br></pre></td></tr></table></figure>
 
 <h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><h4 id="Normal"><a href="#Normal" class="headerlink" title="Normal"></a>Normal</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log</span><br><span class="line">git status</span><br><span class="line">git add .</span><br><span class="line">git commit &#x27;desc&#x27;</span><br><span class="line">git commit -m &#x27;&#x27; --no-verify</span><br><span class="line">git pull</span><br><span class="line">git push</span><br><span class="line">git push --set-upstream origin feature/ST-8498-Supplier-Assembly-Sku</span><br><span class="line">git checkout branchName</span><br><span class="line">git checkout -b feature/ST-13074-Shipsage-Api origin/feature/ST-13074-Shipsage-Api</span><br><span class="line"></span><br><span class="line">git merge develop</span><br><span class="line">git merge origin/develop</span><br></pre></td></tr></table></figure>
@@ -347,6 +347,45 @@
       <tags>
         <tag>linux</tag>
         <tag>manjaro</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>容器的介绍及应用</title>
+    <url>/2023/03/27/php-container/</url>
+    <content><![CDATA[<p>可以理解为一个盒子，事先将项目中可能用到的类扔进去，在项目中直接从容器中拿，也就是避免了直接在项目中到处new，造成大量耦合。取而代之的是在项目类里面增设setDi、getDi方法，通过Di（依赖注入）统一管理类。</p>
+<p> 1.定义了一个存储接口，以及两个类实现</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Storage</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">open</span>(<span class="params"></span>)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DatabaseStorage</span> <span class="keyword">implements</span> <span class="title">Storage</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">open</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;open db Storage&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FileStorage</span> <span class="keyword">implements</span> <span class="title">Storage</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">open</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">&#x27;open file Storage&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>2.创建一个容器</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 容器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Container</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$binds</span>; <span class="comment">// 绑定闭包</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$instances</span>; <span class="comment">// 绑定实例</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 向容器中注册服务</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $abstract 服务名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $conctete 服务体</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">bind</span>(<span class="params"><span class="variable">$abstract</span>, <span class="variable">$concrete</span></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果是个闭包则绑定到binds中</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$concrete</span> <span class="keyword">instanceof</span> <span class="built_in">Closure</span>) &#123;</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;binds[<span class="variable">$abstract</span>] = <span class="variable">$concrete</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 否则绑定到实例数组中</span></span><br><span class="line">            <span class="variable language_">$this</span>-&gt;instances[<span class="variable">$abstract</span>] = <span class="variable">$concrete</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 从容器中获取服务</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $abstract 服务名称</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> $params   实例化服务所需要传递的参数</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">make</span>(<span class="params"><span class="variable">$abstract</span>, <span class="variable">$params</span> = []</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果是个实例就返回这个实例</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable language_">$this</span>-&gt;instances[<span class="variable">$abstract</span>])) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;instances[<span class="variable">$abstract</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="title function_ invoke__">array_unshift</span>(<span class="variable">$params</span>, <span class="variable">$this</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 返回闭包执行结果</span></span><br><span class="line">        <span class="keyword">return</span> <span class="title function_ invoke__">call_user_func_array</span>(<span class="variable">$this</span>-&gt;binds[<span class="variable">$abstract</span>], <span class="variable">$params</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>3.使用容器，注册服务到容器中，并拿出来使用</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="variable">$Container</span> = <span class="keyword">new</span> <span class="title class_">Container</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 把名称为FileStorage，内容为闭包的服务，注册到容器</span></span><br><span class="line"><span class="variable">$Container</span>-&gt;<span class="title function_ invoke__">bind</span>(<span class="string">&#x27;FileStorage&#x27;</span>, function(<span class="variable">$Container</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">FileStorage</span>;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 把名称为DatabaseStorage，内容为DatabaseStorage实例的服务注册到容器</span></span><br><span class="line"><span class="variable">$Container</span>-&gt;<span class="title function_ invoke__">bind</span>(<span class="string">&#x27;DatabaseStorage&#x27;</span>, <span class="keyword">new</span> <span class="title class_">DatabaseStorage</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从容器获取服务并使用</span></span><br><span class="line"><span class="variable">$FileStorage</span> = <span class="variable">$Container</span>-&gt;<span class="title function_ invoke__">make</span>(<span class="string">&#x27;FileStorage&#x27;</span>);</span><br><span class="line"><span class="variable">$FileStorage</span>-&gt;<span class="title function_ invoke__">open</span>(); <span class="comment">// open file Storage</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$DatabaseStorage</span> = <span class="variable">$Container</span>-&gt;<span class="title function_ invoke__">make</span>(<span class="string">&#x27;DatabaseStorage&#x27;</span>);</span><br><span class="line"><span class="variable">$DatabaseStorage</span>-&gt;<span class="title function_ invoke__">open</span>(); <span class="comment">// open db Storage</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>4.容器的另外两种实现方式<br> 通过魔术方法实现</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MagicContainer</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="variable">$ele</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;ele = [];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__set</span>(<span class="params"><span class="variable">$name</span>, <span class="variable">$value</span></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>] = <span class="variable">$value</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__get</span>(<span class="params"><span class="variable">$name</span></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__isset</span>(<span class="params"><span class="variable">$name</span></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">isset</span>(<span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">__unset</span>(<span class="params"><span class="variable">$name</span></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">isset</span>(<span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>]))&#123;</span><br><span class="line">      <span class="keyword">unset</span>(<span class="variable language_">$this</span>-&gt;ele[<span class="variable">$name</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$container</span> = <span class="keyword">new</span> <span class="title class_">MagicContainer</span>();</span><br><span class="line"><span class="variable">$container</span>-&gt;logger = <span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$msg</span></span>)</span>&#123;</span><br><span class="line">  <span class="title function_ invoke__">file_put_contents</span>(<span class="string">&#x27;info.log&#x27;</span>,<span class="variable">$msg</span>.PHP_EOL,FILE_APPEND);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable">$logger</span> = <span class="variable">$container</span>-&gt;logger;</span><br><span class="line"><span class="variable">$logger</span>(<span class="string">&#x27;magic container works&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<p>通过ArrayAccess接口实现</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayContainer</span> <span class="keyword">implements</span> <span class="title">ArrayAccess</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="variable">$elements</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;elements = [];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetExists</span>(<span class="params"><span class="variable">$offset</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">isset</span>(<span class="variable language_">$this</span>-&gt;elements[<span class="variable">$offset</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetGet</span>(<span class="params"><span class="variable">$offset</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">offsetExists</span>(<span class="variable">$offset</span>))&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;elements[<span class="variable">$offset</span>];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetSet</span>(<span class="params"><span class="variable">$offset</span>, <span class="variable">$value</span></span>)</span>&#123;</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;elements[<span class="variable">$offset</span>] = <span class="variable">$value</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">offsetUnset</span>(<span class="params"><span class="variable">$offset</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">offsetExists</span>(<span class="variable">$offset</span>))&#123;</span><br><span class="line">      <span class="keyword">unset</span>(<span class="variable language_">$this</span>-&gt;elements[<span class="variable">$offset</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$container</span> = <span class="keyword">new</span> <span class="title class_">ArrayContainer</span>();</span><br><span class="line"><span class="variable">$container</span>[<span class="string">&#x27;logger&#x27;</span>] = <span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$msg</span></span>)</span>&#123;</span><br><span class="line">  <span class="title function_ invoke__">file_put_contents</span>(<span class="string">&#x27;info.log&#x27;</span>,<span class="variable">$msg</span>.PHP_EOL,FILE_APPEND);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="variable">$logger</span> = <span class="variable">$container</span>[<span class="string">&#x27;logger&#x27;</span>];</span><br><span class="line"><span class="variable">$logger</span>(<span class="string">&#x27;array container works&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+
+<p>链接：<a href="https://www.jianshu.com/p/f531beef7177">https://www.jianshu.com/p/f531beef7177</a></p>
+]]></content>
+      <categories>
+        <category>container</category>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>container</tag>
+        <tag>php</tag>
       </tags>
   </entry>
   <entry>
