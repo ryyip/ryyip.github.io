@@ -549,4 +549,26 @@
         <tag>Typora</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Encrypt Post</title>
+    <url>/2023/03/28/test/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="a6e9072ba7a2fc705eb46ddfbf256ecb4a81694961df46b9a90aa821d4bccaaf">10d79030e8222445804370796b90fca121d84a5651bdfcfb01244e226c595abf50c978dcd05b1ced00dab5e459519fbfbeb24437604eaad60626a774954ee397a582cc02a01880f6abdaa8de2d3e93aabcbd88aae4e0855d9029e88bad3cb6b139d15d50ae0f0f86bd9f28358ff6bd9380d8efbdb9d45233bf7ae9fd5afc86acac75f670839c7f8ec647e0d57c3c68dfc7f1f24d1ab70ea876f5b9d43c1aee5183febbf765d0447bc3adafb132e35dda4e71b31cea02ad56fa63f2f45f1caa36496c2e797c7715f1a49388a744eaf800</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>private</tag>
+      </tags>
+  </entry>
 </search>
