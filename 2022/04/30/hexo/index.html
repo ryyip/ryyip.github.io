@@ -30,7 +30,7 @@
 <meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-29T16:34:14.000Z">
-<meta property="article:modified_time" content="2023-04-21T06:50:37.334Z">
+<meta property="article:modified_time" content="2023-04-22T02:43:47.480Z">
 <meta property="article:author" content="Leo Ye">
 <meta name="twitter:card" content="summary">
 
@@ -144,7 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clean-to-static-files"><span class="nav-number">1.5.</span> <span class="nav-text">Clean to static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files-amp-Deploy-to-remote-sites"><span class="nav-number">1.6.</span> <span class="nav-text">Generate static files &amp; Deploy to remote sites</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-Plugins"><span class="nav-number">2.</span> <span class="nav-text">Hexo Plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo-Top"><span class="nav-number">2.1.</span> <span class="nav-text">Hexo Top</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clean-to-static-files"><span class="nav-number">1.5.</span> <span class="nav-text">Clean to static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files-amp-Deploy-to-remote-sites"><span class="nav-number">1.6.</span> <span class="nav-text">Generate static files &amp; Deploy to remote sites</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -244,7 +244,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-21 14:50:37" itemprop="dateModified" datetime="2023-04-21T14:50:37+08:00">2023-04-21</time>
+      <time title="Modified: 2023-04-22 10:43:47" itemprop="dateModified" datetime="2023-04-22T10:43:47+08:00">2023-04-22</time>
     </span>
 
   
@@ -274,9 +274,6 @@
 
 <h3 id="Generate-static-files-amp-Deploy-to-remote-sites"><a href="#Generate-static-files-amp-Deploy-to-remote-sites" class="headerlink" title="Generate static files &amp; Deploy to remote sites"></a>Generate static files &amp; Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
 
-
-
-<h2 id="Hexo-Plugins"><a href="#Hexo-Plugins" class="headerlink" title="Hexo Plugins"></a>Hexo Plugins</h2><h3 id="Hexo-Top"><a href="#Hexo-Top" class="headerlink" title="Hexo Top"></a>Hexo Top</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. yarn add hexo-generator-index-pin-top</span><br><span class="line">2.</span><br><span class="line"># /home/leo/www/html/hexo-blog/node_modules/hexo-theme-next/layout/_partials/post/post-meta.njk</span><br><span class="line">add the below code into the post-meta.njk</span><br><span class="line">```</span><br><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">	&lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">	&lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">	&lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">```</span><br><span class="line">3. 在需要置顶的文章的Front-matter中加上top: true 或者top: 任意数字</span><br></pre></td></tr></table></figure>
 
 
     </div>

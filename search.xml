@@ -570,9 +570,6 @@
 <h3 id="Generate-static-files-amp-Deploy-to-remote-sites"><a href="#Generate-static-files-amp-Deploy-to-remote-sites" class="headerlink" title="Generate static files &amp; Deploy to remote sites"></a>Generate static files &amp; Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g -d</span><br></pre></td></tr></table></figure>
 
 
-
-<h2 id="Hexo-Plugins"><a href="#Hexo-Plugins" class="headerlink" title="Hexo Plugins"></a>Hexo Plugins</h2><h3 id="Hexo-Top"><a href="#Hexo-Top" class="headerlink" title="Hexo Top"></a>Hexo Top</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. yarn add hexo-generator-index-pin-top</span><br><span class="line">2.</span><br><span class="line"># /home/leo/www/html/hexo-blog/node_modules/hexo-theme-next/layout/_partials/post/post-meta.njk</span><br><span class="line">add the below code into the post-meta.njk</span><br><span class="line">```</span><br><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">	&lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">	&lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">	&lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line">```</span><br><span class="line">3. 在需要置顶的文章的Front-matter中加上top: true 或者top: 任意数字</span><br></pre></td></tr></table></figure>
-
 ]]></content>
   </entry>
 </search>
