@@ -30,7 +30,7 @@
 <meta property="og:description" content="User &amp; Group切换rootsudo su 切换用户su leo  chgrp：更改文件属组chgrp [-R] 属组名 文件名 chown：更改文件属主，也可以同时更改文件属组chown [–R] 属主名 文件名chown [-R] 属主名:属组名 文件名 chmod: 更改文件权限chmod [-R] 755 文件名  查看当前用户所属组: groups 查看指定用户所属组:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-07-15T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-02-03T02:53:08.884Z">
+<meta property="article:modified_time" content="2023-05-10T07:52:16.915Z">
 <meta property="article:author" content="Leo Ye">
 <meta property="article:tag" content="linux">
 <meta property="article:tag" content="linux command">
@@ -159,18 +159,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-03 10:53:08" itemprop="dateModified" datetime="2023-02-03T10:53:08+08:00">2023-02-03</time>
+      <time title="Modified: 2023-05-10 15:52:16" itemprop="dateModified" datetime="2023-05-10T15:52:16+08:00">2023-05-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -284,6 +284,8 @@
 <p>直接查看组文件: cat &#x2F;etc&#x2F;group</p>
 <p>wget <a target="_blank" rel="noopener" href="http://example.com/file.tar">http://example.com/file.tar</a> -O &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar<br>curl <a target="_blank" rel="noopener" href="http://example.com/file.tar">http://example.com/file.tar</a> -o &#x2F;path&#x2F;to&#x2F;dir&#x2F;file.tar</p>
 <p>cgroups<br>cgroups(Control Groups) 是 linux 内核提供的一种机制，这种机制可以根据需求把一系列系统任务及其子任务整合(或分隔)到按资源划分等级的不同组内，从而为系统资源管理提供一个统一的框架。简单说，cgroups 可以限制、记录任务组所使用的物理资源。本质上来说，cgroups 是内核附加在程序上的一系列钩子(hook)，通过程序运行时对资源的调度触发相应的钩子以达到资源追踪和限制的目的。</p>
+<p>显示leo所属用户组：groups leo</p>
+<p>将用户leo添加到用户http中：usermod -a -G http leo</p>
 <h3 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h3><p>#lsof(list open files)是一个列出当前系统打开文件的工具。<br>lsof -i:端口号</p>
 <p>#netstat -tunlp 用于显示 tcp，udp 的端口和进程等相关情况。<br>netstat -tunlp | grep 端口号</p>
 <p>sudo update-alternatives –set php &#x2F;usr&#x2F;bin&#x2F;php7.2</p>
