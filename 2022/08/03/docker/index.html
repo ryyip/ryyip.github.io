@@ -30,7 +30,7 @@
 <meta property="og:description" content="上个月将系统更换成了Manjaro，期间顺理了相关软件推荐，命令的简要使用等，今天总结一下docker的使用及遇到的问题。 Docker简介 image (相当于镜像，里面各项配置) container (相当与一台台虚拟机) docker-compose (多容器合作，App容器，数据库容器) Portainer (容器可视化管理软件)  文件dockerfile (自动化脚本，用于创建镜像)">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-04-12T08:06:57.913Z">
+<meta property="article:modified_time" content="2023-07-06T07:41:06.875Z">
 <meta property="article:author" content="Leo Ye">
 <meta property="article:tag" content="docker">
 <meta property="article:tag" content="docker compose">
@@ -146,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker"><span class="nav-number">1.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-number">1.0.2.</span> <span class="nav-text">文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E6%BA%90%E5%9C%B0%E5%9D%80%E4%BF%AE%E6%94%B9"><span class="nav-number">1.0.3.</span> <span class="nav-text">镜像源地址修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.0.4.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Container-Problems"><span class="nav-number">1.0.5.</span> <span class="nav-text">Container Problems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-number">1.0.6.</span> <span class="nav-text">Project</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker"><span class="nav-number">1.</span> <span class="nav-text">Docker</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-number">1.0.2.</span> <span class="nav-text">文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E6%BA%90%E5%9C%B0%E5%9D%80%E4%BF%AE%E6%94%B9"><span class="nav-number">1.0.3.</span> <span class="nav-text">镜像源地址修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.0.4.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Container-Problems"><span class="nav-number">1.0.5.</span> <span class="nav-text">Container Problems</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Project"><span class="nav-number">1.0.6.</span> <span class="nav-text">Project</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Simple-Demo"><span class="nav-number">1.0.7.</span> <span class="nav-text">Simple Demo</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -159,7 +159,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -246,7 +246,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-12 16:06:57" itemprop="dateModified" datetime="2023-04-12T16:06:57+08:00">2023-04-12</time>
+      <time title="Modified: 2023-07-06 15:41:06" itemprop="dateModified" datetime="2023-07-06T15:41:06+08:00">2023-07-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -286,6 +286,8 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#image: php:7.2-fpm</span><br><span class="line"></span><br><span class="line">#重启php服务(该容器自带的特定命令)</span><br><span class="line">kill -USR2 1</span><br></pre></td></tr></table></figure>
 
 <h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/ryyip/docker-leo</span><br></pre></td></tr></table></figure>
+
+<h4 id="Simple-Demo"><a href="#Simple-Demo" class="headerlink" title="Simple Demo"></a>Simple Demo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name=supervisor okteto/supervisor:0.2.1</span><br><span class="line">docker exec -it supervisor /bin/sh</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
     </div>
