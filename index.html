@@ -242,7 +242,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-07-26 14:56:43" itemprop="dateModified" datetime="2023-07-26T14:56:43+08:00">2023-07-26</time>
+      <time title="Modified: 2023-08-16 17:40:14" itemprop="dateModified" datetime="2023-08-16T17:40:14+08:00">2023-08-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -939,7 +939,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-07-06 15:41:06" itemprop="dateModified" datetime="2023-07-06T15:41:06+08:00">2023-07-06</time>
+      <time title="Modified: 2023-07-28 16:34:09" itemprop="dateModified" datetime="2023-07-28T16:34:09+08:00">2023-07-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -980,7 +980,7 @@
 
 <h4 id="Project"><a href="#Project" class="headerlink" title="Project"></a>Project</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/ryyip/docker-leo</span><br></pre></td></tr></table></figure>
 
-<h4 id="Simple-Demo"><a href="#Simple-Demo" class="headerlink" title="Simple Demo"></a>Simple Demo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name=supervisor okteto/supervisor:0.2.1</span><br><span class="line">docker exec -it supervisor /bin/sh</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="Simple-Demo"><a href="#Simple-Demo" class="headerlink" title="Simple Demo"></a>Simple Demo</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 拉取okteto/supervisor:0.2.1 </span><br><span class="line">docker pull okteto/supervisor:0.2.1</span><br><span class="line">// 标记本地镜像，将其归入某一仓库。</span><br><span class="line">docker tag okteto/supervisor:0.2.1 ryyip/supervisor:v1.0</span><br><span class="line">// 上传到自己的docker仓库</span><br><span class="line">docker push ryyip/supervisor:v1.0</span><br><span class="line"></span><br><span class="line">// 拉取okteto/supervisor:0.2.1 </span><br><span class="line">docker pull okteto/supervisor:0.2.1</span><br><span class="line">// 生成容器</span><br><span class="line">docker run -itd --name=supervisor okteto/supervisor:0.2.1</span><br><span class="line">// 进入容器</span><br><span class="line">docker exec -it supervisor /bin/sh</span><br><span class="line">// 在容器内，进行操作</span><br><span class="line">mkdir test &amp;&amp; echo &#x27;aaa&#x27; &gt;&gt; a.txt</span><br><span class="line">// 退出容器</span><br><span class="line">exit</span><br><span class="line">// 提交容器修改，并打上tag，归入自己docker仓库中</span><br><span class="line">docker commit supervisor ryyip/supervisor:v1.1</span><br><span class="line">// push到远程docker仓库</span><br><span class="line">docker push ryyip/supervisor:v1.1 </span><br></pre></td></tr></table></figure>
 
 
       
